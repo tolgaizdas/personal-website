@@ -37,6 +37,13 @@ export default function Home() {
         description: [],
       },
       {
+        header: "Research Scholar",
+        date: "Jul 2024 - Present",
+        company: "COSMOS AI Research Group",
+        location: "İstanbul, Türkiye",
+        description: [],
+      },
+      {
         header: "Software Engineer Intern",
         date: "Jul - Aug 2023",
         company: "SESTEK",

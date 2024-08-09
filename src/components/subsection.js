@@ -26,7 +26,7 @@ const Subsection = ({ header, date, company, location, description }) => {
           <li
             key={index}
             className="text-gray-700 dark:text-gray-300"
-            dangerouslySetInnerHTML={{ __html: item }}
+            dangerouslySetInnerHTML={{ __html: item }} // TODO: Using innerHTML can be a security risk. Consider using a library like DOMPurify to avoid this.
           />
         ))}
       </ul>
