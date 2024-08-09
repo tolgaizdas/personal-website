@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define color variables for light and dark modes */
+:root {
+  --foreground-light: 0, 0, 0; /* Light mode text color */
+  --background-light: 255, 255, 255; /* Light mode background color */
+
+  --foreground-dark: 255, 255, 255; /* Dark mode text color */
+  --background-dark: 0, 0, 0; /* Dark mode background color */
+}
+
+/* Light mode styles */
+body {
+  color: rgb(var(--foreground-light));
+  background-color: rgb(var(--background-light));
+}
+
+/* Dark mode classes for Tailwind CSS */
+.dark body {
+  color: rgb(var(--foreground-dark));
+  background-color: rgb(var(--background-dark));
+}
