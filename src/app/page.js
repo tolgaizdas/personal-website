@@ -20,7 +20,7 @@ export default function Home() {
         company: "Yıldız Technical University",
         location: "İstanbul, Türkiye",
         description: [
-          "GPA: 3.59/4",
+          "<strong>GPA:</strong> 3.59/4",
         ],
       },
     ],
@@ -81,9 +81,9 @@ export default function Home() {
         company: "",
         location: "",
         description: [
-          "Technologies: Python, Java, C, SQL, JavaScript, Jupyter Notebook, MATLAB",
-          "Libraries: TensorFlow, PyTorch, NumPy, Pandas, Keras, scikit-learn, Java Swing, Matplotlib",
-          "Tools: Git, Google Colab, Kaggle, PyCharm",
+          "<strong>Technologies:</strong> Python, Java, C, SQL, JavaScript, Jupyter Notebook, MATLAB",
+          "<strong>Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Keras, scikit-learn, Java Swing, Matplotlib",
+          "<strong>Tools:</strong> Git, Google Colab, Kaggle, PyCharm",
         ],
       },
     ],
@@ -98,8 +98,8 @@ export default function Home() {
         company: "",
         location: "",
         description: [
-          "Turkish: Native",
-          "English: Advanced (TOEFL iBT: 98/120)",
+          "<strong>Turkish:</strong> Native",
+          "<strong>English:</strong> Advanced (TOEFL iBT: 98/120)",
         ],
       },
     ],
