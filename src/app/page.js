@@ -79,6 +79,19 @@ export default function Home() {
     ],
   };
 
+  const projects = {
+    header: "Projects",
+    subsections: [
+      {
+        header: "Occupation Prediction from Twitter Data",
+        date: "Jun 2024",
+        company: "Yıldız Technical University",
+        location: "",
+        description: ["Under the supervision of Prof. Banu Diri, an undergraduate project, which is in the process of being published as an article, was developed to predict occupations on Turkish tweets using machine learning and deep learning methods along with natural language processing techniques."],
+      },
+    ],
+  };
+
   const skills = {
     header: "Skills",
     subsections: [
@@ -119,6 +132,7 @@ export default function Home() {
       <Section {...education} />
       <Section {...experience} />
       <Section {...accomplishments} />
+      <Section {...projects} />
       <Section {...skills} />
       <Section {...languages} />
     </div>
