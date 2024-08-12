@@ -131,8 +131,8 @@ export default function Home() {
       <Title {...title} />
       <Section {...education} />
       <Section {...experience} />
-      <Section {...accomplishments} />
       <Section {...projects} />
+      <Section {...accomplishments} />
       <Section {...skills} />
       <Section {...languages} />
     </div>
