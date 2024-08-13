@@ -30,18 +30,21 @@ export default function Home() {
     header: "Experience",
     subsections: [
       {
-        header: "Software Engineer Intern",
-        date: "Jul - Sep 2024",
-        company: "Türk Telekom",
-        location: "İzmir, Türkiye",
-        description: [],
-      },
-      {
         header: "Research Scholar",
         date: "Jul 2024 - Present",
         company: "COSMOS AI Research Group",
         location: "İstanbul, Türkiye",
         description: [],
+      },
+      {
+        header: "Software Engineer Intern",
+        date: "Jul - Sep 2024",
+        company: "Türk Telekom",
+        location: "İzmir, Türkiye",
+        description: [
+          "Designed a database for the company inventory from scratch using SQLite.",
+          "Implemented an interface and database operations, including authorization and data integrity measures, using the Django framework.",
+       ],
       },
       {
         header: "Software Engineer Intern",
