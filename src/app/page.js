@@ -42,7 +42,7 @@ export default function Home() {
       },
       {
         header: "Software Engineer Intern",
-        date: "Jul - Present 2024",
+        date: "Jul 2024 - Present",
         company: "Türk Telekom",
         location: "İzmir, Türkiye",
         description: [
