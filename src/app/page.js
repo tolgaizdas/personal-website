@@ -34,11 +34,15 @@ export default function Home() {
         date: "Jul 2024 - Present",
         company: "COSMOS AI Research Group",
         location: "İstanbul, Türkiye",
-        description: [],
+        description: [
+          "Performing benchmarks on LLMs using few-shot learning.",
+          "Creating datasets for evaluating text generation models.",
+          "Writing scripts for automated model evaluation and result analysis.",
+        ],
       },
       {
         header: "Software Engineer Intern",
-        date: "Jul - Sep 2024",
+        date: "Jul - Present 2024",
         company: "Türk Telekom",
         location: "İzmir, Türkiye",
         description: [
