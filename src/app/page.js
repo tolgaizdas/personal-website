@@ -109,7 +109,7 @@ export default function Home() {
         location: "",
         description: [
           "<strong>Technologies:</strong> Python, Java, C, SQL, JavaScript, Jupyter Notebook, MATLAB",
-          "<strong>Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Keras, scikit-learn, Java Swing, Matplotlib",
+          "<strong>Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Keras, scikit-learn, Java Swing, Matplotlib, Apache Hadoop, Django",
           "<strong>Tools:</strong> Git, Google Colab, Kaggle, PyCharm",
         ],
       },
