@@ -126,7 +126,7 @@ export default function Home() {
         location: "",
         description: [
           "<strong>Turkish:</strong> Native",
-          "<strong>English:</strong> Advanced (TOEFL iBT: 98/120)",
+          "<strong>English:</strong> Advanced | TOEFL iBT: 98/120",
         ],
       },
     ],
