@@ -17,7 +17,7 @@ export default function Home() {
       {
         header: "Bachelor of Science in Computer Engineering",
         date: "Expected Jun 2025",
-        company: "Yıldız Technical University",
+        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "İstanbul, Türkiye",
         description: [
           "<strong>GPA:</strong> 3.59/4",
@@ -32,7 +32,7 @@ export default function Home() {
       {
         header: "Research Scholar",
         date: "Jul 2024 - Present",
-        company: "COSMOS AI Research Group",
+        company: "<a href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
         location: "İstanbul, Türkiye",
         description: [
           "Performing benchmarks on LLMs using few-shot learning.",
@@ -43,7 +43,7 @@ export default function Home() {
       {
         header: "Software Engineer Intern",
         date: "Jul 2024 - Present",
-        company: "Türk Telekom",
+        company: "<a href='https://www.turktelekom.com.tr/en' class='underline'>Türk Telekom</a>",
         location: "İzmir, Türkiye",
         description: [
           "Designed a database for the company inventory from scratch using SQLite.",
@@ -53,7 +53,7 @@ export default function Home() {
       {
         header: "Software Engineer Intern",
         date: "Jul - Aug 2023",
-        company: "SESTEK",
+        company: "<a href='https://www.sestek.com/' class='underline'>SESTEK</a>",
         location: "İstanbul, Türkiye",
         description: [
           "Developed a product that summarizes provided voice input using JavaScript and API.",
@@ -70,14 +70,14 @@ export default function Home() {
       {
         header: "STAR Intern Researcher Scholarship",
         date: "Jul 2024",
-        company: "TÜBİTAK (Scientific and Technological Research Council of Türkiye)",
+        company: "<a href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
         location: "",
-        description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by Prof. Mehmet Fatih Amasyalı at Yıldız Technical University Computer Engineering Department."],
+        description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by <a href='https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en' class='underline'>Prof. Mehmet Fatih Amasyalı</a> at <a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a> Computer Engineering Department."],
       },
       {
         header: "National Science Olympiads in Computer Science",
         date: "May 2019",
-        company: "TÜBİTAK (Scientific and Technological Research Council of Türkiye)",
+        company: "<a href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
         location: "",
         description: [
           "Ranked 55/600th in the National Science Olympiad in the category of Computer Science.",
@@ -92,9 +92,9 @@ export default function Home() {
       {
         header: "Occupation Prediction from Twitter Data",
         date: "Jun 2024",
-        company: "Yıldız Technical University",
+        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "",
-        description: ["Under the supervision of Prof. Banu Diri, an undergraduate project, which is in the process of being published as an article, was developed to predict occupations on Turkish tweets using machine learning and deep learning methods along with natural language processing techniques."],
+        description: ["Under the supervision of <a href='https://scholar.google.com.tr/citations?user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri</a>, an undergraduate project, which is in the process of being published as an article, was developed to predict occupations on Turkish tweets using machine learning and deep learning methods along with natural language processing techniques."],
       },
     ],
   };
