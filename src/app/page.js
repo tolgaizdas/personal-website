@@ -42,7 +42,7 @@ export default function Home() {
       },
       {
         header: "Software Engineer Intern",
-        date: "Jul 2024 - Present",
+        date: "Jul - Sep 2024",
         company: "<a href='https://www.turktelekom.com.tr/en' class='underline'>Türk Telekom</a>",
         location: "İzmir, Türkiye",
         description: [
@@ -94,7 +94,7 @@ export default function Home() {
         date: "Jun 2024",
         company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "",
-        description: ["Under the supervision of <a href='https://scholar.google.com.tr/citations?user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri</a>, an undergraduate project, which is in the process of being published as an article, was developed to predict occupations on Turkish tweets using machine learning and deep learning methods along with natural language processing techniques."],
+        description: ["Under the supervision of <a href='https://scholar.google.com.tr/citations?user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri</a>, an undergraduate project was developed to predict occupations on Turkish tweets using machine learning, deep learning, and natural language processing techniques, and has been submitted for publication."],
       },
     ],
   };
