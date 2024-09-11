@@ -21,25 +21,15 @@ export default function Home() {
         location: "İstanbul, Türkiye",
         description: [
           "<strong>GPA:</strong> 3.59/4",
+          "<strong>Relevant Coursework:</strong> Big Data Processing and Analytics, Artificial Intelligence, Image Processing"
         ],
       },
     ],
   };
 
-  const experience = {
-    header: "Experience",
+  const professionalExperience = {
+    header: "Professional Experience",
     subsections: [
-      {
-        header: "Research Scholar",
-        date: "Jul 2024 - Present",
-        company: "<a href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
-        location: "İstanbul, Türkiye",
-        description: [
-          "Performing benchmarks on LLMs using few-shot learning.",
-          "Creating datasets for evaluating text generation models.",
-          "Writing scripts for automated model evaluation and result analysis.",
-        ],
-      },
       {
         header: "Software Engineer Intern",
         date: "Jul - Sep 2024",
@@ -48,6 +38,7 @@ export default function Home() {
         description: [
           "Designed a database for the company inventory from scratch using SQLite.",
           "Implemented an interface and database operations, including authorization and data integrity measures, using the Django framework.",
+          "Improved the data retrieval and processing speeds, contributing to more efficient inventory management.",
        ],
       },
       {
@@ -57,15 +48,49 @@ export default function Home() {
         location: "İstanbul, Türkiye",
         description: [
           "Developed a product that summarizes provided voice input using JavaScript and API.",
-          "Added a module to an existing product that allows the user to read sent HTTP data in a web interface.",
+          "Added a module to an existing product that allows the user to read sent HTTP data in a web interface, facilitating real-time data analysis and visualization.",
           "Gained valuable information regarding agile software development practices by actively participating in both daily and weekly meetings."
         ],
       },
     ],
   };
 
-  const accomplishments = {
-    header: "Accomplishments",
+  const researchExperience = {
+    header: "Research Experience",
+    subsections: [
+      {
+        header: "Research Scholar",
+        date: "Jul 2024 - Present",
+        company: "<a href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
+        location: "İstanbul, Türkiye",
+        description: [
+          "Conducting benchmarks on large language models (LLMs) using few-shot learning, contributing to the advancement of model evaluation techniques.",
+          "Creating and curating datasets for evaluating text generation models, ensuring high-quality data for accurate model performance assessments.",
+          "Writing and maintaining scripts for automated model evaluation and result analysis, leading to improved evaluation efficiency.",
+        ],
+      },
+    ],
+  };
+    
+  const projects = {
+    header: "Projects",
+    subsections: [
+      {
+        header: "Undergraduate Project: Occupation Prediction from Twitter Data",
+        date: "Jun 2024",
+        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        location: "İstanbul, Türkiye",
+        description: [
+          "Developed a project to predict occupations from Turkish tweets under the supervision of Prof. Banu Diri.",
+          "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
+          "The project has been submitted for publication and is under review.",
+        ],
+      },
+    ],
+  };
+
+  const awardsAndHonors = {
+    header: "Awards & Honors",
     subsections: [
       {
         header: "STAR Intern Researcher Scholarship",
@@ -74,27 +99,56 @@ export default function Home() {
         location: "",
         description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by <a href='https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en' class='underline'>Prof. Mehmet Fatih Amasyalı</a> at <a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a> Computer Engineering Department."],
       },
+    ],
+  };
+
+  const accomplishments = {
+    header: "Accomplishments",
+    subsections: [
       {
         header: "National Science Olympiads in Computer Science",
         date: "May 2019",
         company: "<a href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
         location: "",
         description: [
-          "Ranked 55/600th in the National Science Olympiad in the category of Computer Science.",
+          "Ranked 55th among 600 students in the National Science Olympiads in Computer Science.",
         ],
       },
     ],
   };
 
-  const projects = {
-    header: "Projects",
+  const coursework = {
+    header: "Coursework",
     subsections: [
       {
-        header: "Occupation Prediction from Twitter Data",
-        date: "Jun 2024",
-        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        header: "Big Data Processing and Analytics",
+        date: "",
+        company: "",
         location: "",
-        description: ["Under the supervision of <a href='https://scholar.google.com.tr/citations?user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri</a>, an undergraduate project was developed to predict occupations on Turkish tweets using machine learning, deep learning, and natural language processing techniques, and has been submitted for publication."],
+        description: [
+          "Gained hands-on experience with distributed systems, large-scale data processing, and recommender systems.",
+          "Completed a project that evaluated the performance of Apache Hadoop in processing large datasets by applying various statistical functions."
+        ],
+      },
+      {
+        header: "Artificial Intelligence",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          "Studied fundamental AI concepts, including search algorithms, optimization methods, gradient descent, and stochastic processes.",
+          "Implemented various projects using Genetic Algorithms and Q-Learning techniques to solve complex problems and enhance decision-making in AI systems."
+        ],
+      },
+      {
+        header: "Image Processing",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          "Explored core image processing techniques such as filtering, segmentation, and edge detection.",
+          "Implemented algorithms for image recognition, classification, and enhancement, and engaged in various related projects."
+        ],
       },
     ],
   };
@@ -137,9 +191,12 @@ export default function Home() {
       <ThemeToggle />
       <Title {...title} />
       <Section {...education} />
-      <Section {...experience} />
+      <Section {...professionalExperience} />
+      <Section {...researchExperience} />
       <Section {...projects} />
+      <Section {...awardsAndHonors} />
       <Section {...accomplishments} />
+      <Section {...coursework} />
       <Section {...skills} />
       <Section {...languages} />
     </div>
