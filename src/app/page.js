@@ -17,7 +17,7 @@ export default function Home() {
       {
         header: "Bachelor of Science in Computer Engineering",
         date: "Expected Jun 2025",
-        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        company: "<a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "İstanbul, Türkiye",
         description: [
           "<strong>GPA:</strong> 3.59/4",
@@ -33,7 +33,7 @@ export default function Home() {
       {
         header: "Software Engineer Intern",
         date: "Jul - Sep 2024",
-        company: "<a href='https://www.turktelekom.com.tr/en' class='underline'>Türk Telekom</a>",
+        company: "<a target='_blank' href='https://www.turktelekom.com.tr/en' class='underline'>Türk Telekom</a>",
         location: "İzmir, Türkiye",
         description: [
           "Designed a database for the company inventory from scratch using SQLite.",
@@ -44,7 +44,7 @@ export default function Home() {
       {
         header: "Software Engineer Intern",
         date: "Jul - Aug 2023",
-        company: "<a href='https://www.sestek.com/' class='underline'>SESTEK</a>",
+        company: "<a target='_blank' href='https://www.sestek.com/' class='underline'>SESTEK</a>",
         location: "İstanbul, Türkiye",
         description: [
           "Developed a product that summarizes provided voice input using JavaScript and API.",
@@ -61,7 +61,7 @@ export default function Home() {
       {
         header: "Research Scholar",
         date: "Jul 2024 - Present",
-        company: "<a href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
+        company: "<a target='_blank' href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
         location: "İstanbul, Türkiye",
         description: [
           "Conducting benchmarks on large language models (LLMs) using few-shot learning, contributing to the advancement of model evaluation techniques.",
@@ -78,12 +78,12 @@ export default function Home() {
       {
         header: "Undergraduate Project: Occupation Prediction from Twitter Data",
         date: "Jun 2024",
-        company: "<a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        company: "<a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "İstanbul, Türkiye",
         description: [
           "Developed a project to predict occupations from Turkish tweets under the supervision of Prof. Banu Diri.",
           "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
-          "The project has been submitted for publication and is under review.",
+          "The project has been accepted for publication in the Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD), co-authored by T. Izdas, H. Iskifoglu, and B. Diri.",
         ],
       },
     ],
@@ -95,9 +95,9 @@ export default function Home() {
       {
         header: "STAR Intern Researcher Scholarship",
         date: "Jul 2024",
-        company: "<a href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
+        company: "<a target='_blank' href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
         location: "",
-        description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by <a href='https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en' class='underline'>Prof. Mehmet Fatih Amasyalı</a> at <a href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a> Computer Engineering Department."],
+        description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by <a target='_blank' href='https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en' class='underline'>Prof. Mehmet Fatih Amasyalı</a> at <a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a> Computer Engineering Department."],
       },
     ],
   };
@@ -108,10 +108,10 @@ export default function Home() {
       {
         header: "National Science Olympiads in Computer Science",
         date: "May 2019",
-        company: "<a href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
+        company: "<a target='_blank' href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
         location: "",
         description: [
-          "Ranked 55th among 600 students in the National Science Olympiads in Computer Science.",
+          "Ranked 55th out of 600 students in the National Science Olympiads in Computer Science.",
         ],
       },
     ],
