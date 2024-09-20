@@ -81,7 +81,7 @@ export default function Home() {
         company: "<a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
         location: "İstanbul, Türkiye",
         description: [
-          "Developed a project to predict occupations from Turkish tweets under the supervision of Prof. Banu Diri.",
+          "Developed a project to predict occupations from Turkish tweets under the supervision of <a target='_blank' href='https://scholar.google.com.tr/citations?hl=en&user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri.</a>",
           "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
           "The project has been accepted for publication in the Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD), co-authored by T. Izdas, H. Iskifoglu, and B. Diri.",
         ],
