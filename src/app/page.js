@@ -187,7 +187,7 @@ export default function Home() {
   };
 
   return (
-    <div className="p-10">
+    <div className="pt-4 pb-4 pl-8 pr-8">
       <ThemeToggle />
       <Title {...title} />
       <Section {...education} />
