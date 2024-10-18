@@ -85,8 +85,8 @@ export default function Home() {
     ],
   };
 
-  const projects = {
-    header: "Projects",
+  const publications = {
+    header: "Publications",
     subsections: [
       {
         header:
@@ -107,6 +107,40 @@ export default function Home() {
           )}`,
           "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
           "The project has been accepted for publication in the Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD), co-authored by T. Izdas, H. Iskifoglu, and B. Diri.",
+        ],
+      },
+    ],
+  };
+
+  const projects = {
+    header: "Projects",
+    subsections: [
+      {
+        header: "Emotion Classification with RNN",
+        date: "Mar 2024",
+        company: "",
+        location: "",
+        description: [
+          `Developed a multi-label text classification ${generate_a_tag(
+            "https://github.com/tolgaizdas/Emotion-Classification-with-RNN",
+            "project"
+          )}
+            on a dataset with 6 labels using RNN and GloVe embeddings.`,
+          "Implemented a 3-layer GRU model for the classification task.",
+          "Achieved ~90% accuracy on 3-layer GRU model.",
+        ],
+      },
+      {
+        header: "K-Means Clustering",
+        date: "Apr 2022",
+        company: "",
+        location: "",
+        description: [
+          `Developed a Java ${generate_a_tag(
+            "https://github.com/tolgaizdas/K-Means-Clustering",
+            "project"
+          )} to implement the k-means clustering algorithm for analyzing and grouping coordinates from a CSV file.`,
+          "Created an intuitive GUI that allows users to specify parameters such as the number of iterations and cluster centers for tailored clustering results.",
         ],
       },
     ],
@@ -239,6 +273,7 @@ export default function Home() {
       <Section {...education} />
       <Section {...professionalExperience} />
       <Section {...researchExperience} />
+      <Section {...publications} />
       <Section {...projects} />
       <Section {...awardsAndHonors} />
       <Section {...accomplishments} />
