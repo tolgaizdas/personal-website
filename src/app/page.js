@@ -1,6 +1,10 @@
-import Title from '../components/title';
-import Section from '../components/section';
-import ThemeToggle from '../components/theme-toggle';
+import Title from "../components/title";
+import Section from "../components/section";
+import ThemeToggle from "../components/theme-toggle";
+
+function generate_a_tag(url, text) {
+  return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;
+}
 
 export default function Home() {
   const title = {
@@ -17,11 +21,14 @@ export default function Home() {
       {
         header: "Bachelor of Science in Computer Engineering",
         date: "Expected Jun 2025",
-        company: "<a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        company: generate_a_tag(
+          "https://www.yildiz.edu.tr/en",
+          "Yıldız Technical University"
+        ),
         location: "İstanbul, Türkiye",
         description: [
           "<strong>GPA:</strong> 3.59/4",
-          "<strong>Relevant Coursework:</strong> Big Data Processing and Analytics, Artificial Intelligence, Image Processing"
+          "<strong>Relevant Coursework:</strong> Big Data Processing and Analytics, Artificial Intelligence, Image Processing",
         ],
       },
     ],
@@ -33,23 +40,26 @@ export default function Home() {
       {
         header: "Software Engineer Intern",
         date: "Jul - Sep 2024",
-        company: "<a target='_blank' href='https://www.turktelekom.com.tr/en' class='underline'>Türk Telekom</a>",
+        company: generate_a_tag(
+          "https://www.turktelekom.com.tr/en",
+          "Türk Telekom"
+        ),
         location: "İzmir, Türkiye",
         description: [
           "Designed a database for the company inventory from scratch using SQLite.",
           "Implemented an interface and database operations, including authorization and data integrity measures, using the Django framework.",
           "Improved the data retrieval and processing speeds, contributing to more efficient inventory management.",
-       ],
+        ],
       },
       {
         header: "Software Engineer Intern",
         date: "Jul - Aug 2023",
-        company: "<a target='_blank' href='https://www.sestek.com/' class='underline'>SESTEK</a>",
+        company: generate_a_tag("https://www.sestek.com/", "SESTEK"),
         location: "İstanbul, Türkiye",
         description: [
           "Developed a product that summarizes provided voice input using JavaScript and API.",
           "Added a module to an existing product that allows the user to read sent HTTP data in a web interface, facilitating real-time data analysis and visualization.",
-          "Gained valuable information regarding agile software development practices by actively participating in both daily and weekly meetings."
+          "Gained valuable information regarding agile software development practices by actively participating in both daily and weekly meetings.",
         ],
       },
     ],
@@ -61,7 +71,10 @@ export default function Home() {
       {
         header: "Research Scholar",
         date: "Jul 2024 - Present",
-        company: "<a target='_blank' href='https://cosmos.yildiz.edu.tr/' class='underline'>COSMOS AI Research Group</a>",
+        company: generate_a_tag(
+          "https://cosmos.yildiz.edu.tr/",
+          "COSMOS AI Research Group"
+        ),
         location: "İstanbul, Türkiye",
         description: [
           "Conducting benchmarks on large language models (LLMs) using few-shot learning, contributing to the advancement of model evaluation techniques.",
@@ -71,17 +84,27 @@ export default function Home() {
       },
     ],
   };
-    
+
   const projects = {
     header: "Projects",
     subsections: [
       {
-        header: "Undergraduate Project: Occupation Prediction from Twitter Data",
+        header:
+          "Undergraduate Project: Occupation Prediction from Twitter Data",
         date: "Jun 2024",
-        company: "<a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a>",
+        company: generate_a_tag(
+          "https://www.yildiz.edu.tr/en",
+          "Yıldız Technical University"
+        ),
         location: "İstanbul, Türkiye",
         description: [
-          "Developed a project to predict occupations from Turkish tweets under the supervision of <a target='_blank' href='https://scholar.google.com.tr/citations?hl=en&user=GUQMy2UAAAAJ&hl=en' class='underline'>Prof. Banu Diri.</a>",
+          `Developed a ${generate_a_tag(
+            "https://github.com/tolgaizdas/Occupation-Prediction",
+            "project"
+          )} to predict occupations from Turkish tweets under the supervision of ${generate_a_tag(
+            "https://scholar.google.com.tr/citations?hl=en&user=GUQMy2UAAAAJ&hl=en",
+            "Prof. Banu Diri."
+          )}`,
           "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
           "The project has been accepted for publication in the Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD), co-authored by T. Izdas, H. Iskifoglu, and B. Diri.",
         ],
@@ -95,9 +118,20 @@ export default function Home() {
       {
         header: "STAR Intern Researcher Scholarship",
         date: "Jul 2024",
-        company: "<a target='_blank' href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
+        company: `${generate_a_tag(
+          "https://tubitak.gov.tr/en",
+          "TÜBİTAK"
+        )} (Scientific and Technological Research Council of Türkiye)`,
         location: "",
-        description: ["Awarded a scholarship as a research intern in the project titled “New Approaches for Text Representation and Text Generation with Neural Language Models” conducted by <a target='_blank' href='https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en' class='underline'>Prof. Mehmet Fatih Amasyalı</a> at <a target='_blank' href='https://www.yildiz.edu.tr/en' class='underline'>Yıldız Technical University</a> Computer Engineering Department."],
+        description: [
+          `Awarded a scholarship as a research intern in the project titled 
+          'New Approaches for Text Representation and Text Generation with Neural Language Models' 
+          conducted by ${generate_a_tag(
+            "https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en",
+            "Prof. Mehmet Fatih Amasyalı"
+          )} 
+          at Yıldız Technical University Computer Engineering Department.`,
+        ],
       },
     ],
   };
@@ -108,7 +142,10 @@ export default function Home() {
       {
         header: "National Science Olympiads in Computer Science",
         date: "May 2019",
-        company: "<a target='_blank' href='https://tubitak.gov.tr/en' class='underline'>TÜBİTAK</a> (Scientific and Technological Research Council of Türkiye)",
+        company: `${generate_a_tag(
+          "https://tubitak.gov.tr/en",
+          "TÜBİTAK"
+        )} (Scientific and Technological Research Council of Türkiye)`,
         location: "",
         description: [
           "Ranked 55th out of 600 students in the National Science Olympiads in Computer Science.",
@@ -127,7 +164,10 @@ export default function Home() {
         location: "",
         description: [
           "Gained hands-on experience with distributed systems, large-scale data processing, and recommender systems.",
-          "Completed a project that evaluated the performance of Apache Hadoop in processing large datasets by applying various statistical functions."
+          `Completed a ${generate_a_tag(
+            "https://github.com/tolgaizdas/Big-Data-Processing",
+            "project"
+          )} that evaluated the performance of Apache Hadoop in processing large datasets by applying various statistical functions.`,
         ],
       },
       {
@@ -137,7 +177,13 @@ export default function Home() {
         location: "",
         description: [
           "Studied fundamental AI concepts, including search algorithms, optimization methods, gradient descent, and stochastic processes.",
-          "Implemented various projects using Genetic Algorithms and Q-Learning techniques to solve complex problems and enhance decision-making in AI systems."
+          `Implemented various projects using ${generate_a_tag(
+            "https://github.com/tolgaizdas/Image-Generator",
+            "Genetic Algorithms"
+          )} and ${generate_a_tag(
+            "https://github.com/tolgaizdas/AI-Flappy-Bird",
+            "Q-Learning"
+          )} techniques to solve complex problems and enhance decision-making in AI systems.`,
         ],
       },
       {
@@ -147,7 +193,7 @@ export default function Home() {
         location: "",
         description: [
           "Explored core image processing techniques such as filtering, segmentation, and edge detection.",
-          "Implemented algorithms for image recognition, classification, and enhancement, and engaged in various related projects."
+          "Implemented algorithms for image recognition, classification, and enhancement, and engaged in various related projects.",
         ],
       },
     ],
