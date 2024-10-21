@@ -79,6 +79,7 @@ export default function Home() {
         description: [
           "Conducting benchmarks on large language models (LLMs) using few-shot learning, contributing to the advancement of model evaluation techniques.",
           "Creating and curating datasets for evaluating text generation models, ensuring high-quality data for accurate model performance assessments.",
+          "Fine-tuning LLMs for specific tasks, improving their performance in domain-specific applications.",
           "Writing and maintaining scripts for automated model evaluation and result analysis, leading to improved evaluation efficiency.",
         ],
       },
