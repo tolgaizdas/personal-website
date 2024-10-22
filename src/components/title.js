@@ -19,6 +19,7 @@ const Title = ({ name, location, email, githubUrl, linkedinUrl }) => {
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+          aria-label='GitHub'
         >
           <FaGithub size={24} />
         </a>
@@ -27,6 +28,7 @@ const Title = ({ name, location, email, githubUrl, linkedinUrl }) => {
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+          aria-label='LinkedIn'
         >
           <FaLinkedin size={24} />
         </a>
