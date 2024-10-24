@@ -15,6 +15,25 @@ export default function Home() {
     linkedinUrl: "https://linkedin.com/in/tolgaizdas",
   };
 
+  const aboutMe = {
+    header: "About Me",
+    subsections: [
+      {
+        header: "",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          `I am a senior Computer Engineering student at ${generate_a_tag(
+          "https://www.yildiz.edu.tr/en",
+          "Yıldız Technical University"
+        )}.`,
+          `Here is my ${generate_a_tag("/tolgaizdas-resume.pdf", "resume")}.`,
+        ],
+      },
+    ],
+  };
+
   const education = {
     header: "Education",
     subsections: [
@@ -90,58 +109,47 @@ export default function Home() {
     header: "Publications",
     subsections: [
       {
-        header:
-          "Undergraduate Project: Occupation Prediction from Twitter Data",
-        date: "Jun 2024",
-        company: generate_a_tag(
-          "https://www.yildiz.edu.tr/en",
-          "Yıldız Technical University"
-        ),
-        location: "İstanbul, Türkiye",
+        header: "Accepted Publications",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          `T. Izdas, H. Iskifoglu, and B. Diri (2024). 
+          Occupation Prediction from Twitter Data. 
+          Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD). (Accepted, pending publication)`,
+        ],
+      },
+    ],
+  };
+
+
+  const projects = {
+    header: "Projects",
+    subsections: [
+      {
+        header: "COSMOS LLM Evaluation Tool",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          "Developed a tool to evaluate large language models such as GPT, BERT, and LLAMA on a variety of tasks with support for few-shot learning.",
+          "Implemented custom evaluation metrics for accuracy and perplexity, enhancing the tool's functionality and user experience.",
+        ],
+      },
+      {
+        header: "Occupation Prediction from Twitter Data",
+        date: "",
+        company: "",
+        location: "",
         description: [
           `Developed a ${generate_a_tag(
             "https://github.com/tolgaizdas/Occupation-Prediction",
             "project"
           )} to predict occupations from Turkish tweets under the supervision of ${generate_a_tag(
             "https://scholar.google.com.tr/citations?hl=en&user=GUQMy2UAAAAJ&hl=en",
-            "Prof. Banu Diri."
-          )}`,
+            "Prof. Banu Diri"
+          )}.`,
           "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
-          "The project has been accepted for publication in the Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD), co-authored by T. Izdas, H. Iskifoglu, and B. Diri.",
-        ],
-      },
-    ],
-  };
-
-  const projects = {
-    header: "Projects",
-    subsections: [
-      {
-        header: "Emotion Classification with RNN",
-        date: "Mar 2024",
-        company: "",
-        location: "",
-        description: [
-          `Developed a multi-label text classification ${generate_a_tag(
-            "https://github.com/tolgaizdas/Emotion-Classification-with-RNN",
-            "project"
-          )}
-            on a dataset with 6 labels using RNN and GloVe embeddings.`,
-          "Implemented a 3-layer GRU model for the classification task.",
-          "Achieved ~90% accuracy on 3-layer GRU model.",
-        ],
-      },
-      {
-        header: "K-Means Clustering",
-        date: "Apr 2022",
-        company: "",
-        location: "",
-        description: [
-          `Developed a Java ${generate_a_tag(
-            "https://github.com/tolgaizdas/K-Means-Clustering",
-            "project"
-          )} to implement the k-means clustering algorithm for analyzing and grouping coordinates from a CSV file.`,
-          "Created an intuitive GUI that allows users to specify parameters such as the number of iterations and cluster centers for tailored clustering results.",
         ],
       },
     ],
@@ -271,16 +279,16 @@ export default function Home() {
     <div className="pt-4 pb-4 pl-8 pr-8">
       <ThemeToggle />
       <Title {...title} />
-      <Section {...education} />
-      <Section {...professionalExperience} />
-      <Section {...researchExperience} />
-      <Section {...publications} />
+      <Section {...aboutMe} />
+      {/* <Section {...education} /> */}
+      {/* <Section {...professionalExperience} /> <Section {...researchExperience} /> */}
       <Section {...projects} />
-      <Section {...awardsAndHonors} />
-      <Section {...accomplishments} />
       <Section {...coursework} />
+      <Section {...awardsAndHonors} />
+      <Section {...publications} />
+      {/* <Section {...accomplishments} /> */}
       <Section {...skills} />
-      <Section {...languages} />
+      {/* <Section {...languages} /> */}
     </div>
   );
 }
