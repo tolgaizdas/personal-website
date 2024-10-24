@@ -287,7 +287,7 @@ export default function Home() {
       <Section {...awardsAndHonors} />
       <Section {...publications} />
       {/* <Section {...accomplishments} /> */}
-      <Section {...skills} />
+      {/* <Section {...skills} /> */}
       {/* <Section {...languages} /> */}
     </div>
   );
