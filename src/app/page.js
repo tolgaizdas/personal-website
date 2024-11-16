@@ -10,7 +10,7 @@ export default function Home() {
   const title = {
     name: "Tolga İzdaş",
     location: "İstanbul, Türkiye",
-    email: "tolgaizdas@tolgaizdas.com",
+    email: "tolga@tolgaizdas.com",
     githubUrl: "https://github.com/tolgaizdas",
     linkedinUrl: "https://linkedin.com/in/tolgaizdas",
   };
