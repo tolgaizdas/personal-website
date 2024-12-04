@@ -275,6 +275,29 @@ export default function Home() {
     ],
   };
 
+  const certifications = {
+    header: "Certifications",
+    subsections: [
+      {
+        header: `Red Hat System Administration I & II - 
+        ${generate_a_tag("https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i", "RH124")} & 
+        ${generate_a_tag("https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii", "RH134")}`,
+        date: "Dec 2024",
+        company: "Red Hat",
+        location: "",
+        description: [],
+      },
+      {
+        header: `Red Hat OpenShift I: Containers & Kubernetes - 
+        ${generate_a_tag("https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster", "DO180")}`,
+        date: "Dec 2024",
+        company: "Red Hat",
+        location: "",
+        description: [],
+      }
+    ],
+  };
+
   return (
     <div className="pt-4 pb-4 pl-8 pr-8">
       <ThemeToggle />
@@ -286,6 +309,7 @@ export default function Home() {
       <Section {...coursework} />
       <Section {...awardsAndHonors} />
       <Section {...publications} />
+      <Section {...certifications} />
       {/* <Section {...accomplishments} /> */}
       {/* <Section {...skills} /> */}
       {/* <Section {...languages} /> */}
