@@ -25,9 +25,9 @@ export default function Home() {
         location: "",
         description: [
           `I am a senior Computer Engineering student at ${generate_a_tag(
-          "https://www.yildiz.edu.tr/en",
-          "Yıldız Technical University"
-        )}.`,
+            "https://www.yildiz.edu.tr/en",
+            "Yıldız Technical University"
+          )}.`,
           `Here is my ${generate_a_tag("/tolgaizdas-resume.pdf", "resume")}.`,
         ],
       },
@@ -122,7 +122,6 @@ export default function Home() {
     ],
   };
 
-
   const projects = {
     header: "Projects",
     subsections: [
@@ -132,7 +131,10 @@ export default function Home() {
         company: "",
         location: "",
         description: [
-          "Developed a tool to evaluate large language models such as GPT, BERT, and LLAMA on a variety of tasks with support for few-shot learning.",
+          `Developed a ${generate_a_tag(
+            "https://github.com/tolgaizdas/cosmos-eval",
+            "tool"
+          )} to evaluate large language models such as GPT, BERT, and LLAMA on a variety of tasks with support for few-shot learning.`,
           "Implemented custom evaluation metrics for accuracy and perplexity, enhancing the tool's functionality and user experience.",
         ],
       },
@@ -280,8 +282,14 @@ export default function Home() {
     subsections: [
       {
         header: `Red Hat System Administration I & II - 
-        ${generate_a_tag("https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i", "RH124")} & 
-        ${generate_a_tag("https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii", "RH134")}`,
+        ${generate_a_tag(
+          "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
+          "RH124"
+        )} & 
+        ${generate_a_tag(
+          "https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii",
+          "RH134"
+        )}`,
         date: "Dec 2024",
         company: "Red Hat",
         location: "",
@@ -289,12 +297,15 @@ export default function Home() {
       },
       {
         header: `Red Hat OpenShift I: Containers & Kubernetes - 
-        ${generate_a_tag("https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster", "DO180")}`,
+        ${generate_a_tag(
+          "https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster",
+          "DO180"
+        )}`,
         date: "Dec 2024",
         company: "Red Hat",
         location: "",
         description: [],
-      }
+      },
     ],
   };
 
