@@ -2,7 +2,7 @@ const Subsection = ({ header, date, company, location, description }) => {
   const showMetadata = date || company || location;
 
   return (
-    <div className="mb-4 p-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <div className="p-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2" dangerouslySetInnerHTML={{ __html: header }} />
       {showMetadata && (
         <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
