@@ -6,7 +6,7 @@ const Title = ({ name, email, githubUrl, linkedinUrl }) => {
   // sticky -> sticky top-0 z-10
   return (
     <header className="mb-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50/75 dark:bg-gray-800/75 backdrop-blur-md backdrop-filter">
-      <div className="flex flex-col-reverse gap-2 sm:h-14 justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:flex-row">
+      <div className="flex flex-col-reverse gap-2 sm:h-14 justify-between items-center max-w-7xl mx-auto p-4 sm:p-8 sm:flex-row">
         {/* Left Side */}
         <div className="flex gap-2 w-auto sm:w-20 sm:gap-4">
           <a
@@ -42,7 +42,7 @@ const Title = ({ name, email, githubUrl, linkedinUrl }) => {
         </h1>
 
         {/* Right Side */}
-        <div className="flex justify-end w-auto sm:w-20">
+        <div className="hidden justify-end w-auto sm:w-20 sm:flex">
           <ThemeToggle />
         </div>
       </div>
