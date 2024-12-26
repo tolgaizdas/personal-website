@@ -1,44 +1,52 @@
 // components/Title.js
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"; // Font Awesome icons
+import ThemeToggle from "./theme-toggle";
 
-const Title = ({ name, location, email, githubUrl, linkedinUrl }) => {
+const Title = ({ name, email, githubUrl, linkedinUrl }) => {
+  // sticky -> sticky top-0 z-10
   return (
-    <div className="text-center mb-8">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-        {name}
-      </h1>
-      <p className="text-lg text-gray-700 dark:text-gray-300 mb-2">
-        {location}
-      </p>
-      <div className="flex justify-center mt-4 space-x-4">
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin size={24} />
-        </a>
-        <a
-          href={`mailto:${email}`}
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
-          aria-label="Email"
-        >
-          <FaEnvelope size={24} />
-        </a>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
-          aria-label="GitHub"
-        >
-          <FaGithub size={24} />
-        </a>
+    <header className="border-b border-gray-200 dark:border-gray-700 bg-gray-50/75 dark:bg-gray-800/75 backdrop-blur-md backdrop-filter">
+      <div className="flex flex-col-reverse gap-2 sm:h-14 justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:flex-row">
+        {/* Left Side */}
+        <div className="flex gap-2 w-auto sm:w-20 sm:gap-4">
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </a>
+          <a
+            href={`mailto:${email}`}
+            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            aria-label="Email"
+          >
+            <FaEnvelope className="w-5 h-5" />
+          </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            aria-label="GitHub"
+          >
+            <FaGithub className="w-5 h-5" />
+          </a>
+        </div>
+
+        {/* Center */}
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 whitespace-nowrap">
+          {name}
+        </h1>
+
+        {/* Right Side */}
+        <div className="flex justify-end w-auto sm:w-20">
+          <ThemeToggle />
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 

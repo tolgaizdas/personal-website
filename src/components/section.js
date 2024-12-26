@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Subsection from "./subsection";
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Section = ({ header, subsections }) => {
   // State to track whether the section is collapsed or expanded
@@ -25,7 +25,7 @@ const Section = ({ header, subsections }) => {
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <div className="mb-8">
+    <div className="mb-4">
       <div className="flex justify-between items-center mb-4">
         <h1
           className="text-2xl font-bold text-gray-900 dark:text-gray-100 cursor-pointer"
@@ -36,7 +36,7 @@ const Section = ({ header, subsections }) => {
           <button
             onClick={toggleCollapse} // Button also toggles collapse
             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none"
-            aria-label={isCollapsed ? 'Expand Section' : 'Collapse Section'}
+            aria-label={isCollapsed ? "Expand Section" : "Collapse Section"}
           >
             {/* FontAwesome icons for up and down arrows */}
             {isCollapsed ? (

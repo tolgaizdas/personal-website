@@ -1,6 +1,5 @@
 import Title from "../components/title";
 import Section from "../components/section";
-import ThemeToggle from "../components/theme-toggle";
 
 function generate_a_tag(url, text) {
   return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;
@@ -310,20 +309,16 @@ export default function Home() {
   };
 
   return (
-    <div className="pt-4 pb-4 pl-8 pr-8">
-      <ThemeToggle />
+    <div>
       <Title {...title} />
-      <Section {...aboutMe} />
-      {/* <Section {...education} /> */}
-      {/* <Section {...professionalExperience} /> <Section {...researchExperience} /> */}
-      <Section {...projects} />
-      <Section {...coursework} />
-      <Section {...awardsAndHonors} />
-      <Section {...publications} />
-      <Section {...certifications} />
-      {/* <Section {...accomplishments} /> */}
-      {/* <Section {...skills} /> */}
-      {/* <Section {...languages} /> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <Section {...aboutMe} />
+        <Section {...projects} />
+        <Section {...coursework} />
+        <Section {...awardsAndHonors} />
+        <Section {...publications} />
+        <Section {...certifications} />
+      </div>
     </div>
   );
 }
