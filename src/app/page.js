@@ -133,7 +133,7 @@ export default function Home() {
           `Developed a ${generate_a_tag(
             "https://github.com/tolgaizdas/cosmos-eval",
             "tool"
-          )} to evaluate large language models such as GPT, BERT, and LLAMA on a variety of tasks with support for few-shot learning.`,
+          )} to evaluate large language models such as GPT, BERT, and LLaMA on a variety of tasks with support for few-shot learning.`,
           "Implemented custom evaluation metrics for accuracy and perplexity, enhancing the tool's functionality and user experience.",
         ],
       },
