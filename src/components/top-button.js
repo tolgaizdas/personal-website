@@ -40,6 +40,7 @@ const TopButton = () => {
       dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none transition-opacity
       border border-gray-300 dark:border-gray-700`}
       aria-label="Scroll to Top"
+      {...(isVisible ? { disabled: false } : { disabled: true })}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
