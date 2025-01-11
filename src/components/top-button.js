@@ -8,7 +8,7 @@ const TopButton = () => {
 
   // Show the button when the page is scrolled down
   const toggleVisibility = () => {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 0) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
