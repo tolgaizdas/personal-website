@@ -1,6 +1,6 @@
-import Title from "../components/title";
-import Section from "../components/section";
-import TopButton from "../components/top-button";
+import Title from "../components/Title";
+import Section from "../components/Section";
+import TopButton from "../components/TopButton";
 
 function generate_a_tag(url, text) {
   return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;

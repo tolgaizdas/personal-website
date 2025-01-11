@@ -1,4 +1,3 @@
-// components/ThemeToggle.js
 "use client";
 
 import { useState } from "react";

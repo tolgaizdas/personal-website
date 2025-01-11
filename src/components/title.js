@@ -1,6 +1,5 @@
-// components/Title.js
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"; // Font Awesome icons
-import ThemeToggle from "./theme-toggle";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 const Title = ({ name, email, githubUrl, linkedinUrl }) => {
   // sticky -> sticky top-0 z-10

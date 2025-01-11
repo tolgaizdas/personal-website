@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Subsection from "./subsection";
+import Subsection from "./Subsection";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Section = ({ header, subsections }) => {
