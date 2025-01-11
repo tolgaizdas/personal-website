@@ -1,5 +1,6 @@
 import Title from "../components/title";
 import Section from "../components/section";
+import TopButton from "../components/top-button";
 
 function generate_a_tag(url, text) {
   return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;
@@ -319,6 +320,7 @@ export default function Home() {
         <Section {...publications} />
         <Section {...certifications} />
       </div>
+      <TopButton />
     </div>
   );
 }
