@@ -35,9 +35,9 @@ const TopButton = () => {
         isVisible ? "opacity-100" : "opacity-0"
       } fixed bottom-8 right-4 p-2
       rounded-full
-      bg-gray-200 dark:bg-gray-800 text-gray-800
+      bg-gray-50 dark:bg-gray-800 text-gray-600
       dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none transition-opacity
-      border border-gray-300 dark:border-gray-700`}
+      border border-gray-200 dark:border-gray-700`}
       aria-label="Scroll to Top"
       disabled={!isVisible}
     >
