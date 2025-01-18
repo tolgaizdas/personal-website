@@ -290,7 +290,7 @@ export default function Home() {
           "https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii",
           "RH134"
         )}`,
-        date: "Dec 2024",
+        date: "Jan 2025",
         company: "Red Hat",
         location: "",
         description: [],
@@ -301,7 +301,7 @@ export default function Home() {
           "https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster",
           "DO180"
         )}`,
-        date: "Dec 2024",
+        date: "Jan 2025",
         company: "Red Hat",
         location: "",
         description: [],
