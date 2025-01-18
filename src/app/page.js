@@ -1,6 +1,7 @@
 import Title from "../components/Title";
 import Section from "../components/Section";
 import TopButton from "../components/TopButton";
+import Footer from "../components/Footer";
 
 function generate_a_tag(url, text) {
   return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;
@@ -28,7 +29,10 @@ export default function Home() {
             "https://www.yildiz.edu.tr/en",
             "Yıldız Technical University"
           )}.`,
-          `Here is my ${generate_a_tag("/tolgaizdas-resume.pdf", "resume")} (Updated Jan 2025).`,
+          `Here is my ${generate_a_tag(
+            "/tolgaizdas-resume.pdf",
+            "resume"
+          )} (Updated Jan 2025).`,
         ],
       },
     ],
@@ -331,6 +335,7 @@ export default function Home() {
         <Section {...certifications} />
       </div>
       <TopButton />
+      <Footer />
     </div>
   );
 }
