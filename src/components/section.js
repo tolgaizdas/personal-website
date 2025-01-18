@@ -15,7 +15,9 @@ const Section = ({ header, subsections }) => {
 
   // Determine the number of columns based on the number of subsections
   const gridCols =
-    subsections.length > 2
+    subsections.length === 4
+      ? "lg:grid-cols-2"
+      : subsections.length === 3
       ? "lg:grid-cols-3"
       : subsections.length === 2
       ? "lg:grid-cols-2"

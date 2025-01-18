@@ -241,6 +241,16 @@ export default function Home() {
           "Implemented algorithms for image recognition, classification, and enhancement, and engaged in various related projects.",
         ],
       },
+      {
+        header: "Information Retrieval and Web Search Engines",
+        date: "",
+        company: "",
+        location: "",
+        description: [
+          "Investigated web mining techniques to analyze and extract valuable insights from social media data.",
+          "Implemented IR algorithms to effectively extract relevant information and enhance search functionalities.",
+        ],
+      },
     ],
   };
 
