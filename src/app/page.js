@@ -28,7 +28,7 @@ export default function Home() {
             "https://www.yildiz.edu.tr/en",
             "Yıldız Technical University"
           )}.`,
-          `Here is my ${generate_a_tag("/tolgaizdas-resume.pdf", "resume")}.`,
+          `Here is my ${generate_a_tag("/tolgaizdas-resume.pdf", "resume")} (Updated Jan 2025).`,
         ],
       },
     ],
