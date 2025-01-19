@@ -37,7 +37,7 @@ const TopButton = () => {
       rounded-full
       focus:outline-none transition-opacity transition-colors
       bg-gray-50 dark:bg-gray-800
-      text-gray-600 dark:text-gray-300
+      text-gray-600 dark:text-gray-400
       hover:text-gray-800 dark:hover:text-gray-200
       border border-gray-200 dark:border-gray-700`}
       aria-label="Scroll to Top"

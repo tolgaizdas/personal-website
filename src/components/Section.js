@@ -23,31 +23,27 @@ const Section = ({ header, subsections }) => {
       ? "lg:grid-cols-2"
       : "lg:grid-cols-1";
 
-  // Toggle the collapsed state
-  const toggleCollapse = () => setIsCollapsed(!isCollapsed);
-
   return (
     <div className="mb-8">
-      <div className="flex justify-between items-center mb-4">
-        <h1
-          className="text-2xl font-bold text-gray-900 dark:text-gray-100 cursor-pointer"
-          onClick={toggleCollapse} // Make the header clickable
-        >
-          {header + " "}
-          {/* Collapse/Expand Button */}
-          <button
-            onClick={toggleCollapse} // Button also toggles collapse
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none"
-            aria-label={isCollapsed ? "Expand Section" : "Collapse Section"}
-          >
-            {/* FontAwesome icons for up and down arrows */}
-            {isCollapsed ? (
-              <FaChevronUp className="h-4 w-4" />
-            ) : (
-              <FaChevronDown className="h-4 w-4" />
-            )}
-          </button>
+      {/* Header container with bottom border that spans full width */}
+      <div
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="group flex justify-between items-center mb-6 pb-2 border-b border-gray-200 dark:border-gray-700 cursor-pointer"
+      >
+        <h1 className="flex-grow text-2xl font-bold text-gray-900 dark:text-gray-100">
+          {header}
         </h1>
+        {/* Collapse/Expand Button */}
+        <button
+          className="ml-4 p-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+          aria-label={isCollapsed ? "Expand Section" : "Collapse Section"}
+        >
+          {isCollapsed ? (
+            <FaChevronUp className="h-4 w-4" />
+          ) : (
+            <FaChevronDown className="h-4 w-4" />
+          )}
+        </button>
       </div>
 
       {/* Conditionally render subsections based on isCollapsed */}
