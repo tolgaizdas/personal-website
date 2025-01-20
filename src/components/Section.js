@@ -28,14 +28,17 @@ const Section = ({ header, subsections }) => {
       {/* Header container with bottom border that spans full width */}
       <div
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className="group flex justify-between items-center mb-6 pb-2 border-b border-gray-200 dark:border-gray-700 cursor-pointer"
+        className="group flex justify-between items-center mb-6 pb-2 cursor-pointer
+        text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200
+        border-b border-gray-200 dark:border-gray-700 
+        hover:border-gray-800 dark:hover:border-gray-200 transition-colors"
       >
         <h1 className="flex-grow text-2xl font-bold text-gray-900 dark:text-gray-100">
           {header}
         </h1>
         {/* Collapse/Expand Button */}
         <button
-          className="ml-4 p-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+          className="ml-4 p-2"
           aria-label={isCollapsed ? "Expand Section" : "Collapse Section"}
         >
           {isCollapsed ? (
