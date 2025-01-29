@@ -50,7 +50,7 @@ export default function Home() {
         ),
         location: "İstanbul, Türkiye",
         description: [
-          "<strong>GPA:</strong> 3.59/4",
+          "<strong>GPA:</strong> 3.64/4",
           "<strong>Relevant Coursework:</strong> Big Data Processing and Analytics, Artificial Intelligence, Image Processing",
         ],
       },
