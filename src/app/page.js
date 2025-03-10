@@ -32,7 +32,7 @@ export default function Home() {
           `Here is my ${generate_a_tag(
             "/tolgaizdas-resume.pdf",
             "resume"
-          )} (Updated Jan 2025).`,
+          )} (Updated March 2025).`,
         ],
       },
     ],
