@@ -51,7 +51,8 @@ const Section = ({ header, subsections }) => {
 
       {/* Conditionally render subsections based on isCollapsed */}
       {!isCollapsed && sortedSubsections.length > 0 ? (
-        <div className={`grid gap-4 ${gridCols}`}>
+        <div>
+          {/* grid -> grid gap-4 ${gridCols} */}
           {sortedSubsections.map((subsection, index) => (
             <Subsection key={index} {...subsection} />
           ))}
