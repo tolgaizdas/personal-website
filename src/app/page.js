@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Title from "../components/Title";
 import Section from "../components/Section";
 import TopButton from "../components/TopButton";
@@ -8,6 +11,15 @@ function generate_a_tag(url, text) {
 }
 
 export default function Home() {
+  // Add state to track which section is expanded
+  const [expandedSection, setExpandedSection] = useState("aboutMe");
+
+  const toggleSection = (sectionKey) => {
+    // If the clicked section is already expanded, collapse it by setting to null
+    // Otherwise, expand the clicked section
+    setExpandedSection(expandedSection === sectionKey ? null : sectionKey);
+  };
+
   const title = {
     name: "Tolga İzdaş",
     location: "İstanbul, Türkiye",
@@ -327,12 +339,42 @@ export default function Home() {
     <div>
       <Title {...title} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <Section {...aboutMe} />
-        <Section {...projects} />
-        <Section {...coursework} />
-        <Section {...awardsAndHonors} />
-        <Section {...publications} />
-        <Section {...certifications} />
+        <Section
+          {...aboutMe}
+          sectionKey="aboutMe"
+          isExpanded={expandedSection === "aboutMe"}
+          onToggle={toggleSection}
+        />
+        <Section
+          {...projects}
+          sectionKey="projects"
+          isExpanded={expandedSection === "projects"}
+          onToggle={toggleSection}
+        />
+        <Section
+          {...coursework}
+          sectionKey="coursework"
+          isExpanded={expandedSection === "coursework"}
+          onToggle={toggleSection}
+        />
+        <Section
+          {...awardsAndHonors}
+          sectionKey="awardsAndHonors"
+          isExpanded={expandedSection === "awardsAndHonors"}
+          onToggle={toggleSection}
+        />
+        <Section
+          {...publications}
+          sectionKey="publications"
+          isExpanded={expandedSection === "publications"}
+          onToggle={toggleSection}
+        />
+        <Section
+          {...certifications}
+          sectionKey="certifications"
+          isExpanded={expandedSection === "certifications"}
+          onToggle={toggleSection}
+        />
       </div>
       <TopButton />
       <Footer />

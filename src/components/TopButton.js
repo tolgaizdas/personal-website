@@ -31,14 +31,23 @@ const TopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`${
-        isVisible ? "opacity-100" : "opacity-0"
-      } fixed bottom-4 right-4 p-2
-      rounded-full
-      focus:outline-none transition-opacity transition-colors
-      text-gray-600 dark:text-gray-400
-      hover:text-gray-800 dark:hover:text-gray-200
-      border border-gray-200 dark:border-gray-700`}
+      className={`
+        ${isVisible ? "opacity-100" : "opacity-0"}
+        fixed bottom-4 right-4
+        p-2 rounded-full
+        focus:outline-none
+        transition-opacity transition-colors
+        bg-[#f0f0f0]
+        text-gray-600
+        border border-gray-600
+        dark:bg-[#181818]
+        dark:text-gray-400
+        dark:border-gray-400
+        hover:text-black
+        dark:hover:text-white
+        hover:border-gray-800
+        dark:hover:border-gray-200
+      `}
       aria-label="Scroll to Top"
       disabled={!isVisible}
     >

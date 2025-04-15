@@ -2,23 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define color variables for light and dark modes */
+/* Color variables */
 :root {
-  --foreground-light: 0, 0, 0; /* Light mode text color */
-  --background-light: 255, 255, 255; /* Light mode background color */
+  --foreground-light: 51, 51, 51;
+  /* #333333 for text */
+  --background-light: 240, 240, 240;
+  /* #f0f0f0 for background */
 
-  --foreground-dark: 255, 255, 255; /* Dark mode text color */
-  --background-dark: 0, 0, 0; /* Dark mode background color */
+  --foreground-dark: 236, 236, 236;
+  /* #ececec for text */
+  --background-dark: 24, 24, 24;
+  /* #181818 for background */
 }
 
-/* Light mode styles */
+/* Light mode */
 body {
   color: rgb(var(--foreground-light));
   background-color: rgb(var(--background-light));
 }
 
-/* Dark mode classes for Tailwind CSS */
+/* Dark mode */
 .dark body {
   color: rgb(var(--foreground-dark));
   background-color: rgb(var(--background-dark));
+}
+
+/* Scrollbar styling for a subtle gray look */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
+  border-radius: 8px;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar {
+  background-color: #222222;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #353535;
 }
