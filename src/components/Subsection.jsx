@@ -4,11 +4,11 @@ const Subsection = ({ header, date, company, location, description }) => {
   return (
     <div className="pb-4 rounded-lg">
       <h2
-        className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2"
+        className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2 ml-1"
         dangerouslySetInnerHTML={{ __html: header }}
       />
       {showMetadata && (
-        <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+        <div className="text-sm text-gray-600 dark:text-gray-400 mb-2 ml-1">
           <span className="font-medium text-gray-800 dark:text-gray-200">
             {date}
           </span>{" "}
