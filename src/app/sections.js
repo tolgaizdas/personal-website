@@ -1,5 +1,5 @@
 function anchor(url, text) {
-  return `<a target="_blank" href="${url}" class="text-blue-500 hover:underline dark:text-blue-400">${text}</a>`;
+  return `<a target="_blank" href="${url}" class="text-blue-600 hover:underline dark:text-blue-400">${text}</a>`;
 }
 
 export const title = {
