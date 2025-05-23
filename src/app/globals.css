@@ -16,33 +16,22 @@
 }
 
 /* Light mode */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--foreground-light)) transparent;
+}
+
 body {
   color: rgb(var(--foreground-light));
   background-color: rgb(var(--background-light));
 }
 
 /* Dark mode */
+html.dark {
+  scrollbar-color: rgb(var(--foreground-light)) transparent;
+}
+
 .dark body {
   color: rgb(var(--foreground-dark));
   background-color: rgb(var(--background-dark));
-}
-
-/* Scrollbar styling for a subtle neutral look */
-::-webkit-scrollbar {
-  width: 8px;
-  background-color: #e0e0e0;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #cccccc;
-  border-radius: 8px;
-}
-
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar {
-  background-color: #222222;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background-color: #353535;
 }
