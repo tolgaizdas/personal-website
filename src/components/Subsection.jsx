@@ -1,3 +1,5 @@
+import { sanitizeHtml } from "../utils/sanitize";
+
 const Subsection = ({ header, date, company, location, description }) => {
   const showMetadata = date || company || location;
 
@@ -6,7 +8,7 @@ const Subsection = ({ header, date, company, location, description }) => {
       {header && (
         <h2
           className="text-xl font-medium text-neutral-800 dark:text-neutral-100 mb-2"
-          dangerouslySetInnerHTML={{ __html: header }}
+          dangerouslySetInnerHTML={{ __html: sanitizeHtml(header) }}
         />
       )}
       {showMetadata && (
@@ -17,7 +19,7 @@ const Subsection = ({ header, date, company, location, description }) => {
           {company ? "|" : ""}
           <span
             className="font-medium text-neutral-800 dark:text-neutral-200 ml-1"
-            dangerouslySetInnerHTML={{ __html: company }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(company) }}
           />{" "}
           {location ? "-" : ""}
           <span className="ml-1 text-neutral-800 dark:text-neutral-200">
@@ -30,7 +32,7 @@ const Subsection = ({ header, date, company, location, description }) => {
           <li
             key={index}
             className="text-gray-700 dark:text-gray-300"
-            dangerouslySetInnerHTML={{ __html: item }} // TODO: Using innerHTML can be a security risk. Consider using a library like DOMPurify to avoid this.
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(item) }}
           />
         ))}
       </ul>

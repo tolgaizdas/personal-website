@@ -1,4 +1,9 @@
 export const runtime = "edge";
+import { sanitizeHtml } from "../utils/sanitize";
+
+// Static CSS styles for the 404 page - this is trusted content, not user-generated
+// For edge runtime, we don't need DOMPurify since this is static trusted content
+const errorPageStyles = `body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}`;
 
 export default function NotFound() {
   return (
@@ -8,7 +13,7 @@ export default function NotFound() {
         <div>
           <style
             dangerouslySetInnerHTML={{
-              __html: `body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}`,
+              __html: sanitizeHtml(errorPageStyles),
             }}
           />
           <h1 className="next-error-h1" style={styles.h1}>
