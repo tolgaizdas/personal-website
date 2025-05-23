@@ -1,9 +1,16 @@
-import { FaEnvelope } from "react-icons/fa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { FaEnvelope, FaCalendar } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGoogleScholar } from "react-icons/fa6";
 import ThemeToggle from "./ThemeToggle";
 
-const Title = ({ name, email, calendlyUrl }) => {
+const Title = ({
+  name,
+  email,
+  calendlyUrl,
+  linkedinUrl,
+  githubUrl,
+  scholarUrl,
+}) => {
   // sticky -> sticky top-0 z-10
   // border -> border-b border-neutral-300 dark:border-neutral-700
   return (
@@ -19,7 +26,7 @@ const Title = ({ name, email, calendlyUrl }) => {
             className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
             aria-label="Email"
           >
-            <FaEnvelope className="w-5 h-5" />
+            <FaEnvelope className="w-5 h-5" style={{ marginTop: "1px" }} />
           </a>
           <a
             href={calendlyUrl}
@@ -28,7 +35,34 @@ const Title = ({ name, email, calendlyUrl }) => {
             className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
             aria-label="Calendly"
           >
-            <FontAwesomeIcon icon={faCalendar} className="w-5 h-5" />
+            <FaCalendar className="w-5 h-5" />
+          </a>
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+            aria-label="GitHub"
+          >
+            <FaGithub className="w-5 h-5" />
+          </a>
+          <a
+            href={scholarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+            aria-label="Google Scholar"
+          >
+            <FaGoogleScholar className="w-5 h-5" />
           </a>
         </div>
 

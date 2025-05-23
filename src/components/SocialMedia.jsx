@@ -1,7 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogleScholar } from "@fortawesome/free-brands-svg-icons";
+import { FaGoogleScholar } from "react-icons/fa6";
 
 const SocialMedia = ({ linkedinUrl, githubUrl, scholarUrl }) => {
   return (
@@ -31,7 +30,7 @@ const SocialMedia = ({ linkedinUrl, githubUrl, scholarUrl }) => {
         className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
         aria-label="Google Scholar"
       >
-        <FontAwesomeIcon icon={faGoogleScholar} className="w-5 h-5" />
+        <FaGoogleScholar className="w-5 h-5" />
       </a>
     </div>
   );

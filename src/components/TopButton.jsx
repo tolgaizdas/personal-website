@@ -33,13 +33,12 @@ const TopButton = () => {
       onClick={scrollToTop}
       className={`
         ${isVisible ? "opacity-100" : "opacity-0"}
-        fixed bottom-4 right-4
+        flex md:hidden sm:right-8
+        fixed bottom-14 right-4
         p-2 rounded-full
         focus:outline-none
         transition-opacity transition-colors
-        bg-[#f0f0f0]
         text-neutral-600
-        dark:bg-[#181818]
         dark:text-neutral-400
         dark:border-neutral-400
         hover:text-black
