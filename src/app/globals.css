@@ -19,7 +19,6 @@
 body {
   color: rgb(var(--foreground-light));
   background-color: rgb(var(--background-light));
-  margin: 0 15%;
 }
 
 /* Dark mode */
