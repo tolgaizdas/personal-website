@@ -2,7 +2,7 @@ const Subsection = ({ header, date, company, location, description }) => {
   const showMetadata = date || company || location;
 
   return (
-    <div className="pb-4 rounded-lg border border-neutral-200 dark:border-neutral-800 shadow-md p-4">
+    <div className="pb-4 rounded-lg">
       {header && (
         <h2
           className="text-xl font-medium text-neutral-800 dark:text-neutral-100 mb-2"

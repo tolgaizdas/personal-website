@@ -9,7 +9,7 @@ const Section = ({ header, subsections }) => {
     (a, b) => new Date(b.date) - new Date(a.date),
   );
 
-  const gridCols =
+  let gridCols =
     subsections.length === 4
       ? "lg:grid-cols-2"
       : subsections.length === 3
@@ -18,9 +18,11 @@ const Section = ({ header, subsections }) => {
           ? "lg:grid-cols-2"
           : "lg:grid-cols-1";
 
+  gridCols = "lg:grid-cols-1";
+
   return (
     <div className="mb-8">
-      <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+      <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-8 decoration-1">
         {header}
       </h1>
       {sortedSubsections.length > 0 ? (

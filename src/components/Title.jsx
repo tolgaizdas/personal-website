@@ -15,8 +15,8 @@ const Title = ({
   // border -> border-b border-neutral-300 dark:border-neutral-700
   return (
     <header
-      className="sticky top-0 z-10 mb-4 border-b bg-[#f0f0f0] text-[#333333] border-[#dadada]
-      dark:bg-[#181818] dark:text-[#ececec] dark:border-[#242424]"
+      className="sticky top-0 z-10 mb-4 border-b bg-[#f0f0f0] text-[#333333] border-neutral-300
+      dark:bg-[#181818] dark:text-[#ececec] dark:border-neutral-700"
     >
       <div className="flex flex-col-reverse gap-2 sm:h-14 justify-between items-center max-w-7xl mx-auto p-4 sm:p-8 sm:flex-row">
         {/* Left Side */}
