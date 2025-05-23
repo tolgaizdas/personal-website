@@ -19,6 +19,7 @@
 body {
   color: rgb(var(--foreground-light));
   background-color: rgb(var(--background-light));
+  margin: 0 15%;
 }
 
 /* Dark mode */
@@ -27,7 +28,7 @@ body {
   background-color: rgb(var(--background-dark));
 }
 
-/* Scrollbar styling for a subtle gray look */
+/* Scrollbar styling for a subtle neutral look */
 ::-webkit-scrollbar {
   width: 8px;
   background-color: #e0e0e0;

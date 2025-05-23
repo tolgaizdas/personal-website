@@ -38,15 +38,14 @@ const TopButton = () => {
         focus:outline-none
         transition-opacity transition-colors
         bg-[#f0f0f0]
-        text-gray-600
-        border border-gray-600
+        text-neutral-600
         dark:bg-[#181818]
-        dark:text-gray-400
-        dark:border-gray-400
+        dark:text-neutral-400
+        dark:border-neutral-400
         hover:text-black
         dark:hover:text-white
-        hover:border-gray-800
-        dark:hover:border-gray-200
+        hover:border-neutral-800
+        dark:hover:border-neutral-200
       `}
       aria-label="Scroll to Top"
       disabled={!isVisible}

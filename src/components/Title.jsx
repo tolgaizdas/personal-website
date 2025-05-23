@@ -1,9 +1,11 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "./ThemeToggle";
 
-const Title = ({ name, email, githubUrl, linkedinUrl }) => {
+const Title = ({ name, email, calendlyUrl }) => {
   // sticky -> sticky top-0 z-10
-  // border -> border-b border-gray-300 dark:border-gray-700
+  // border -> border-b border-neutral-300 dark:border-neutral-700
   return (
     <header
       className="sticky top-0 z-10 mb-4 border-b bg-[#f0f0f0] text-[#333333] border-[#dadada]
@@ -13,29 +15,20 @@ const Title = ({ name, email, githubUrl, linkedinUrl }) => {
         {/* Left Side */}
         <div className="flex gap-2 w-auto sm:w-20 sm:gap-4">
           <a
-            href={linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin className="w-5 h-5" />
-          </a>
-          <a
             href={`mailto:${email}`}
-            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
             aria-label="Email"
           >
             <FaEnvelope className="w-5 h-5" />
           </a>
           <a
-            href={githubUrl}
+            href={calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-1 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
-            aria-label="GitHub"
+            className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
+            aria-label="Calendly"
           >
-            <FaGithub className="w-5 h-5" />
+            <FontAwesomeIcon icon={faCalendar} className="w-5 h-5" />
           </a>
         </div>
 

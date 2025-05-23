@@ -2,12 +2,14 @@ function anchor(url, text) {
   return `<a target="_blank" href="${url}" class="text-blue-600 hover:underline dark:text-blue-400">${text}</a>`;
 }
 
-export const title = {
+export const information = {
   name: "Tolga İzdaş",
   location: "İstanbul, Türkiye",
   email: "tolga@tolgaizdas.com",
   githubUrl: "https://github.com/tolgaizdas",
   linkedinUrl: "https://linkedin.com/in/tolgaizdas",
+  scholarUrl: "https://scholar.google.com/citations?user=GXujHFgAAAAJ&hl=en",
+  calendlyUrl: "https://calendly.com/tolgaizdas",
 };
 
 export const aboutMe = {
@@ -21,11 +23,11 @@ export const aboutMe = {
       description: [
         `I am a senior Computer Engineering student at ${anchor(
           "https://www.yildiz.edu.tr/en",
-          "Yıldız Technical University"
+          "Yıldız Technical University",
         )}.`,
         `Here is my ${anchor(
           "/tolgaizdas-cv.pdf",
-          "CV"
+          "resume",
         )} (Updated March 2025).`,
       ],
     },
@@ -40,7 +42,7 @@ export const education = {
       date: "Expected Jun 2025",
       company: anchor(
         "https://www.yildiz.edu.tr/en",
-        "Yıldız Technical University"
+        "Yıldız Technical University",
       ),
       location: "İstanbul, Türkiye",
       description: [
@@ -87,7 +89,7 @@ export const researchExperience = {
       date: "Jul 2024 - Present",
       company: anchor(
         "https://cosmos.yildiz.edu.tr/",
-        "COSMOS AI Research Group"
+        "COSMOS AI Research Group",
       ),
       location: "İstanbul, Türkiye",
       description: [
@@ -128,9 +130,9 @@ export const projects = {
       description: [
         `Developed a ${anchor(
           "https://github.com/tolgaizdas/cosmos-eval",
-          "tool"
-        )} to evaluate large language models such as GPT, BERT, and LLaMA on a variety of tasks with support for few-shot learning.`,
-        "Implemented custom evaluation metrics for accuracy and perplexity, enhancing the tool's functionality and user experience.",
+          "tool",
+        )} to evaluate LLMs such as GPT, BERT, LLaMA on various tasks with few-shot learning support.`,
+        "Implemented custom evaluation metrics for accuracy and perplexity.",
       ],
     },
     {
@@ -139,14 +141,11 @@ export const projects = {
       company: "",
       location: "",
       description: [
-        `Developed a ${anchor(
+        `Developed an NLP ${anchor(
           "https://github.com/tolgaizdas/Occupation-Prediction",
-          "project"
-        )} to predict occupations from Turkish tweets under the supervision of ${anchor(
-          "https://scholar.google.com.tr/citations?hl=en&user=GUQMy2UAAAAJ&hl=en",
-          "Prof. Banu Diri"
-        )}.`,
-        "Applied machine learning, deep learning, and natural language processing techniques to analyze and classify Twitter data.",
+          "project",
+        )} to analyze and classify social media data.`,
+        "Used ML models such as Logistic Regression, SVM, Random Forest, CNN, and RNN to explore the impact of dataset size on model performance, achieving 89% accuracy in classification tasks.",
       ],
     },
   ],
@@ -160,7 +159,7 @@ export const awardsAndHonors = {
       date: "Jul 2024",
       company: `${anchor(
         "https://tubitak.gov.tr/en",
-        "TÜBİTAK"
+        "TÜBİTAK",
       )} (Scientific and Technological Research Council of Türkiye)`,
       location: "",
       description: [
@@ -168,7 +167,7 @@ export const awardsAndHonors = {
         'New Approaches for Text Representation and Text Generation with Neural Language Models' 
         conducted by ${anchor(
           "https://scholar.google.com.tr/citations?user=qTUSAy0AAAAJ&hl=en",
-          "Prof. Mehmet Fatih Amasyalı"
+          "Prof. Mehmet Fatih Amasyalı",
         )} 
         at Yıldız Technical University Computer Engineering Department.`,
       ],
@@ -184,7 +183,7 @@ export const accomplishments = {
       date: "May 2019",
       company: `${anchor(
         "https://tubitak.gov.tr/en",
-        "TÜBİTAK"
+        "TÜBİTAK",
       )} (Scientific and Technological Research Council of Türkiye)`,
       location: "",
       description: [
@@ -206,7 +205,7 @@ export const coursework = {
         "Gained hands-on experience with distributed systems, large-scale data processing, and recommender systems.",
         `Completed a ${anchor(
           "https://github.com/tolgaizdas/Big-Data-Processing",
-          "project"
+          "project",
         )} that evaluated the performance of Apache Hadoop in processing large datasets by applying various statistical functions.`,
       ],
     },
@@ -219,10 +218,10 @@ export const coursework = {
         "Studied fundamental AI concepts, including search algorithms, optimization methods, gradient descent, and stochastic processes.",
         `Implemented various projects using ${anchor(
           "https://github.com/tolgaizdas/Image-Generator",
-          "Genetic Algorithms"
+          "Genetic Algorithms",
         )} and ${anchor(
           "https://github.com/tolgaizdas/AI-Flappy-Bird",
-          "Q-Learning"
+          "Q-Learning",
         )} techniques to solve complex problems and enhance decision-making in AI systems.`,
       ],
     },
@@ -289,11 +288,11 @@ export const certifications = {
       header: `Red Hat System Administration I & II - 
       ${anchor(
         "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
-        "RH124"
+        "RH124",
       )} & 
       ${anchor(
         "https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii",
-        "RH134"
+        "RH134",
       )}`,
       date: "Jan 2025",
       company: "Red Hat",
@@ -304,7 +303,7 @@ export const certifications = {
       header: `Red Hat OpenShift I: Containers & Kubernetes - 
       ${anchor(
         "https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster",
-        "DO180"
+        "DO180",
       )}`,
       date: "Jan 2025",
       company: "Red Hat",
