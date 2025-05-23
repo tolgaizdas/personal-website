@@ -44,7 +44,7 @@ const Title = ({
             className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
             aria-label="LinkedIn"
           >
-            <FaLinkedin className="w-5 h-5" />
+            <FaLinkedin className="w-5 h-5" style={{ marginTop: "1px" }} />
           </a>
           <a
             href={githubUrl}
