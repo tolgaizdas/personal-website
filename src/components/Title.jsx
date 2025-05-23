@@ -15,10 +15,10 @@ const Title = ({
   // border -> border-b border-neutral-300 dark:border-neutral-700
   return (
     <header
-      className="sticky top-0 z-10 mb-4 border-b bg-[#f0f0f0] text-[#333333] border-neutral-300
+      className="sticky top-0 z-10 mb-12 border-b bg-[#f0f0f0] text-[#333333] border-neutral-300
       dark:bg-[#181818] dark:text-[#ececec] dark:border-neutral-700"
     >
-      <div className="flex justify-between items-center max-w-7xl mx-auto p-4 sm:p-8 min-h-[3.5rem]">
+      <div className="flex justify-between items-center max-w-7xl mx-auto p-8 md:px-0 md:py-8 min-h-[3.5rem]">
         {/* Left Side - Name aligned with section titles */}
         <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
           {name}

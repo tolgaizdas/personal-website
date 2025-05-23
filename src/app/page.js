@@ -19,7 +19,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <div className="flex-1">
         <Title {...information} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="max-w-7xl mx-auto p-8 py-0 md:px-0">
           <Section {...aboutMe} />
           <Section {...projects} />
           <Section {...certifications} />
