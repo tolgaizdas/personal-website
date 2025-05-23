@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    let isDark;
+    if (savedTheme) {
+      isDark = savedTheme === "dark";
+    } else {
+      isDark = systemPrefersDark;
+    }
+
+    setDarkMode(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    localStorage.setItem("theme", newDarkMode ? "dark" : "light");
   };
 
   return (
