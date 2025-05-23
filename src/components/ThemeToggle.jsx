@@ -15,8 +15,8 @@ const ThemeToggle = () => {
     <button
       aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
       onClick={toggleTheme}
-      /* className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none" */
-      className="p-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+      /* className="p-2 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-300 dark:hover:bg-neutral-700 focus:outline-none" */
+      className="p-2 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
     >
       {darkMode ? (
         <FaSun className="w-5 h-5" />
