@@ -46,25 +46,100 @@ html.dark {
   color: rgb(var(--foreground-dark));
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
+.prose h1 {
   color: rgb(var(--foreground-light));
-  font-weight: 600;
+  font-size: 1.25rem; /* 20px - matches text-xl */
+  font-weight: 600; /* matches font-semibold */
+  line-height: 1.25;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
 }
 
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3,
-.dark .prose h4,
-.dark .prose h5,
+.prose h2 {
+  color: rgb(var(--foreground-light));
+  font-size: 1.125rem; /* 18px - text-lg */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.5rem;
+}
+
+.prose h3 {
+  color: rgb(var(--foreground-light));
+  font-size: 1rem; /* 16px - text-base */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+  margin-top: 1.5em;
+  margin-bottom: 0.5rem;
+}
+
+.prose h4 {
+  color: rgb(var(--foreground-light));
+  font-size: 0.875rem; /* 14px - text-sm */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+  margin-top: 1.25em;
+  margin-bottom: 0.5rem;
+}
+
+.prose h5 {
+  color: rgb(var(--foreground-light));
+  font-size: 0.75rem; /* 12px - text-xs */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+  margin-top: 1.25em;
+  margin-bottom: 0.5rem;
+}
+
+.prose h6 {
+  color: rgb(var(--foreground-light));
+  font-size: 0.75rem; /* 12px - text-xs */
+  font-weight: 400; /* slightly lighter for lowest level */
+  line-height: 1.4;
+  margin-top: 1.25em;
+  margin-bottom: 0.5rem;
+}
+
+.dark .prose h1 {
+  color: rgb(var(--foreground-dark));
+  font-size: 1.25rem; /* 20px - matches text-xl */
+  font-weight: 600; /* matches font-semibold */
+  line-height: 1.25;
+}
+
+.dark .prose h2 {
+  color: rgb(var(--foreground-dark));
+  font-size: 1.125rem; /* 18px - text-lg */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.3;
+}
+
+.dark .prose h3 {
+  color: rgb(var(--foreground-dark));
+  font-size: 1rem; /* 16px - text-base */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+}
+
+.dark .prose h4 {
+  color: rgb(var(--foreground-dark));
+  font-size: 0.875rem; /* 14px - text-sm */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+}
+
+.dark .prose h5 {
+  color: rgb(var(--foreground-dark));
+  font-size: 0.75rem; /* 12px - text-xs */
+  font-weight: 500; /* matches font-medium */
+  line-height: 1.4;
+}
+
 .dark .prose h6 {
   color: rgb(var(--foreground-dark));
+  font-size: 0.75rem; /* 12px - text-xs */
+  font-weight: 400; /* slightly lighter for lowest level */
+  line-height: 1.4;
 }
 
 .prose p {
@@ -103,6 +178,7 @@ html.dark {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

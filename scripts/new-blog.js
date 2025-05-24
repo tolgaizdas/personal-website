@@ -93,10 +93,11 @@ Wrap up your thoughts here.
   console.log(`\n✅ Blog post created successfully!`);
   console.log(`📄 Markdown file: ${blogPath}`);
   console.log(`📋 Metadata updated in: ${metadataPath}`);
+  console.log(`🌐 Blog URL: /blog/posts/${id}`);
   console.log(`\n🎯 Next steps:`);
   console.log(`   1. Edit ${filename} with your content`);
   console.log(`   2. Update the reading time if needed`);
-  console.log(`   3. Your blog will be available at: /blog`);
+  console.log(`   3. Your blog will be available at: /blog/posts/${id}`);
 
   rl.close();
 }

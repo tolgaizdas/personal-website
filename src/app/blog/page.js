@@ -1,22 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IoArrowBack } from "react-icons/io5";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Link from "next/link";
 import Title from "../../components/Title";
 import Footer from "../../components/Footer";
 import { information } from "../sections";
-
-// Simple utility functions inline to avoid import issues
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 
 function formatDateShort(dateString) {
   const date = new Date(dateString);
@@ -29,7 +17,6 @@ function formatDateShort(dateString) {
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState([]);
-  const [selectedBlog, setSelectedBlog] = useState(null);
   const [selectedTag, setSelectedTag] = useState("All");
   const [loading, setLoading] = useState(true);
 
@@ -69,80 +56,6 @@ export default function BlogPage() {
   const sortedBlogs = [...filteredBlogs].sort(
     (a, b) => new Date(b.publishDate) - new Date(a.publishDate),
   );
-
-  if (selectedBlog) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <div className="flex-1">
-          <Title {...information} />
-          <div className="max-w-4xl mx-auto px-8 py-0 md:px-0">
-            {/* Back button */}
-            <div className="flex items-center gap-4 mb-6">
-              <button
-                onClick={() => setSelectedBlog(null)}
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-              >
-                <IoArrowBack className="w-5 h-5" />
-                Back to blog list
-              </button>
-            </div>
-
-            {/* Blog header */}
-            <article className="prose prose-neutral dark:prose-invert max-w-none">
-              <div className="mb-8">
-                <h1 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-                  {selectedBlog.title}
-                </h1>
-                <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">
-                    {selectedBlog.tag}
-                  </span>
-                  <span>{formatDate(selectedBlog.publishDate)}</span>
-                  <span>{selectedBlog.readingTime}</span>
-                </div>
-              </div>
-
-              {/* Blog content */}
-              <div className="prose-lg prose-neutral dark:prose-invert max-w-none">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    // Customize code blocks
-                    code: ({ node, inline, className, children, ...props }) => {
-                      return inline ? (
-                        <code
-                          className="bg-neutral-100 dark:bg-neutral-800 px-1 py-0.5 rounded text-sm"
-                          {...props}
-                        >
-                          {children}
-                        </code>
-                      ) : (
-                        <code
-                          className={`${className} block bg-neutral-100 dark:bg-neutral-800 p-4 rounded overflow-x-auto`}
-                          {...props}
-                        >
-                          {children}
-                        </code>
-                      );
-                    },
-                    // Customize blockquotes
-                    blockquote: ({ children }) => (
-                      <blockquote className="border-l-4 border-blue-500 pl-4 italic text-neutral-600 dark:text-neutral-400">
-                        {children}
-                      </blockquote>
-                    ),
-                  }}
-                >
-                  {selectedBlog.content}
-                </ReactMarkdown>
-              </div>
-            </article>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -199,26 +112,31 @@ export default function BlogPage() {
               </div>
             ) : (
               sortedBlogs.map((blog) => (
-                <article
+                <Link
                   key={blog.id}
-                  className="border-b border-neutral-200 dark:border-neutral-700 pb-6 cursor-pointer group"
-                  onClick={() => setSelectedBlog(blog)}
+                  href={`/blog/posts/${blog.id}`}
+                  className="block"
                 >
-                  <h3 className="text-l font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
-                    {blog.title}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm">
-                      {blog.tag}
-                    </span>
-                    <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                      {formatDateShort(blog.publishDate)} | {blog.readingTime}
-                    </span>
-                  </div>
-                  <p className="text-neutral-600 dark:text-neutral-400 line-clamp-2">
-                    {blog.preview}
-                  </p>
-                </article>
+                  <article className="border-b border-neutral-200 dark:border-neutral-700 pb-6 cursor-pointer group">
+                    <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
+                      {blog.title}
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm">
+                        {blog.tag}
+                      </span>
+                      <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                        {formatDateShort(blog.publishDate)}
+                      </span>
+                      <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                        {blog.readingTime}
+                      </span>
+                    </div>
+                    <p className="text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                      {blog.preview}
+                    </p>
+                  </article>
+                </Link>
               ))
             )}
           </div>
