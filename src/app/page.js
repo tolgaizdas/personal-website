@@ -12,6 +12,7 @@ import {
   awardsAndHonors,
   coursework,
   certifications,
+  skills,
 } from "./sections";
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
         <Title {...information} />
         <div className="max-w-2xl p-8 py-0 md:px-0">
           <Section {...aboutMe} />
+          <Section {...skills} />
           <Section {...projects} />
+          <Section {...publications} />
           <Section {...certifications} />
         </div>
         <TopButton />

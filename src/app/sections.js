@@ -106,14 +106,12 @@ export const publications = {
   header: "Publications",
   subsections: [
     {
-      header: "Accepted Publications",
+      header: "Refereed Journal Publications",
       date: "",
       company: "",
       location: "",
       description: [
-        `T. Izdas, H. Iskifoglu, and B. Diri (2024). 
-        Occupation Prediction from Twitter Data. 
-        Dokuz Eylul University Faculty of Engineering Journal of Science and Engineering (DEU FMD).`,
+        `<strong>T. İzdaş</strong>, H. İskifoğlu, and B. Diri, \“${anchor("https://dergipark.org.tr/en/download/article-file/4155848", "Occupation Prediction from Twitter Data")}\", <i>DEUFMD</i>, vol. 27, no. 80, pp. 267–271, 2025, doi: 10.21205/deufmd.2025278013.`,
       ],
     },
   ],
@@ -257,9 +255,9 @@ export const skills = {
       company: "",
       location: "",
       description: [
-        "<strong>Technologies:</strong> Python, Java, C, SQL, JavaScript, Jupyter Notebook, MATLAB",
-        "<strong>Libraries:</strong> TensorFlow, PyTorch, NumPy, Pandas, Keras, scikit-learn, Java Swing, Matplotlib, Apache Hadoop, Django",
-        "<strong>Tools:</strong> Git, Google Colab, Kaggle, PyCharm",
+        "<span class='font-medium'>Technologies:</span> Python, Java, C, SQL, JavaScript,   MATLAB",
+        "<span class='font-medium'>Libraries:</span> TensorFlow, PyTorch, Pandas, Keras, scikit-learn, Matplotlib, Apache Hadoop, Apache Spark, Django, FastAPI, Java Swing",
+        "<span class='font-medium'>Tools:</span> Git",
       ],
     },
   ],
@@ -285,7 +283,12 @@ export const certifications = {
   header: "Certifications",
   subsections: [
     {
-      header: `Red Hat System Administration I & II - 
+      header: "",
+      date: "",
+      company: "",
+      location: "",
+      description: [
+        `Red Hat System Administration I & II - 
       ${anchor(
         "https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i",
         "RH124",
@@ -294,21 +297,14 @@ export const certifications = {
         "https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii",
         "RH134",
       )}`,
-      date: "Jan 2025",
-      company: "Red Hat",
-      location: "",
-      description: [],
-    },
-    {
-      header: `Red Hat OpenShift I: Containers & Kubernetes - 
+        `
+      Red Hat OpenShift I: Containers & Kubernetes - 
       ${anchor(
         "https://www.redhat.com/en/services/training/red-hat-openshift-administration-i-operating-a-production-cluster",
         "DO180",
-      )}`,
-      date: "Jan 2025",
-      company: "Red Hat",
-      location: "",
-      description: [],
+      )}
+      `,
+      ],
     },
   ],
 };
