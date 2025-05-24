@@ -1,6 +1,7 @@
-import { FaEnvelope, FaCalendar } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaGoogleScholar } from "react-icons/fa6";
+import { IoMdCalendar } from "react-icons/io";
 import ThemeToggle from "./ThemeToggle";
 
 const Title = ({
@@ -33,7 +34,7 @@ const Title = ({
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
               aria-label="Email"
             >
-              <FaEnvelope className="w-5 h-5" style={{ marginTop: "1px" }} />
+              <FaEnvelope className="w-5 h-5" style={{ marginTop: "2px" }} />
             </a>
             <a
               href={calendlyUrl}
@@ -42,7 +43,10 @@ const Title = ({
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
               aria-label="Calendly"
             >
-              <FaCalendar className="w-5 h-5" />
+              <IoMdCalendar
+                className="w-6 h-6"
+                style={{ marginBottom: "1px" }}
+              />
             </a>
             <a
               href={linkedinUrl}
@@ -51,7 +55,7 @@ const Title = ({
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="w-5 h-5" style={{ marginTop: "1px" }} />
+              <FaLinkedin className="w-5 h-5" style={{ marginTop: "2px" }} />
             </a>
             <a
               href={githubUrl}
@@ -60,7 +64,7 @@ const Title = ({
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
               aria-label="GitHub"
             >
-              <FaGithub className="w-5 h-5" />
+              <FaGithub className="w-5 h-5" style={{ marginTop: "2px" }} />
             </a>
             <a
               href={scholarUrl}
@@ -69,7 +73,10 @@ const Title = ({
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors"
               aria-label="Google Scholar"
             >
-              <FaGoogleScholar className="w-5 h-5" />
+              <FaGoogleScholar
+                className="w-5 h-5"
+                style={{ marginTop: "2px" }}
+              />
             </a>
           </div>
 
