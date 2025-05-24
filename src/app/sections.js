@@ -111,7 +111,7 @@ export const publications = {
       company: "",
       location: "",
       description: [
-        `<strong>T. İzdaş</strong>, H. İskifoğlu, and B. Diri, \“${anchor("https://dergipark.org.tr/en/download/article-file/4155848", "Occupation Prediction from Twitter Data")}\", <i>DEUFMD</i>, vol. 27, no. 80, pp. 267–271, 2025, doi: 10.21205/deufmd.2025278013.`,
+        `<span class="font-medium">T. İzdaş</span>, H. İskifoğlu, and B. Diri, \“${anchor("https://dergipark.org.tr/en/download/article-file/4155848", "Occupation Prediction from Twitter Data")}\", <i>DEUFMD</i>, vol. 27, no. 80, pp. 267–271, 2025, doi: 10.21205/deufmd.2025278013.`,
       ],
     },
   ],
