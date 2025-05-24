@@ -25,7 +25,7 @@ export const aboutMe = {
       company: "",
       location: "",
       description: [
-        `I am a senior Computer Engineering student at ${anchor(
+        `I am a senior computer engineering student at ${anchor(
           "https://www.yildiz.edu.tr/en",
           "Yıldız Technical University",
         )}.`,
