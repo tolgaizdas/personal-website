@@ -25,9 +25,9 @@ const Title = ({
           {name}
         </h1>
 
-        {/* Right Side - Social buttons, separator, and theme toggle */}
+        {/* Right Side - Contact buttons, social buttons, separator, and theme toggle */}
         <div className="flex items-center gap-4">
-          {/* Social Media Buttons */}
+          {/* Contact Buttons */}
           <div className="flex gap-2 sm:gap-4">
             <a
               href={`mailto:${email}`}
@@ -45,6 +45,13 @@ const Title = ({
             >
               <IoMdCalendar className="w-6 h-6" />
             </a>
+          </div>
+
+          {/* Separator Line */}
+          <div className="h-6 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+
+          {/* Social Media Buttons */}
+          <div className="flex gap-2 sm:gap-4">
             <a
               href={linkedinUrl}
               target="_blank"
