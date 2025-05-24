@@ -35,3 +35,74 @@ html.dark {
   color: rgb(var(--foreground-dark));
   background-color: rgb(var(--background-dark));
 }
+
+/* Custom prose styling for blog content */
+.prose {
+  color: rgb(var(--foreground-light));
+  text-align: justify;
+}
+
+.dark .prose {
+  color: rgb(var(--foreground-dark));
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: rgb(var(--foreground-light));
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+  color: rgb(var(--foreground-dark));
+}
+
+.prose p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.dark .prose a {
+  color: #60a5fa;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+.dark .prose a:hover {
+  color: #93c5fd;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
