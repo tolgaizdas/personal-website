@@ -19,6 +19,7 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--foreground-light)) transparent;
+  overflow-y: scroll;
 }
 
 body {
