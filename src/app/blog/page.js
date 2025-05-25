@@ -5,6 +5,7 @@ import Link from "next/link";
 import Title from "../../components/Title";
 import Footer from "../../components/Footer";
 import { information } from "../sections";
+import { getAllBlogs } from "../../utils/blog.js";
 
 function formatDateShort(dateString) {
   const date = new Date(dateString);
@@ -21,25 +22,24 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load blogs from API endpoint (which reads markdown files)
+    // Load blogs from API endpoint
     fetch("/api/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(async (error) => {
         console.error("Error loading blogs:", error);
-        // Fallback: load from static file if API doesn't exist (but without content)
-        import("../../data/blogs.json").then((data) => {
-          const blogsWithPlaceholder = data.default.map((blog) => ({
-            ...blog,
-            content:
-              "# Content Loading Error\n\nPlease refresh the page or check the server.",
-          }));
-          setBlogs(blogsWithPlaceholder);
-          setLoading(false);
-        });
+        // Fallback: load directly from blog modules if API fails
+        try {
+          const blogsData = await getAllBlogs();
+          setBlogs(blogsData);
+        } catch (fallbackError) {
+          console.error("Error loading blogs from fallback:", fallbackError);
+          setBlogs([]);
+        }
+        setLoading(false);
       });
   }, []);
 

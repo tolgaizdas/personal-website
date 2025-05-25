@@ -1,40 +1,30 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-import blogsMetadata from "../../../data/blogs.json";
+import { getAllBlogs, getBlogById } from "../../../utils/blog.js";
 
 export const runtime = "edge";
 
-export async function GET() {
+export async function GET(request) {
   try {
-    const blogsWithContent = await Promise.all(
-      blogsMetadata.map(async (blog) => {
-        try {
-          const filePath = path.join(
-            process.cwd(),
-            "src",
-            "data",
-            "blogs",
-            blog.file,
-          );
-          const content = await fs.readFile(filePath, "utf8");
-          return {
-            ...blog,
-            content,
-          };
-        } catch (error) {
-          console.error(`Error reading blog file ${blog.file}:`, error);
-          return {
-            ...blog,
-            content: "# Error\n\nCould not load blog content.",
-          };
-        }
-      }),
-    );
+    const { searchParams } = new URL(request.url);
+    const blogId = searchParams.get("id");
 
-    return NextResponse.json(blogsWithContent);
+    if (blogId) {
+      // Get specific blog by ID
+      const blog = await getBlogById(blogId);
+      if (!blog) {
+        return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+      }
+      return NextResponse.json(blog);
+    } else {
+      // Get all blogs
+      const blogs = await getAllBlogs();
+      return NextResponse.json(blogs);
+    }
   } catch (error) {
     console.error("Error loading blogs:", error);
-    return NextResponse.json([], { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 },
+    );
   }
 }

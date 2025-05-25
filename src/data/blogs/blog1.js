@@ -1,4 +1,14 @@
-# Introduction
+// Blog 1: My Journey to a Master's in Computer Science
+export const blogData = {
+  id: "My Journey to a Master's in Computer Science",
+  title: "My Journey to a Master's in Computer Science",
+  tag: "Education",
+  publishDate: "2025-05-25",
+  readingTime: "10 min read",
+  preview:
+    "This post is about the long, sometimes uncertain, but deeply rewarding journey I took while applying to graduate programs abroad.",
+  content: `
+  # Introduction
 
 This post is about the long, sometimes uncertain, but deeply rewarding journey I took while applying to graduate programs abroad. As a computer engineering student from Turkey, I always knew I wanted to continue my studies with a master's—possibly even a PhD. But I had no idea how many lessons, reflections, and personal growth moments would come along the way.
 
@@ -81,3 +91,5 @@ All this hard work and uncertainty came down to that one moment—making the dec
 Now that this chapter is closing, I'm genuinely excited about what lies ahead. This journey has taught me a lot—not just about academia, but about persistence and about myself.
 
 If you're reading this and thinking about applying to grad school, here's my advice: it's a marathon, not a sprint. It takes time, patience, and effort. But in the end, it's absolutely worth it.
+  `,
+};
