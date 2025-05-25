@@ -3,6 +3,8 @@ import { promises as fs } from "fs";
 import path from "path";
 import blogsMetadata from "../../../data/blogs.json";
 
+export const runtime = "edge";
+
 export async function GET() {
   try {
     const blogsWithContent = await Promise.all(

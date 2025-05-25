@@ -11,6 +11,8 @@ import { information } from "../../../sections";
 import { IoArrowBack } from "react-icons/io5";
 import TopButton from "@/components/TopButton";
 
+export const runtime = "edge";
+
 // Simple utility functions inline to avoid import issues
 function formatDate(dateString) {
   const date = new Date(dateString);
