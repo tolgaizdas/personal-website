@@ -21,7 +21,7 @@ const Title = ({
       className="sticky top-0 z-10 mb-12 border-b bg-[#f0f0f0] text-[#333333] border-neutral-300
       dark:bg-[#181818] dark:text-[#ececec] dark:border-neutral-700"
     >
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 max-w-7xl mx-auto px-8 py-4 sm:p-8 md:px-0 md:py-8 min-h-[3.5rem]">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 max-w-7xl mx-auto px-8 p-8 md:px-0 md:py-8 min-h-[3.5rem]">
         {/* Left Side - Name aligned with section titles */}
         <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 leading-[1.8rem] sm:leading-[2rem]">
           <Link href="/">{name}</Link>
