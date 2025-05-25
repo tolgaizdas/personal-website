@@ -28,7 +28,7 @@ const Title = ({
         </h1>
 
         {/* Right Side - Contact buttons, social buttons, separator, and theme toggle */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mt-0 sm:mt-[5px]">
           {/* Contact Buttons */}
           <div className="flex gap-2 sm:gap-4">
             <Link
