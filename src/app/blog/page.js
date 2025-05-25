@@ -117,20 +117,15 @@ export default function BlogPage() {
                   href={`/blog/posts/${blog.id}`}
                   className="block"
                 >
-                  <article className="border-b border-neutral-200 dark:border-neutral-700 pb-6 cursor-pointer group">
+                  <article className="pb-6 cursor-pointer group">
                     <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
                       {blog.title}
                     </h2>
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm">
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+                      <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
                         {blog.tag}
                       </span>
-                      <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                        {formatDateShort(blog.publishDate)}
-                      </span>
-                      <span className="text-sm text-neutral-500 dark:text-neutral-400">
-                        {blog.readingTime}
-                      </span>
+                      {blog.readingTime} · {formatDateShort(blog.publishDate)}
                     </div>
                     <p className="text-neutral-600 dark:text-neutral-400 line-clamp-2">
                       {blog.preview}

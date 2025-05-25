@@ -135,12 +135,11 @@ export default function BlogPostPage() {
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                 {blog.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                 <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
                   {blog.tag}
                 </span>
-                <span>{formatDate(blog.publishDate)}</span>
-                <span>{blog.readingTime}</span>
+                {blog.readingTime} · {formatDate(blog.publishDate)}
               </div>
             </div>
 

@@ -34,7 +34,7 @@ const TopButton = () => {
       className={`
         ${isVisible ? "opacity-100" : "opacity-0"}
         flex sm:right-8
-        fixed bottom-14 right-4
+        fixed bottom-4 right-4
         p-2 rounded-full
         focus:outline-none
         transition-opacity transition-colors
