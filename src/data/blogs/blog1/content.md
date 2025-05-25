@@ -1,14 +1,4 @@
-// Blog 1: My Journey to a Master's in Computer Science
-export const blogData = {
-  id: "My Journey to a Master's in Computer Science",
-  title: "My Journey to a Master's in Computer Science",
-  tag: "Education",
-  publishDate: "2025-05-25",
-  readingTime: "10 min read",
-  preview:
-    "This post is about the long, sometimes uncertain, but deeply rewarding journey I took while applying to graduate programs abroad.",
-  content: `
-  # Introduction
+# Introduction
 
 This post is about the long, sometimes uncertain, but deeply rewarding journey I took while applying to graduate programs abroad. As a computer engineering student from Turkey, I always knew I wanted to continue my studies with a master's—possibly even a PhD. But I had no idea how many lessons, reflections, and personal growth moments would come along the way.
 
@@ -48,7 +38,7 @@ Another exam that some (though not all) universities require is the GRE. I hadn'
 
 The most overwhelming part was getting letters of recommendation. I'd already gone through this process when applying for scholarships I didn't get, but it helped me get familiar with it. I had to decide which professors to ask for letters. I got one from Prof. Banu Diri, with whom I worked on an undergraduate research project; one from Prof. Mehmet Fatih Amasyalı, whose lab I was part of; and the last one from Prof. Mehmet Sıddık Aktaş, who earned his MSc and PhD in the U.S. and helped me a lot throughout this process.
 
-Getting the letters wasn't too hard because I already had good relationships with these professors. But the repeated requests to fill out recommendation forms for every university were a bit embarrassing. For those unfamiliar with the process, professors don't upload the letters themselves; instead, you have to enter their emails into each university's system, and the system emails them to upload the letter. Doing this for so many schools can feel awkward to ask over and over again. Thankfully, my professors were kind and never hesitated to help.
+Getting the letters wasn't too hard because I already had good relationships with these professors. But the repeated requests to fill out recommendation forms for every university were a bit embarrassing. For those unfamiliar with the process, you do not upload the letters yourself; instead, you have to enter the professors' emails into each university's system, and the system emails them to upload the letter. Doing this for so many schools can feel awkward to ask over and over again. Thankfully, my professors were kind and never hesitated to help.
 
 Once the letters were set, I had to write a statement of purpose (SoP) for each university. That's a detailed topic on its own, but you can find plenty of advice online or on university websites.
 
@@ -91,5 +81,3 @@ All this hard work and uncertainty came down to that one moment—making the dec
 Now that this chapter is closing, I'm genuinely excited about what lies ahead. This journey has taught me a lot—not just about academia, but about persistence and about myself.
 
 If you're reading this and thinking about applying to grad school, here's my advice: it's a marathon, not a sprint. It takes time, patience, and effort. But in the end, it's absolutely worth it.
-  `,
-};

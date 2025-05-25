@@ -1,7 +1,7 @@
 // Blog index mapping IDs to their respective modules
 export const blogModules = {
   "My Journey to a Master's in Computer Science": () =>
-    import("../data/blogs/blog1.js"),
+    import("../data/blogs/blog1/index"),
   // Add more blog mappings here as you create them
   // "Blog ID": () => import('./blog.js'),
 };

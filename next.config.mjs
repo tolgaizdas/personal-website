@@ -8,6 +8,16 @@ if (process.env.NODE_ENV === "development") {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  webpack: (config) => {
+    // Add rule to handle .md files as raw text
+    config.module.rules.push({
+      test: /\.md$/,
+      use: "raw-loader",
+    });
+
+    return config;
+  },
+};
 
 export default nextConfig;
