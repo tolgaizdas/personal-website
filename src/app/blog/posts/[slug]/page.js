@@ -65,7 +65,7 @@ export default function BlogPostPage() {
       <div className="min-h-screen flex flex-col">
         <div className="flex-1">
           <Title {...information} />
-          <div className="max-w-2xl p-8 py-0 md:px-0">
+          <div className="p-8 py-0 md:px-0">
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
               <p className="text-neutral-600 dark:text-neutral-400 mt-4">

@@ -61,21 +61,33 @@ export default function BlogPage() {
     <div className="min-h-screen flex flex-col">
       <div className="flex-1">
         <Title {...information} />
-        <div className="max-w-2xl p-8 py-0 md:px-0">
-          {/* Blog header */}
-          <div className="mb-8">
-            <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 decoration-neutral-300 dark:decoration-neutral-700">
-              Welcome to my blog!
-            </h1>
-            <p className="text-neutral-600 dark:text-neutral-400">
-              Here, I share my thoughts, experiences, and insights on a variety
-              of topics. I hope you find the content engaging and insightful.
-              Enjoy reading!
+        {/* Blog header */}
+        <div className="mb-8 max-w-2xl p-8 py-0 md:px-0">
+          <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 decoration-neutral-300 dark:decoration-neutral-700">
+            Welcome to my blog!
+          </h1>
+          <p className="text-neutral-600 dark:text-neutral-400">
+            Here, I share my thoughts, experiences, and insights on a variety of
+            topics. I hope you find the content engaging and insightful. Enjoy
+            reading!
+          </p>
+        </div>
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <p className="text-neutral-600 dark:text-neutral-400 mt-4">
+              Loading blog posts...
             </p>
           </div>
-
-          {/* Tag filter */}
-          {loading || (
+        ) : sortedBlogs.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-neutral-600 dark:text-neutral-400">
+              No blog posts found.
+            </p>
+          </div>
+        ) : (
+          <div className="max-w-2xl p-8 py-0 md:px-0">
+            {/* Tag filter */}
             <div className="mb-8">
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
@@ -93,25 +105,9 @@ export default function BlogPage() {
                 ))}
               </div>
             </div>
-          )}
-
-          {/* Blog list */}
-          <div className="space-y-6">
-            {loading ? (
-              <div className="text-center py-12">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                <p className="text-neutral-600 dark:text-neutral-400 mt-4">
-                  Loading blog posts...
-                </p>
-              </div>
-            ) : sortedBlogs.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-neutral-600 dark:text-neutral-400">
-                  No blog posts found.
-                </p>
-              </div>
-            ) : (
-              sortedBlogs.map((blog) => (
+            {/* Blog list */}
+            <div className="space-y-6">
+              {sortedBlogs.map((blog) => (
                 <Link
                   key={blog.id}
                   href={`/blog/posts/${encodeURIComponent(blog.id)}`}
@@ -132,10 +128,10 @@ export default function BlogPage() {
                     </p>
                   </article>
                 </Link>
-              ))
-            )}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <Footer />
     </div>
