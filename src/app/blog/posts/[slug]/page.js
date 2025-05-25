@@ -128,7 +128,7 @@ export default function BlogPostPage() {
     <div className="min-h-screen flex flex-col">
       <div className="flex-1">
         <Title {...information} />
-        <div className="max-w-2xl p-8 py-0 md:px-0">
+        <div className="p-8 py-0 md:px-0">
           {/* Back button */}
           <div className="flex items-center gap-4 mb-6">
             <Link
