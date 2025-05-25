@@ -7,7 +7,7 @@ const TopButton = () => {
 
   // Show the button when the page is scrolled down
   const toggleVisibility = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -33,18 +33,22 @@ const TopButton = () => {
       onClick={scrollToTop}
       className={`
         ${isVisible ? "opacity-100" : "opacity-0"}
-        flex md:hidden sm:right-8
-        fixed bottom-14 right-4
+        flex md:hidden
+        fixed bottom-4 right-4
         p-2 rounded-full
         focus:outline-none
         transition-opacity transition-colors
         text-neutral-600
+        hover:text-neutral-800
         dark:text-neutral-400
-        dark:border-neutral-400
-        hover:text-black
-        dark:hover:text-white
-        hover:border-neutral-800
-        dark:hover:border-neutral-200
+        dark:hover:text-neutral-200
+        bg-neutral-200
+        dark:bg-neutral-800
+        hover:bg-neutral-300
+        dark:hover:bg-neutral-700
+        border-[0.1rem]
+        border-neutral-300
+        dark:border-neutral-700
       `}
       aria-label="Scroll to Top"
       disabled={!isVisible}

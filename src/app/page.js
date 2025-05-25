@@ -27,7 +27,6 @@ export default function Home() {
           <Section {...publications} />
           <Section {...certifications} />
         </div>
-        <TopButton />
       </div>
       <Footer />
     </div>
