@@ -114,7 +114,7 @@ export default function BlogPage() {
               sortedBlogs.map((blog) => (
                 <Link
                   key={blog.id}
-                  href={`/blog/posts/${blog.id}`}
+                  href={`/blog/posts/${encodeURIComponent(blog.id)}`}
                   className="block"
                 >
                   <article className="pb-6 cursor-pointer group">

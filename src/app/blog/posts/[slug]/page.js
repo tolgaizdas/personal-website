@@ -30,11 +30,14 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     if (params.slug) {
+      // Decode the URL parameter
+      const decodedSlug = decodeURIComponent(params.slug);
+
       // Load specific blog post
       fetch("/api/blogs")
         .then((res) => res.json())
         .then((data) => {
-          const foundBlog = data.find((b) => b.id === params.slug);
+          const foundBlog = data.find((b) => b.id === decodedSlug);
           if (foundBlog) {
             setBlog(foundBlog);
             // Set related blogs (same tag, excluding current blog)
