@@ -135,7 +135,7 @@ export default function BlogPostPage() {
           </div>
 
           {/* Blog header */}
-          <article className="prose prose-neutral dark:prose-invert max-w-none">
+          <article className="prose prose-neutral dark:prose-invert max-w-none mb-12">
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                 {blog.title}
