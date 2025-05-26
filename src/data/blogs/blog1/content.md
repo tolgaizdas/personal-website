@@ -72,7 +72,7 @@ Both master's programs offered great academic environments. Their tuition fees w
 
 The LSU PhD was a completely different path. Cost wasn't an issue since it was fully funded, but it required a much higher level of commitment. I went through several rounds of interviews with the professor at LSU, who was very understanding no matter what decision I made.
 
-After gathering advice from many people, I ultimately decided to go with USC. What shaped my choice most were the location—right in the heart of California's tech scene and close to Silicon Valley—the faculty's research areas that aligned with my own, and the prestige of the university.
+After gathering advice from many people, I ultimately decided to go with USC. What shaped my choice most were the location—right in the heart of California's tech scene and close to Silicon Valley—the faculty's research areas that aligned with my own, and the prestige of the university. USC is ranked 21st in the field of computer science among all U.S. universities, which also gave me confidence in the program’s quality and reputation.
 
 All this hard work and uncertainty came down to that one moment—making the decision.
 
