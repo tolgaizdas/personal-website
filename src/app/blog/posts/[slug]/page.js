@@ -150,7 +150,7 @@ export default function BlogPostPage() {
                 <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
                   {blog.tag}
                 </span>
-                {blog.readingTime} · {formatDate(blog.publishDate)}
+                {" " + blog.readingTime + " · " + formatDate(blog.publishDate)}
               </div>
             </div>
 

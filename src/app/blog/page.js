@@ -121,7 +121,10 @@ export default function BlogPage() {
                       <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
                         {blog.tag}
                       </span>
-                      {blog.readingTime} · {formatDateShort(blog.publishDate)}
+                      {" " +
+                        blog.readingTime +
+                        " · " +
+                        formatDateShort(blog.publishDate)}
                     </div>
                     <p className="text-neutral-600 dark:text-neutral-400 line-clamp-2">
                       {blog.preview}
