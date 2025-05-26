@@ -35,7 +35,7 @@ export const aboutMe = {
         )}.`,
         `Here is my ${anchor(
           "/tolgaizdas-cv.pdf",
-          "resume",
+          "CV",
         )} (Updated March 2025).`,
       ],
     },
