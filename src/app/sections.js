@@ -25,14 +25,16 @@ export const aboutMe = {
       company: "",
       location: "",
       description: [
-        `I am a senior computer engineering student at ${anchor(
-          "https://www.yildiz.edu.tr/en",
-          "Yıldız Technical University",
-        )}.`,
-        `In Fall 2025, I'll be starting my Master's in Computer Science at ${anchor(
+        `I am a master's student in computer science at
+        ${anchor(
           "https://www.usc.edu/",
           "the University of Southern California",
         )}.`,
+        `I graduated with a Bachelor's in Computer Engineering from
+          ${anchor(
+            "https://www.yildiz.edu.tr/en",
+            "Yıldız Technical University",
+          )}.`,
         `Here is my ${anchor(
           "/tolgaizdas-cv.pdf",
           "CV",
