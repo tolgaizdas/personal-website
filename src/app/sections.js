@@ -30,7 +30,7 @@ export const aboutMe = {
           "https://www.usc.edu/",
           "the University of Southern California",
         )}.`,
-        `I graduated with a Bachelor's in Computer Engineering from
+        `I graduated with a bachelor's in computer engineering from
           ${anchor(
             "https://www.yildiz.edu.tr/en",
             "Yıldız Technical University",
