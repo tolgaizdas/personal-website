@@ -85,7 +85,7 @@ const Title = ({
           {/* Separator Line */}
           <div className="h-6 min-h-[1.5rem] w-px bg-neutral-300 dark:bg-neutral-700 flex-shrink-0"></div>
 
-          <div className="flex gap-2 sm:gap-4 text-nowrap">
+          <div className="flex gap-2 sm:gap-4">
             <Link
               href="/blog"
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors flex items-center text-center"
