@@ -2,7 +2,6 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaGoogleScholar } from "react-icons/fa6";
 import { IoMdCalendar } from "react-icons/io";
-import { FaBlog } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 
@@ -50,7 +49,7 @@ const Title = ({
           </div>
 
           {/* Separator Line */}
-          <div className="h-6 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+          <div className="h-6 min-h-[1.5rem] w-px bg-neutral-300 dark:bg-neutral-700 flex-shrink-0"></div>
 
           {/* Social Media Buttons */}
           <div className="flex gap-2 sm:gap-4">
@@ -84,9 +83,9 @@ const Title = ({
           </div>
 
           {/* Separator Line */}
-          <div className="h-6 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+          <div className="h-6 min-h-[1.5rem] w-px bg-neutral-300 dark:bg-neutral-700 flex-shrink-0"></div>
 
-          <div className="flex gap-2 sm:gap-4">
+          <div className="flex gap-2 sm:gap-4 text-nowrap">
             <Link
               href="/blog"
               className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors flex items-center text-center"
@@ -97,7 +96,7 @@ const Title = ({
           </div>
 
           {/* Separator Line */}
-          <div className="h-6 w-px bg-neutral-300 dark:bg-neutral-700"></div>
+          <div className="h-6 min-h-[1.5rem] w-px bg-neutral-300 dark:bg-neutral-700 flex-shrink-0"></div>
 
           {/* Theme Toggle */}
           <ThemeToggle />
