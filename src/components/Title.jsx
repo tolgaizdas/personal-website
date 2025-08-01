@@ -89,10 +89,10 @@ const Title = ({
           <div className="flex gap-2 sm:gap-4">
             <Link
               href="/blog"
-              className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors flex items-center"
+              className="p-1 text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200 transition-colors flex items-center text-center"
               aria-label="Blog"
             >
-              <FaBlog className="w-5 h-5" />
+              My Blog
             </Link>
           </div>
 
