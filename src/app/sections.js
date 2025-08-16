@@ -118,7 +118,7 @@ export const publications = {
       company: "",
       location: "",
       description: [
-        `<span class="font-medium">T. İzdaş</span>, Ö. Sancak, T. Kesgin, M. K. Yüce, and M. F. Amasyalı,  “Turkish-e5:  E5  Model  Enhanced  for  Turkish  with  Multi-Positive  Contrastive Learning”, <i>33rd IEEE SIU</i>, 2025. `,
+        `<span class="font-medium">T. İzdaş</span>, Ö. Sancak, T. Kesgin, M. K. Yüce, and M. F. Amasyalı,  \“${anchor("https://ieeexplore.ieee.org/document/11112375", "Turkish-e5:  E5  Model  Enhanced  for  Turkish  with  Multi-Positive  Contrastive Learning")}\" <i>33rd IEEE SIU</i>, 2025.`,
         `<span class="font-medium">T. İzdaş</span>, H. İskifoğlu, and B. Diri, \“${anchor("https://dergipark.org.tr/en/download/article-file/4155848", "Occupation Prediction from Twitter Data")}\", <i>DEUFMD</i>, vol. 27, no. 80, pp. 267–271, 2025, doi: 10.21205/deufmd.2025278013.`,
       ],
     },
