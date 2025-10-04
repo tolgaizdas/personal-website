@@ -35,7 +35,6 @@ export const aboutMe = {
             "https://www.yildiz.edu.tr/en",
             "Yıldız Technical University",
           )}.`,
-        `Here is my ${anchor("/tolgaizdas-cv.pdf", "CV")} (Updated Aug 2025).`,
       ],
     },
   ],
