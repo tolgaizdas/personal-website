@@ -134,8 +134,7 @@ export const projects = {
       company: "",
       location: "",
       description: [
-        `Developed a tool to evaluate LLMs such as GPT, BERT, LLaMA on various tasks with few-shot learning support.`,
-        "Implemented custom evaluation metrics for accuracy and perplexity.",
+        "An open-source tool for evaluating large language models (LLMs) such as GPT, BERT, and LLaMA on various NLP tasks with few-shot learning support.",
       ],
     },
     {
@@ -144,8 +143,7 @@ export const projects = {
       company: "",
       location: "",
       description: [
-        "Developed an NLP project to analyze and classify social media data.",
-        "Used ML models such as Logistic Regression, SVM, Random Forest, CNN, and RNN to explore the impact of dataset size on model performance, achieving 89% accuracy in classification tasks.",
+        "A machine learning project that classifies Twitter users into different occupation categories based on their tweets.",
       ],
     },
   ],

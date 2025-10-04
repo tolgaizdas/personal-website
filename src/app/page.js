@@ -22,6 +22,7 @@ export default function Home() {
         <Title {...information} />
         <div className="max-w-2xl p-8 py-0 md:px-0">
           <Section {...aboutMe} />
+          <Section {...projects} />
           <Section {...publications} />
         </div>
       </div>
