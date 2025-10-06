@@ -5,11 +5,11 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Title from "@/components/Title";
-import Footer from "@/components/Footer";
-import { information } from "../../../sections";
+import Title from "@/components/layout/Title";
+import Footer from "@/components/layout/Footer";
+import { information } from "../../../content";
 import { IoArrowBack } from "react-icons/io5";
-import TopButton from "@/components/TopButton";
+import TopButton from "@/components/common/TopButton";
 
 export const runtime = "edge";
 
@@ -62,7 +62,7 @@ export default function BlogPostPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
         <div className="flex-1">
           <Title {...information} />
           <div className="mx-auto px-8 py-0 md:px-0">
@@ -93,7 +93,7 @@ export default function BlogPostPage() {
 
   if (error || !blog) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
         <div className="flex-1">
           <Title {...information} />
           <div className="max-w-4xl mx-auto px-8 py-0 md:px-0">
@@ -125,7 +125,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
       <div className="flex-1">
         <Title {...information} />
         <div className="p-8 py-0 md:px-0">
@@ -192,7 +192,7 @@ export default function BlogPostPage() {
 
           {/* Related Posts */}
           {relatedBlogs.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+            <div className="mt-12 pt-8 border-t border-neutral-200/70 dark:border-neutral-700">
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
                 Related Posts
               </h3>
@@ -203,7 +203,7 @@ export default function BlogPostPage() {
                     href={`/blog/posts/${relatedBlog.id}`}
                     className="group"
                   >
-                    <article className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <article className="border border-neutral-200/70 dark:border-neutral-800/60 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <h4 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                         {relatedBlog.title}
                       </h4>

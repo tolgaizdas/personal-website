@@ -1,32 +1,35 @@
 "use client";
 
-import Title from "../components/Title";
-import Section from "../components/Section";
-import TopButton from "../components/TopButton";
-import Footer from "../components/Footer";
-import {
-  information,
-  aboutMe,
-  publications,
-  projects,
-  awardsAndHonors,
-  coursework,
-  certifications,
-  skills,
-} from "./sections";
+import Section from "../components/layout/sections/Section";
+import TopButton from "../components/common/TopButton";
+import Footer from "../components/layout/Footer";
+import Introduction from "../components/layout/Introduction";
+import { information, aboutMe, publications, projects } from "./content";
 
 export default function Home() {
+  const introduction = aboutMe.subsections?.[0];
+
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-1">
-        <Title {...information} />
-        <div className="max-w-2xl p-8 py-0 md:px-0">
-          <Section {...aboutMe} />
-          <Section {...projects} />
-          <Section {...publications} />
-        </div>
-      </div>
+      <main className="flex-1">
+        <section>
+          <div className="max-w-5xl mx-auto px-8 py-10">
+            <Introduction
+              information={information}
+              introduction={introduction}
+            />
+          </div>
+        </section>
+        <section>
+          <div className="max-w-5xl mx-auto px-8 custom:pr-[20rem] py-10">
+            <Section {...projects} />
+            <Section {...publications} />
+          </div>
+        </section>
+      </main>
+
       <Footer />
+      <TopButton />
     </div>
   );
 }

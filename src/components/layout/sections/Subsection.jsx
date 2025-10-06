@@ -1,4 +1,4 @@
-import { sanitizeHtml } from "../utils/sanitize";
+import { sanitizeHtml } from "../../../utils/sanitize";
 
 const Subsection = ({ header, date, company, location, description }) => {
   const showMetadata = date || company || location;
@@ -7,18 +7,18 @@ const Subsection = ({ header, date, company, location, description }) => {
     <div className="pb-4 rounded-lg">
       {header && (
         <h2
-          className="text-xl font-medium text-neutral-800 dark:text-neutral-100 mb-2"
+          className="text-xl font-light text-neutral-800 dark:text-neutral-100 mb-2"
           dangerouslySetInnerHTML={{ __html: sanitizeHtml(header) }}
         />
       )}
       {showMetadata && (
         <div className="text-sm text-neutral-600 dark:text-neutral-400 mb-2 ml-1">
-          <span className="font-medium text-neutral-800 dark:text-neutral-200">
+          <span className="font-light text-neutral-800 dark:text-neutral-200">
             {date}
           </span>{" "}
           {company ? "|" : ""}
           <span
-            className="font-medium text-neutral-800 dark:text-neutral-200 ml-1"
+            className="font-light text-neutral-800 dark:text-neutral-200 ml-1"
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(company) }}
           />{" "}
           {location ? "-" : ""}

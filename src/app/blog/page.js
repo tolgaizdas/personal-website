@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Title from "../../components/Title";
-import Footer from "../../components/Footer";
-import { information } from "../sections";
+import Title from "../../components/layout/Title";
+import Footer from "../../components/layout/Footer";
+import { information } from "../content";
 import { getAllBlogs } from "../../utils/blog.js";
 
 function formatDateShort(dateString) {
@@ -58,7 +58,7 @@ export default function BlogPage() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
       <div className="flex-1">
         <Title {...information} />
         {/* Blog header */}

@@ -14,6 +14,7 @@ export const information = {
   linkedinUrl: "https://linkedin.com/in/tolgaizdas",
   scholarUrl: "https://scholar.google.com/citations?user=GXujHFgAAAAJ&hl=en",
   calendlyUrl: "https://calendly.com/tolgaizdas",
+  blogUrl: "/blog",
 };
 
 export const aboutMe = {
@@ -25,16 +26,7 @@ export const aboutMe = {
       company: "",
       location: "",
       description: [
-        `I am a master's student in computer science at
-        ${anchor(
-          "https://www.usc.edu/",
-          "the University of Southern California",
-        )}.`,
-        `I graduated with a bachelor's in computer engineering from
-          ${anchor(
-            "https://www.yildiz.edu.tr/en",
-            "Yıldız Technical University",
-          )}.`,
+        `I graduated with a bachelor's in computer engineering from  ${anchor("https://www.yildiz.edu.tr/en", "Yıldız Technical University")}. Currently, I am doing my master's in computer science at the ${anchor("https://www.usc.edu/", "University of Southern California")}.`,
       ],
     },
   ],

@@ -37,7 +37,6 @@ const TopButton = () => {
         fixed bottom-4 right-4
         p-2 rounded-full
         focus:outline-none
-        transition-opacity transition-colors
         text-neutral-600
         hover:text-neutral-800
         dark:text-neutral-400

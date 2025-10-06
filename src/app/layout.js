@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${inter.className} mx-0 md:mx-[20%]`}>{children}</body>
+      <body className={`${inter.className}`}>{children}</body>
     </html>
   );
 }

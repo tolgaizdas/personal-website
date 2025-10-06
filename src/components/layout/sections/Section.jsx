@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
 import Subsection from "./Subsection";
-import { FaChevronDown } from "react-icons/fa";
 
 const Section = ({ header, subsections }) => {
   const sortedSubsections = [...subsections].sort(
@@ -22,7 +20,7 @@ const Section = ({ header, subsections }) => {
 
   return (
     <div className="mb-8">
-      <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-8 decoration-1">
+      <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 decoration-neutral-200/70 dark:decoration-neutral-800/60 underline-offset-8 decoration-1">
         {header}
       </h1>
       {sortedSubsections.length > 0 ? (
