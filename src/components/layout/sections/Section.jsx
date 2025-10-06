@@ -19,7 +19,7 @@ const Section = ({ header, subsections }) => {
   gridCols = "lg:grid-cols-1";
 
   return (
-    <div className="mb-8">
+    <div className="mb-10">
       <h1 className="flex-grow text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 decoration-neutral-200/70 dark:decoration-neutral-800/60 underline-offset-8 decoration-1">
         {header}
       </h1>

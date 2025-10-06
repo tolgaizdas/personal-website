@@ -18,6 +18,16 @@ const Introduction = ({ information, introduction }) => {
             <h1 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100">
               Hi, I'm {information.name.split(" ")[0]}!
             </h1>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Email email={information.email} />
+              <Calendly calendlyUrl={information.calendlyUrl} />
+              <LinkedIn linkedinUrl={information.linkedinUrl} />
+              <GitHub githubUrl={information.githubUrl} />
+              <Scholar scholarUrl={information.scholarUrl} />
+              <Blog blogUrl={information.blogUrl} />
+              <Separator />
+              <ThemeToggle />
+            </div>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-neutral-700 dark:text-neutral-200">
               {introduction.description.map((item, index) => (
                 <p
@@ -29,16 +39,6 @@ const Introduction = ({ information, introduction }) => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Email email={information.email} />
-          <Calendly calendlyUrl={information.calendlyUrl} />
-          <LinkedIn linkedinUrl={information.linkedinUrl} />
-          <GitHub githubUrl={information.githubUrl} />
-          <Scholar scholarUrl={information.scholarUrl} />
-          <Blog blogUrl={information.blogUrl} />
-          <Separator />
-          <ThemeToggle />
         </div>
       </div>
       <div className="relative flex-shrink-0">

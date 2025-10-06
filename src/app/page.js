@@ -13,7 +13,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
         <section>
-          <div className="max-w-5xl mx-auto px-8 py-10">
+          <div className="max-w-5xl mx-auto px-8 pt-10">
             <Introduction
               information={information}
               introduction={introduction}
