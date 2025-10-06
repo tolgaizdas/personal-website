@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="max-w-5xl mx-auto px-8 custom:pr-[20rem] py-10">
+          <div className="max-w-5xl mx-auto px-8 custom:pr-[20rem] pt-10">
             <Section {...projects} />
             <Section {...publications} />
           </div>
