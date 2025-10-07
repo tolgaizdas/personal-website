@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        <section className="pt-10">
+        <section className="pt-10 pb-4">
           <div className="page-container">
             <Introduction
               information={information}
@@ -20,7 +20,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="pt-10 pb-16">
+        <section className="max-w-5xl mx-auto custom:pr-[20rem] pt-10">
           <div className="page-container space-y-12">
             <Section {...projects} />
             <Section {...publications} />

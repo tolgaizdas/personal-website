@@ -60,7 +60,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Title {...information} />
-      <main className="flex-1">
+      <main className="flex-1 max-w-5xl mx-auto custom:pr-[20rem]">
         <section className="page-container mb-10">
           <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
             Welcome to my blog!
