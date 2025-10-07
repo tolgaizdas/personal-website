@@ -30,6 +30,18 @@ export default function BlogPostPage() {
   const [error, setError] = useState(null);
   const [relatedBlogs, setRelatedBlogs] = useState([]);
 
+  const backLink = (
+    <div className="flex items-center gap-4 mb-6">
+      <Link
+        href="/blog"
+        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
+      >
+        <IoArrowBack className="w-5 h-5" />
+        Back to Blog
+      </Link>
+    </div>
+  );
+
   useEffect(() => {
     if (params.slug) {
       // Decode the URL parameter
@@ -62,30 +74,19 @@ export default function BlogPostPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
-        <div className="flex-1">
-          <Title {...information} />
-          <div className="mx-auto px-8 py-0 md:px-0">
-            {/* Back button */}
-            <div className="flex items-center gap-4 mb-6">
-              <Link
-                href="/blog"
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-              >
-                <IoArrowBack className="w-5 h-5" />
-                Back to Blog
-              </Link>
-            </div>
-          </div>
-          <div className="p-8 py-0 md:px-0">
-            <div className="text-center py-12">
+      <div className="min-h-screen flex flex-col">
+        <Title {...information} />
+        <main className="flex-1">
+          <section className="page-container">
+            {backLink}
+            <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
               <p className="text-neutral-600 dark:text-neutral-400 mt-4">
                 Loading blog post...
               </p>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
         <Footer />
       </div>
     );
@@ -93,22 +94,13 @@ export default function BlogPostPage() {
 
   if (error || !blog) {
     return (
-      <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
-        <div className="flex-1">
-          <Title {...information} />
-          <div className="max-w-4xl mx-auto px-8 py-0 md:px-0">
-            {/* Back button */}
-            <div className="flex items-center gap-4 mb-6">
-              <Link
-                href="/blog"
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-              >
-                <IoArrowBack className="w-5 h-5" />
-                Back to Blog
-              </Link>
-            </div>
+      <div className="min-h-screen flex flex-col">
+        <Title {...information} />
+        <main className="flex-1">
+          <section className="page-container">
+            {backLink}
 
-            <div className="text-center py-12">
+            <div className="text-center">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                 {error || "Blog Post Not Found"}
               </h1>
@@ -117,30 +109,20 @@ export default function BlogPostPage() {
                 loaded.
               </p>
             </div>
-          </div>
-        </div>
+          </section>
+        </main>
         <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col mx-0 md:mx-[20%]">
-      <div className="flex-1">
-        <Title {...information} />
-        <div className="p-8 py-0 md:px-0">
-          {/* Back button */}
-          <div className="flex items-center gap-4 mb-6">
-            <Link
-              href="/blog"
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-            >
-              <IoArrowBack className="w-5 h-5" />
-              Back to Blog
-            </Link>
-          </div>
+    <div className="min-h-screen flex flex-col">
+      <Title {...information} />
+      <main className="flex-1">
+        <section className="page-container">
+          {backLink}
 
-          {/* Blog header */}
           <article className="prose prose-neutral dark:prose-invert max-w-none mb-12">
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
@@ -154,16 +136,14 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            {/* Blog content */}
             <div className="prose-lg prose-neutral dark:prose-invert max-w-none">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  // Customize code blocks
                   code: ({ node, inline, className, children, ...props }) => {
                     return inline ? (
                       <code
-                        className="bg-neutral-100 dark:bg-neutral-800 px-1 py-0.5 rounded text-sm"
+                        className="bg-neutral-100 dark:bg-neutral-800 px-1.5 rounded text-sm"
                         {...props}
                       >
                         {children}
@@ -177,7 +157,6 @@ export default function BlogPostPage() {
                       </code>
                     );
                   },
-                  // Customize blockquotes
                   blockquote: ({ children }) => (
                     <blockquote className="border-l-4 border-blue-500 pl-4 italic text-neutral-600 dark:text-neutral-400">
                       {children}
@@ -190,7 +169,6 @@ export default function BlogPostPage() {
             </div>
           </article>
 
-          {/* Related Posts */}
           {relatedBlogs.length > 0 && (
             <div className="mt-12 pt-8 border-t border-neutral-200/70 dark:border-neutral-700">
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
@@ -224,8 +202,8 @@ export default function BlogPostPage() {
               </div>
             </div>
           )}
-        </div>
-      </div>
+        </section>
+      </main>
 
       <TopButton />
       <Footer />

@@ -37,6 +37,12 @@ html.dark {
   background-color: rgb(var(--background-dark));
 }
 
+@layer components {
+  .page-container {
+    @apply mx-auto w-full max-w-5xl px-8;
+  }
+}
+
 /* Custom prose styling for blog content */
 .prose {
   color: rgb(var(--foreground-light));

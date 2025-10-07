@@ -12,16 +12,16 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        <section>
-          <div className="max-w-5xl mx-auto px-8 pt-10">
+        <section className="pt-10">
+          <div className="page-container">
             <Introduction
               information={information}
               introduction={introduction}
             />
           </div>
         </section>
-        <section>
-          <div className="max-w-5xl mx-auto px-8 custom:pr-[20rem] pt-10">
+        <section className="pt-10 pb-16">
+          <div className="page-container space-y-12">
             <Section {...projects} />
             <Section {...publications} />
           </div>

@@ -21,9 +21,9 @@ const Title = ({
   return (
     <header
       className="mb-12 bg-[#f0f0f0] text-[#333333] 
-      dark:bg-[#181818] dark:text-[#ececec] border-b border-neutral-200/70 dark:border-neutral-800/60"
+      dark:bg-[#181818] dark:text-[#ececec]"
     >
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-2 px-8 p-8 md:px-0 md:py-8 min-h-[3.5rem]">
+      <div className="border-b border-neutral-200/70 dark:border-neutral-800/60 page-container flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-2 py-6 sm:py-8 min-h-[3.5rem]">
         {/* Left Side - Name aligned with section titles */}
         <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 leading-[1.8rem] sm:leading-[2rem] text-nowrap">
           <Link href="/">{name}</Link>
