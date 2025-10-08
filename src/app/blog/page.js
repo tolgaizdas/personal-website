@@ -60,8 +60,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Title {...information} />
-      <main className="flex-1 max-w-5xl mx-auto custom:pr-[20rem]">
-        <section className="page-container mb-10">
+      <main className="flex-1 max-w-5xl mx-auto">
+        <section className="page-container mb-10 custom:pr-[20rem]">
           <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
             Welcome to my blog!
           </h1>
@@ -72,7 +72,9 @@ export default function BlogPage() {
           </p>
         </section>
 
-        <section className="page-container pb-16">
+        <section
+          className={`page-container pb-16${!loading ? " custom:pr-[20rem]" : ""}`}
+        >
           {loading ? (
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
