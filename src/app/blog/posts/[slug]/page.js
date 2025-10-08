@@ -1,19 +1,13 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Title from "@/components/layout/Title";
 import Footer from "@/components/layout/Footer";
-import { information } from "../../../content";
-import { IoArrowBack } from "react-icons/io5";
 import TopButton from "@/components/common/TopButton";
+import { IoArrowBack } from "react-icons/io5";
+import { information } from "../../../content";
+import { getAllBlogs, getAllBlogSlugs, getBlogById } from "@/utils/blog";
 
-export const runtime = "edge";
-
-// Simple utility functions inline to avoid import issues
 function formatDate(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
@@ -23,86 +17,66 @@ function formatDate(dateString) {
   });
 }
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [relatedBlogs, setRelatedBlogs] = useState([]);
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
 
-  const backLink = (
-    <div className="flex items-center gap-4 mb-6">
-      <Link
-        href="/blog"
-        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-      >
-        <IoArrowBack className="w-5 h-5" />
-        Back to Blog
-      </Link>
-    </div>
-  );
+  return slugs.map((slug) => ({ slug }));
+}
 
-  useEffect(() => {
-    if (params.slug) {
-      // Decode the URL parameter
-      const decodedSlug = decodeURIComponent(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const blog = await getBlogById(slug);
 
-      // Load specific blog post
-      fetch("/api/blogs")
-        .then((res) => res.json())
-        .then((data) => {
-          const foundBlog = data.find((b) => b.id === decodedSlug);
-          if (foundBlog) {
-            setBlog(foundBlog);
-            // Set related blogs (same tag, excluding current blog)
-            const related = data
-              .filter((b) => b.tag === foundBlog.tag && b.id !== foundBlog.id)
-              .slice(0, 3);
-            setRelatedBlogs(related);
-          } else {
-            setError("Blog post not found");
-          }
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error loading blog:", error);
-          setError("Failed to load blog post");
-          setLoading(false);
-        });
-    }
-  }, [params.slug]);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Title {...information} />
-        <main className="flex-1">
-          <section className="page-container">
-            {backLink}
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              <p className="text-neutral-600 dark:text-neutral-400 mt-4">
-                Loading blog post...
-              </p>
-            </div>
-          </section>
-        </main>
-        <Footer />
-      </div>
-    );
+  if (!blog) {
+    return {
+      title: "Blog Post Not Found",
+    };
   }
 
-  if (error || !blog) {
+  const description = blog.preview || blog.content?.slice(0, 160) || "";
+
+  return {
+    title: blog.title,
+    description,
+    openGraph: {
+      title: blog.title,
+      description,
+      type: "article",
+      publishedTime: blog.publishDate,
+      tags: blog.tag ? [blog.tag] : undefined,
+      url: `https://tolgaizdas.com/blog/posts/${blog.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description,
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const blog = await getBlogById(slug);
+
+  if (!blog) {
     return (
       <div className="min-h-screen flex flex-col">
         <Title {...information} />
         <main className="flex-1">
           <section className="page-container">
-            {backLink}
+            <div className="flex items-center gap-4 mb-6">
+              <Link
+                href="/blog"
+                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
+              >
+                <IoArrowBack className="w-5 h-5" />
+                Back to Blog
+              </Link>
+            </div>
 
             <div className="text-center">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-                {error || "Blog Post Not Found"}
+                Blog Post Not Found
               </h1>
               <p className="text-neutral-600 dark:text-neutral-400 mb-6">
                 The blog post you're looking for doesn't exist or couldn't be
@@ -116,12 +90,25 @@ export default function BlogPostPage() {
     );
   }
 
+  const allBlogs = await getAllBlogs();
+  const relatedBlogs = allBlogs
+    .filter((b) => b.tag === blog.tag && b.slug !== blog.slug)
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Title {...information} />
       <main className="flex-1">
         <section className="page-container">
-          {backLink}
+          <div className="flex items-center gap-4 mb-6">
+            <Link
+              href="/blog"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
+            >
+              <IoArrowBack className="w-5 h-5" />
+              Back to Blog
+            </Link>
+          </div>
 
           <article className="prose prose-neutral dark:prose-invert max-w-none mb-12">
             <div className="mb-8">
@@ -129,10 +116,15 @@ export default function BlogPostPage() {
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
-                  {blog.tag}
+                {blog.tag ? (
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
+                    {blog.tag}
+                  </span>
+                ) : null}
+                <span>
+                  {blog.readingTime}
+                  {blog.publishDate ? ` · ${formatDate(blog.publishDate)}` : ""}
                 </span>
-                {" " + blog.readingTime + " · " + formatDate(blog.publishDate)}
               </div>
             </div>
 
@@ -140,8 +132,8 @@ export default function BlogPostPage() {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  code: ({ node, inline, className, children, ...props }) => {
-                    return inline ? (
+                  code: ({ inline, className, children, ...props }) =>
+                    inline ? (
                       <code
                         className="bg-neutral-100 dark:bg-neutral-800 px-1.5 rounded text-sm"
                         {...props}
@@ -155,8 +147,7 @@ export default function BlogPostPage() {
                       >
                         {children}
                       </code>
-                    );
-                  },
+                    ),
                   blockquote: ({ children }) => (
                     <blockquote className="border-l-4 border-blue-500 pl-4 italic text-neutral-600 dark:text-neutral-400">
                       {children}
@@ -177,8 +168,8 @@ export default function BlogPostPage() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {relatedBlogs.map((relatedBlog) => (
                   <Link
-                    key={relatedBlog.id}
-                    href={`/blog/posts/${relatedBlog.id}`}
+                    key={relatedBlog.slug}
+                    href={`/blog/posts/${relatedBlog.slug}`}
                     className="group"
                   >
                     <article className="border border-neutral-200/70 dark:border-neutral-800/60 rounded-lg p-4 hover:shadow-md transition-shadow">
@@ -186,9 +177,11 @@ export default function BlogPostPage() {
                         {relatedBlog.title}
                       </h4>
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">
-                          {relatedBlog.tag}
-                        </span>
+                        {relatedBlog.tag ? (
+                          <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">
+                            {relatedBlog.tag}
+                          </span>
+                        ) : null}
                         <span className="text-xs text-neutral-500 dark:text-neutral-400">
                           {relatedBlog.readingTime}
                         </span>

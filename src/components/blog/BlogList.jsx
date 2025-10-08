@@ -1,0 +1,100 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import Link from "next/link";
+
+function formatDateShort(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+export default function BlogList({ blogs = [] }) {
+  const [selectedTag, setSelectedTag] = useState("All");
+
+  const tags = useMemo(() => {
+    const uniqueTags = new Set(blogs.map((blog) => blog.tag).filter(Boolean));
+    return ["All", ...uniqueTags];
+  }, [blogs]);
+
+  const filteredBlogs = useMemo(() => {
+    if (selectedTag === "All") {
+      return blogs;
+    }
+
+    return blogs.filter((blog) => blog.tag === selectedTag);
+  }, [blogs, selectedTag]);
+
+  const sortedBlogs = useMemo(() => {
+    return [...filteredBlogs].sort(
+      (a, b) => new Date(b.publishDate) - new Date(a.publishDate),
+    );
+  }, [filteredBlogs]);
+
+  if (!sortedBlogs.length) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-neutral-600 dark:text-neutral-400">
+          No blog posts found.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="mb-8">
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`px-3 py-1 rounded-full text-sm  ${
+                selectedTag === tag
+                  ? "bg-blue-600 text-white"
+                  : "bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-600"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        {sortedBlogs.map((blog) => (
+          <Link
+            key={blog.slug}
+            href={`/blog/posts/${blog.slug}`}
+            className="block"
+          >
+            <article className="pb-6 cursor-pointer group">
+              <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
+                {blog.title}
+              </h2>
+              <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+                {blog.tag ? (
+                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
+                    {blog.tag}
+                  </span>
+                ) : null}
+                <span>
+                  {blog.readingTime}
+                  {blog.publishDate
+                    ? ` · ${formatDateShort(blog.publishDate)}`
+                    : ""}
+                </span>
+              </div>
+              <p className="text-neutral-600 dark:text-neutral-400 line-clamp-2">
+                {blog.preview}
+              </p>
+            </article>
+          </Link>
+        ))}
+      </div>
+    </>
+  );
+}

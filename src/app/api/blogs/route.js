@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getAllBlogs, getBlogById } from "../../../utils/blog.js";
+import { getAllBlogs, getBlogById } from "@/utils/blog";
 
 export const runtime = "edge";
 
@@ -7,10 +7,12 @@ export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
     const blogId = searchParams.get("id");
+    const slug = searchParams.get("slug");
 
-    if (blogId) {
-      // Get specific blog by ID
-      const blog = await getBlogById(blogId);
+    if (blogId || slug) {
+      const identifier = slug ?? blogId;
+      // Get specific blog by ID or slug
+      const blog = await getBlogById(identifier);
       if (!blog) {
         return NextResponse.json({ error: "Blog not found" }, { status: 404 });
       }

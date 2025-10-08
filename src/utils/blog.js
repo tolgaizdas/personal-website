@@ -1,49 +1,54 @@
-// Blog index mapping IDs to their respective modules
-export const blogModules = {
-  "My Journey to a Master's in Computer Science": () =>
-    import("../data/blogs/blog1/index"),
-  // Add more blog mappings here as you create them
-  // "Blog ID": () => import('./blog.js'),
-};
+import { blogData as blog1 } from "../data/blogs/blog1/index";
 
-// Function to get a specific blog by ID
-export async function getBlogById(id) {
-  const moduleLoader = blogModules[id];
-  if (!moduleLoader) {
-    return null;
+const rawBlogs = [blog1];
+
+function createSlug(source) {
+  const candidate = source
+    .toString()
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-");
+
+  if (candidate.length > 0) {
+    return candidate;
   }
 
-  try {
-    const module = await moduleLoader();
-    return module.blogData;
-  } catch (error) {
-    console.error(`Error loading blog with ID "${id}":`, error);
-    return null;
-  }
+  return source.toString().trim().toLowerCase().replace(/\s+/g, "-") || "blog";
 }
 
-// Function to get all blogs
+function normalizeBlogData(data) {
+  const id = data.id ?? data.title ?? "untitled-blog";
+  const slug = data.slug ?? createSlug(id);
+
+  return {
+    ...data,
+    id,
+    slug,
+  };
+}
+
+const blogStore = rawBlogs.map(normalizeBlogData);
+const blogsById = new Map();
+const blogsBySlug = new Map();
+
+for (const blog of blogStore) {
+  blogsById.set(blog.id, blog);
+  blogsBySlug.set(blog.slug, blog);
+}
+
+export async function getBlogById(identifier) {
+  const blog = blogsById.get(identifier) ?? blogsBySlug.get(identifier);
+  return blog ? { ...blog } : null;
+}
+
 export async function getAllBlogs() {
-  const blogs = [];
+  return blogStore.map((blog) => ({ ...blog }));
+}
 
-  for (const [id, moduleLoader] of Object.entries(blogModules)) {
-    try {
-      const module = await moduleLoader();
-      blogs.push(module.blogData);
-    } catch (error) {
-      console.error(`Error loading blog with ID "${id}":`, error);
-      // Add a placeholder blog with error content
-      blogs.push({
-        id,
-        title: "Error Loading Blog",
-        tag: "Error",
-        publishDate: "2025-01-01",
-        readingTime: "0 min read",
-        preview: "This blog post could not be loaded.",
-        content: "# Error\n\nCould not load blog content.",
-      });
-    }
-  }
-
-  return blogs;
+export async function getAllBlogSlugs() {
+  return blogStore.map((blog) => blog.slug);
 }
