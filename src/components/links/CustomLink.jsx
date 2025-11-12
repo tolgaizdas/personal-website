@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const CustomLink = ({ IconComponent, href, label }) => {
   let size = label === "Calendly" ? "w-6 h-6" : "w-5 h-5";
+  let marginLeft = label === "Calendly" ? "ml-[0.1rem]" : "ml-1";
   return (
     <Link
       href={href}
@@ -9,7 +10,7 @@ const CustomLink = ({ IconComponent, href, label }) => {
       aria-label={label}
     >
       <IconComponent className={size} />
-      <span className="text-sm ml-1 hidden sm:inline text-nowrap">{label}</span>
+      <span className={`text-sm ${marginLeft} hidden sm:inline text-nowrap`}>{label}</span>
     </Link>
   );
 };
