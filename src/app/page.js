@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </section>
         <section className="max-w-5xl mx-auto custom:pr-[20rem] pt-10">
-          <div className="page-container space-y-12">
+          <div className="page-container">
             <Section {...projects} />
             <Section {...publications} />
           </div>
