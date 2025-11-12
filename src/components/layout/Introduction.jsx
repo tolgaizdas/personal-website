@@ -15,7 +15,7 @@ const Introduction = ({ information, introduction }) => {
       <div className="self-center">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
           <div className="flex-1 w-full">
-            <h1 className="text-3xl font-semibold text-neutral-900 dark:text-neutral-100">
+            <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
               Hi, I'm {information.name.split(" ")[0]}!
             </h1>
             <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -28,7 +28,7 @@ const Introduction = ({ information, introduction }) => {
               <Separator />
               <ThemeToggle />
             </div>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-neutral-700 dark:text-neutral-200">
+            <div className="mt-6 space-y-4 leading-relaxed text-neutral-700 dark:text-neutral-200">
               {introduction.description.map((item, index) => (
                 <p
                   key={index}
