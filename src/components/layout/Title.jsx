@@ -1,7 +1,6 @@
 import ThemeToggle from "../common/ThemeToggle";
 import Link from "next/link";
 import Email from "../links/Email";
-import Calendly from "../links/Calendly";
 import LinkedIn from "../links/LinkedIn";
 import GitHub from "../links/GitHub";
 import Scholar from "../links/Scholar";

@@ -1,20 +1,20 @@
 import Image from "next/image";
-import { sanitizeHtml } from "../../utils/sanitize";
 import ThemeToggle from "../common/ThemeToggle";
 import Email from "../links/Email";
-import Calendly from "../links/Calendly";
 import LinkedIn from "../links/LinkedIn";
 import GitHub from "../links/GitHub";
 import Scholar from "../links/Scholar";
 import Blog from "../links/Blog";
-import Separator from "../common/Separator";
 
 const Introduction = ({ information, introduction }) => {
   const [firstName, ...rest] = information.name.split(" ");
   const lastName = rest.join(" ");
 
   return (
-    <div className="flex flex-col w-full h-full items-center justify-center dark:bg-neutral-900 px-6 md:px-16 transform scale-120">
+    <div className="relative flex flex-col w-full h-full items-center justify-center dark:bg-neutral-900 px-6 md:px-16 transform scale-120">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <div className="mb-6 flex items-center justify-center">
         <div className="relative overflow-hidden rounded-full dark:bg-neutral-900 shadow-xl">
           <Image
@@ -44,8 +44,6 @@ const Introduction = ({ information, introduction }) => {
           <GitHub githubUrl={information.githubUrl} />
           <Scholar scholarUrl={information.scholarUrl} />
           <Blog blogUrl="/blog" />
-          <Separator />
-          <ThemeToggle />
         </div>
 
         <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
