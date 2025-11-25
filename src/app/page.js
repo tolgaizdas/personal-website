@@ -1,35 +1,14 @@
-"use client";
-
-import Section from "../components/layout/sections/Section";
-import TopButton from "../components/common/TopButton";
-import Footer from "../components/layout/Footer";
 import Introduction from "../components/layout/Introduction";
-import { information, aboutMe, publications, projects } from "./content";
+import { information, aboutMe } from "./content";
 
-export default function Home() {
+export default async function Home() {
   const introduction = aboutMe.subsections?.[0];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1">
-        <section className="pt-10 pb-4">
-          <div className="page-container">
-            <Introduction
-              information={information}
-              introduction={introduction}
-            />
-          </div>
-        </section>
-        <section className="max-w-5xl mx-auto custom:pr-[20rem] pt-10">
-          <div className="page-container">
-            <Section {...projects} />
-            <Section {...publications} />
-          </div>
-        </section>
+    <div className="h-screen overflow-hidden pb-[10rem]">
+      <main className="h-full">
+        <Introduction information={information} introduction={introduction} />
       </main>
-
-      <Footer />
-      <TopButton />
     </div>
   );
 }

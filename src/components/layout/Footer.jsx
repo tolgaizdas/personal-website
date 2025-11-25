@@ -8,7 +8,7 @@ const Footer = () => {
       className="text-center text-gray-900 dark:text-gray-100 flex-wrap p-2"
       style={{ fontSize }}
     >
-      &copy; {currentYear} Tolga İzdaş. All Rights Reserved.
+      &copy; {currentYear} Tolga Izdas. All Rights Reserved.
     </footer>
   );
 };

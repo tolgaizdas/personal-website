@@ -5,8 +5,8 @@ import { sanitizeHtml } from "../utils/sanitize";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Tolga İzdaş",
-  description: "Personal website of Tolga İzdaş",
+  title: "Tolga Izdas",
+  description: "Personal website of Tolga Izdas",
 };
 
 // Theme script for dark/light mode switching

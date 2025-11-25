@@ -7,14 +7,13 @@ function linkGithub(url) {
 }
 
 export const information = {
-  name: "Tolga İzdaş",
+  name: "Tolga Izdas",
   location: "İstanbul, Türkiye",
   email: "tolga@tolgaizdas.com",
   githubUrl: "https://github.com/tolgaizdas",
   linkedinUrl: "https://linkedin.com/in/tolgaizdas",
   scholarUrl: "https://scholar.google.com/citations?user=GXujHFgAAAAJ&hl=en",
   calendlyUrl: "https://calendly.com/tolgaizdas",
-  blogUrl: "/blog",
 };
 
 export const aboutMe = {

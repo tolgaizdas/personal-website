@@ -5,7 +5,6 @@ import Calendly from "../links/Calendly";
 import LinkedIn from "../links/LinkedIn";
 import GitHub from "../links/GitHub";
 import Scholar from "../links/Scholar";
-import Blog from "../links/Blog";
 import Separator from "../common/Separator";
 
 const Title = ({
@@ -30,9 +29,8 @@ const Title = ({
         </h1>
 
         {/* Right Side - Contact buttons, social buttons, separator, and theme toggle */}
-        <div className="flex items-center gap-4 mt-0 sm:mt-[5px]">
+        <div className="flex items-center gap-5 mt-0 sm:mt-[5px] ml-0 sm:ml-4">
           <Email email={email} />
-          <Calendly calendlyUrl={calendlyUrl} />
           <LinkedIn linkedinUrl={linkedinUrl} />
           <GitHub githubUrl={githubUrl} />
           <Scholar scholarUrl={scholarUrl} />

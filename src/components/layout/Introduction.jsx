@@ -10,49 +10,54 @@ import Blog from "../links/Blog";
 import Separator from "../common/Separator";
 
 const Introduction = ({ information, introduction }) => {
+  const [firstName, ...rest] = information.name.split(" ");
+  const lastName = rest.join(" ");
+
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
-      <div className="self-center">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-          <div className="flex-1 w-full">
-            <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">
-              Hi, I'm {information.name.split(" ")[0]}!
-            </h1>
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <Email email={information.email} />
-              <Calendly calendlyUrl={information.calendlyUrl} />
-              <LinkedIn linkedinUrl={information.linkedinUrl} />
-              <GitHub githubUrl={information.githubUrl} />
-              <Scholar scholarUrl={information.scholarUrl} />
-              <Blog blogUrl={information.blogUrl} />
-              <Separator />
-              <ThemeToggle />
-            </div>
-            <div className="mt-6 space-y-4 leading-relaxed text-neutral-700 dark:text-neutral-200">
-              {introduction.description.map((item, index) => (
-                <p
-                  key={index}
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(item),
-                  }}
-                />
-              ))}
-            </div>
+    <div className="flex flex-col md:flex-row w-full h-full justify-center">
+      <div className="w-full md:w-[22%] flex items-center justify-center px-6 md:px-4">
+        <div className="relative flex flex-col items-center md:items-end">
+          <div className="relative overflow-hidden rounded-full bg-white dark:bg-neutral-900">
+            <Image
+              src="/images/profile.jpeg"
+              alt={`${information.name} portrait`}
+              width={320}
+              height={320}
+              className="w-[12rem] h-auto object-cover border-2 border-neutral-800 dark:border-neutral-200 rounded-full"
+              priority
+            />
           </div>
         </div>
       </div>
-      <div className="relative flex-shrink-0">
-        <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-[2rem] bg-gradient-to-br from-blue-400/50 via-purple-400/40 to-emerald-400/40 blur-2xl dark:from-blue-500/30 dark:via-purple-500/30 dark:to-emerald-500/30"></div>
-        <div className="relative overflow-hidden rounded-[2rem] bg-white shadow-xl dark:bg-neutral-900">
-          <Image
-            src="/images/profile.jpeg"
-            alt={`${information.name} portrait`}
-            width={400}
-            height={400}
-            className="w-[16rem] h-auto object-cover"
-            priority
-          />
+
+      <div className="flex px-8 md:px-4 py-4 text-left flex flex-col justify-center items-center md:items-start">
+        <h1 className="mt-4 text-5xl font-black uppercase tracking-[0.1em] text-neutral-800 dark:text-neutral-200 pl-2 -indent-2 break-words text-center md:text-left">
+          <span>{firstName}</span>{" "}
+          <span className="text-neutral-400 dark:text-neutral-500 ml-[0.1rem]">
+            {lastName}
+          </span>
+        </h1>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-6 ml-[0.16rem]">
+          <Email email={information.email} />
+          <LinkedIn linkedinUrl={information.linkedinUrl} />
+          <GitHub githubUrl={information.githubUrl} />
+          <Scholar scholarUrl={information.scholarUrl} />
+          <Blog blogUrl="/blog" />
+          <Separator />
+          <ThemeToggle />
         </div>
+
+        <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400 ml-[0.3rem]">
+          <a
+            className="underline underline-offset-4"
+            href={information.calendlyUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book a 1:1 via Calendly
+          </a>
+        </p>
       </div>
     </div>
   );

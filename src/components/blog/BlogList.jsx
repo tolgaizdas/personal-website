@@ -52,7 +52,7 @@ export default function BlogList({ blogs = [] }) {
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              className={`px-3 py-1 rounded-full text-sm  ${
+              className={`px-3 py-1 rounded text-sm  ${
                 selectedTag === tag
                   ? "bg-blue-600 text-white"
                   : "bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-600"
@@ -72,7 +72,7 @@ export default function BlogList({ blogs = [] }) {
             className="block"
           >
             <article className="pb-6 cursor-pointer group">
-              <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
+              <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
                 {blog.title}
               </h2>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
