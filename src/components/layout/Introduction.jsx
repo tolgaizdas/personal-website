@@ -48,7 +48,7 @@ const Introduction = ({ information, introduction }) => {
 
         <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
           <a
-            className="underline underline-offset-4"
+            className="underline-offset-4"
             href={information.calendlyUrl}
             target="_blank"
             rel="noreferrer"
