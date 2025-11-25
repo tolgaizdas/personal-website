@@ -55,7 +55,7 @@ const Introduction = ({ information, introduction }) => {
             target="_blank"
             rel="noreferrer"
           >
-            Book a 1:1 via Calendly
+            Book a 1:1 meeting
           </a>
         </p>
       </div>
