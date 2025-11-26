@@ -30,9 +30,9 @@ const Introduction = ({ information, introduction }) => {
 
       <div className="w-full max-w-3xl text-center">
         <h1 className="text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-300">
-          <span>{firstName}</span>
+          <span>{firstName}</span>{" "}
           {lastName && (
-            <span className="block ml-3 sm:inline text-neutral-400 dark:text-neutral-500 mt-2 sm:mt-0">
+            <span className="block ml-3 sm:ml-0 sm:inline text-neutral-400 dark:text-neutral-500 mt-2 sm:mt-0">
               {lastName}
             </span>
           )}
@@ -46,7 +46,7 @@ const Introduction = ({ information, introduction }) => {
           <Blog blogUrl="/blog" />
         </div>
 
-        <p className="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="mt-6 text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200">
           <a
             className="underline-offset-4"
             href={information.calendlyUrl}
