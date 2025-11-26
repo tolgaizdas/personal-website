@@ -32,7 +32,7 @@ const Introduction = ({ information, introduction }) => {
         <h1 className="text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-200">
           <span>{firstName}</span>
           {lastName && (
-            <span className="block sm:inline sm:ml-3 text-neutral-400 dark:text-neutral-500 mt-2 sm:mt-0">
+            <span className="block ml-3 sm:inline text-neutral-400 dark:text-neutral-500 mt-2 sm:mt-0">
               {lastName}
             </span>
           )}
