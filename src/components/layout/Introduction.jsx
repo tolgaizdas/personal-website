@@ -22,14 +22,14 @@ const Introduction = ({ information, introduction }) => {
             alt={`${information.name} portrait`}
             width={320}
             height={320}
-            className="w-48 h-48 rounded-full object-cover border-2 border-neutral-800 dark:border-neutral-200"
+            className="w-48 h-48 rounded-full object-cover border-2 border-neutral-800 dark:border-neutral-300"
             priority
           />
         </div>
       </div>
 
       <div className="w-full max-w-3xl text-center">
-        <h1 className="text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-200">
+        <h1 className="text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-300">
           <span>{firstName}</span>
           {lastName && (
             <span className="block ml-3 sm:inline text-neutral-400 dark:text-neutral-500 mt-2 sm:mt-0">
