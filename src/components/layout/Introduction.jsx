@@ -18,7 +18,7 @@ const Introduction = ({ information, introduction }) => {
       <div className="mb-6 flex items-center justify-center">
         <div className="relative overflow-hidden rounded-full dark:bg-neutral-900 shadow-xl">
           <Image
-            src="/images/profile.png"
+            src="/images/profile.jpg"
             alt={`${information.name} portrait`}
             width={320}
             height={320}
