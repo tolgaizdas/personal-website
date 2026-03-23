@@ -8,6 +8,12 @@ import { IoArrowBack } from "react-icons/io5";
 import { information } from "../../../content";
 import { getAllBlogs, getAllBlogSlugs, getBlogById } from "@/utils/blog";
 
+const backToBlogClassName =
+  "group flex items-center gap-2 text-blue-600 duration-200 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300";
+
+const backToBlogIconClassName =
+  "h-5 w-5 transition-transform duration-200 ease-out group-hover:-translate-x-0.5";
+
 function formatDate(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
@@ -63,13 +69,16 @@ export default async function BlogPostPage({ params }) {
       <div className="min-h-screen flex flex-col">
         <Title {...information} />
         <main className="flex-1">
-          <section className="page-container">
+          <section
+            className="fade-in-up page-container"
+            style={{ "--enter-delay": "300ms" }}
+          >
             <div className="flex items-center gap-4 mb-6">
               <Link
                 href="/blog"
-                className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
+                className={backToBlogClassName}
               >
-                <IoArrowBack className="w-5 h-5" />
+                <IoArrowBack className={backToBlogIconClassName} />
                 Back to Blog
               </Link>
             </div>
@@ -99,18 +108,24 @@ export default async function BlogPostPage({ params }) {
     <div className="min-h-screen flex flex-col">
       <Title {...information} />
       <main className="flex-1">
-        <section className="page-container">
-          <div className="flex items-center gap-4 mb-6">
-            <Link
-              href="/blog"
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center gap-2"
-            >
-              <IoArrowBack className="w-5 h-5" />
+        <section
+          className="page-container"
+          style={{ "--enter-delay": "300ms" }}
+        >
+          <div
+            className="fade-in-up flex items-center gap-4 mb-6"
+            style={{ "--enter-delay": "300ms" }}
+          >
+            <Link href="/blog" className={backToBlogClassName}>
+              <IoArrowBack className={backToBlogIconClassName} />
               Back to Blog
             </Link>
           </div>
 
-          <article className="prose prose-neutral dark:prose-invert max-w-none mb-12">
+          <article
+            className="fade-in-up prose prose-neutral dark:prose-invert max-w-none mb-12"
+            style={{ "--enter-delay": "360ms" }}
+          >
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                 {blog.title}
@@ -161,7 +176,10 @@ export default async function BlogPostPage({ params }) {
           </article>
 
           {relatedBlogs.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-neutral-200/70 dark:border-neutral-700">
+            <div
+              className="fade-in-up mt-12 pt-8 border-t border-neutral-200/70 dark:border-neutral-700"
+              style={{ "--enter-delay": "440ms" }}
+            >
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
                 Related Posts
               </h3>

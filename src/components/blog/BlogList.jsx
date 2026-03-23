@@ -15,6 +15,15 @@ function formatDateShort(dateString) {
 export default function BlogList({ blogs = [] }) {
   const [selectedTag, setSelectedTag] = useState("All");
 
+  const topicButtonBaseClassName =
+    "rounded px-3 py-1 text-sm transition-[transform,box-shadow] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100 dark:focus-visible:ring-offset-neutral-900";
+
+  const activeTopicButtonClassName =
+    "bg-blue-600 text-white shadow-sm shadow-blue-600/20 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-md hover:shadow-blue-600/25 active:translate-y-0";
+
+  const inactiveTopicButtonClassName =
+    "bg-neutral-200 text-neutral-700 hover:-translate-y-0.5 hover:bg-neutral-300 hover:shadow-sm active:translate-y-0 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600";
+
   const tags = useMemo(() => {
     const uniqueTags = new Set(blogs.map((blog) => blog.tag).filter(Boolean));
     return ["All", ...uniqueTags];
@@ -52,10 +61,10 @@ export default function BlogList({ blogs = [] }) {
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              className={`px-3 py-1 rounded text-sm  ${
+              className={`${topicButtonBaseClassName} ${
                 selectedTag === tag
-                  ? "bg-blue-600 text-white"
-                  : "bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-600"
+                  ? activeTopicButtonClassName
+                  : inactiveTopicButtonClassName
               }`}
             >
               {tag}
@@ -72,8 +81,10 @@ export default function BlogList({ blogs = [] }) {
             className="block"
           >
             <article className="pb-6 cursor-pointer group">
-              <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 ">
-                {blog.title}
+              <h2 className="mb-4 text-xl font-semibold text-neutral-900 transition-transform duration-200 dark:text-neutral-100 group-hover:translate-x-0.5 group-hover:text-blue-600 dark:group-hover:text-blue-400 motion-reduce:transform-none">
+                <span className="inline-block">
+                  {blog.title}
+                </span>
               </h2>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                 {blog.tag ? (

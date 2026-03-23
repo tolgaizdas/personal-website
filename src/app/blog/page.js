@@ -14,7 +14,10 @@ export default async function BlogPage() {
     <div className="min-h-screen flex flex-col">
       <Title {...information} />
       <main className="flex-1 max-w-5xl mx-auto">
-        <section className="page-container mb-10 md:pr-[20rem]">
+        <section
+          className="fade-in-up page-container mb-10 md:pr-[20rem]"
+          style={{ "--enter-delay": "300ms" }}
+        >
           <h1 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
             Welcome to my blog!
           </h1>
@@ -26,7 +29,8 @@ export default async function BlogPage() {
         </section>
 
         <section
-          className={`page-container pb-16${hasBlogs ? " md:pr-[20rem]" : ""}`}
+          className={`fade-in-up page-container pb-16${hasBlogs ? " md:pr-[20rem]" : ""}`}
+          style={{ "--enter-delay": "380ms" }}
         >
           <BlogList blogs={blogs} />
         </section>
