@@ -35,7 +35,7 @@ export default async function BlogPage() {
           <BlogList blogs={blogs} />
         </section>
       </main>
-      <Footer />
+      <Footer enterDelay="460ms" />
     </div>
   );
 }

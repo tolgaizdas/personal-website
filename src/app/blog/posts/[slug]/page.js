@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }) {
             </div>
           </section>
         </main>
-        <Footer />
+        <Footer enterDelay="380ms" />
       </div>
     );
   }
@@ -217,7 +217,7 @@ export default async function BlogPostPage({ params }) {
       </main>
 
       <TopButton />
-      <Footer />
+      <Footer enterDelay="520ms" />
     </div>
   );
 }
