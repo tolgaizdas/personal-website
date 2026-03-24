@@ -20,11 +20,26 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--foreground-light)) transparent;
   overflow-y: scroll;
+  cursor: default;
 }
 
 body {
   color: rgb(var(--foreground-light));
   background-color: rgb(var(--background-light));
+  cursor: default;
+}
+
+a,
+button,
+[role="button"],
+summary {
+  cursor: pointer;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
 }
 
 /* Dark mode */
