@@ -44,7 +44,9 @@ const Title = ({
           style={{ "--enter-delay": "240ms" }}
         >
           <div className="flex items-center gap-3">
-            <Email email={email} />
+            <div className="-ml-[0.66rem] sm:ml-0">
+              <Email email={email} />
+            </div>
             <LinkedIn linkedinUrl={linkedinUrl} />
             <GitHub githubUrl={githubUrl} />
             <Scholar scholarUrl={scholarUrl} />
