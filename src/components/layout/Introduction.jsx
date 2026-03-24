@@ -21,7 +21,7 @@ const Introduction = ({ information, introduction }) => {
       </div>
       <div className="mb-6 flex items-center justify-center">
         <div
-          className="fade-in group relative p-[0.1rem]"
+          className="fade-in relative p-[0.1rem]"
           style={{ "--enter-delay": "160ms" }}
         >
           <div className="absolute inset-0 scale-105 rounded-full border border-black/10 dark:border-white/10" />
@@ -31,7 +31,7 @@ const Introduction = ({ information, introduction }) => {
               alt={`${information.name} portrait`}
               width={320}
               height={320}
-              className="w-48 h-48 rounded-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
+              className="w-48 h-48 rounded-full object-cover"
               priority
             />
           </div>
