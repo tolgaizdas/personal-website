@@ -22,7 +22,7 @@ const Title = ({
       dark:bg-[#171717] dark:text-[#ececec]"
       style={{ "--enter-delay": "100ms" }}
     >
-      <div className="border-b border-neutral-200/70 dark:border-neutral-800/60 page-container flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-2 py-6 sm:py-8 min-h-[3.5rem]">
+      <div className="fade-in border-b border-neutral-200/70 dark:border-neutral-800/60 page-container flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-2 py-6 sm:py-8 min-h-[3.5rem]">
         {/* Left Side - Name aligned with section titles */}
         <h1
           className="fade-in-up text-2xl font-semibold text-neutral-900 dark:text-neutral-100 leading-[1.8rem] sm:leading-[2rem] text-nowrap"
