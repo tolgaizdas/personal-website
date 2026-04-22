@@ -5,7 +5,7 @@ export default async function Home() {
   const introduction = aboutMe.subsections?.[0];
 
   return (
-    <div className="h-screen overflow-hidden pb-[10rem]">
+    <div className="h-screen overflow-hidden pb-0 [@media(min-height:813px)]:pb-[10rem]">
       <main className="h-full">
         <Introduction information={information} introduction={introduction} />
       </main>

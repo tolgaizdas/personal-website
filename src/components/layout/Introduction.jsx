@@ -24,8 +24,8 @@ const Introduction = ({ information, introduction }) => {
           className="fade-in relative p-[0.1rem]"
           style={{ "--enter-delay": "160ms" }}
         >
-          <div className="absolute inset-0 scale-105 rounded-full border border-black/10 dark:border-white/10" />
-          <div className="relative overflow-hidden rounded-full p-2 shadow-[0_16px_45px_rgba(15,23,42,0.1)] dark:bg-white/[0.03]">
+          <div className="absolute inset-0 scale-105 rounded-full" />
+          <div className="relative overflow-hidden rounded-full border border-neutral-800 dark:border-neutral-300 shadow-[0_16px_45px_rgba(15,23,42,0.1)] dark:bg-white/[0.03]">
             <Image
               src="/images/profile.jpg"
               alt={`${information.name} portrait`}
@@ -40,7 +40,7 @@ const Introduction = ({ information, introduction }) => {
 
       <div className="w-full max-w-3xl text-center">
         <h1
-          className="fade-in-up whitespace-nowrap text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-300"
+          className="fade-in-up sm:whitespace-nowrap text-5xl font-black uppercase tracking-[0.02em] text-neutral-800 dark:text-neutral-300"
           style={{ "--enter-delay": "240ms" }}
         >
           <span>{firstName}</span>{" "}
