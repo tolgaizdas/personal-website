@@ -79,22 +79,21 @@ export default async function BlogPostPage({ params }) {
                 className={backToBlogClassName}
               >
                 <IoArrowBack className={backToBlogIconClassName} />
-                Back to Blog
+                Back to blog
               </Link>
             </div>
 
             <div className="text-center">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-                Blog Post Not Found
+                Oops!..
               </h1>
               <p className="text-neutral-600 dark:text-neutral-400 mb-6">
                 The blog post you're looking for doesn't exist or couldn't be
-                loaded.
+                loaded
               </p>
             </div>
           </section>
         </main>
-        <Footer enterDelay="380ms" />
       </div>
     );
   }
@@ -118,7 +117,7 @@ export default async function BlogPostPage({ params }) {
           >
             <Link href="/blog" className={backToBlogClassName}>
               <IoArrowBack className={backToBlogIconClassName} />
-              Back to Blog
+              Back to blog
             </Link>
           </div>
 
@@ -131,11 +130,6 @@ export default async function BlogPostPage({ params }) {
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                {blog.tag ? (
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 p-1 rounded">
-                    {blog.tag}
-                  </span>
-                ) : null}
                 <span>
                   {blog.readingTime}
                   {blog.publishDate ? ` · ${formatDate(blog.publishDate)}` : ""}
@@ -217,7 +211,6 @@ export default async function BlogPostPage({ params }) {
       </main>
 
       <TopButton />
-      <Footer enterDelay="520ms" />
     </div>
   );
 }

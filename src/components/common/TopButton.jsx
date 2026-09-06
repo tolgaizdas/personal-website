@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { IoArrowUp } from "react-icons/io5";
 
 const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,20 +53,7 @@ const TopButton = () => {
       aria-label="Scroll to Top"
       disabled={!isVisible}
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 11l7-7 7 7M5 19l7-7 7 7"
-        />
-      </svg>
+      <IoArrowUp className={"h-5 w-5 transition-transform duration-200 ease-out group-hover:-translate-x-0.5"} />
     </button>
   );
 };
