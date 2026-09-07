@@ -4,15 +4,8 @@ import remarkGfm from "remark-gfm";
 import Title from "@/components/layout/Title";
 import Footer from "@/components/layout/Footer";
 import TopButton from "@/components/common/TopButton";
-import { IoArrowBack } from "react-icons/io5";
 import { information } from "../../../content";
 import { getAllBlogs, getAllBlogSlugs, getBlogById } from "@/utils/blog";
-
-const backToBlogClassName =
-  "group flex items-center gap-2 text-blue-600 duration-200 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300";
-
-const backToBlogIconClassName =
-  "h-5 w-5 transition-transform duration-200 ease-out group-hover:-translate-x-0.5";
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -67,22 +60,12 @@ export default async function BlogPostPage({ params }) {
   if (!blog) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Title {...information} sectionLabel="Blog" />
+        <Title {...information} sectionLabel="Blog" sectionHref="/blog" />
         <main className="flex-1">
           <section
             className="fade-in-up page-container"
             style={{ "--enter-delay": "300ms" }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <Link
-                href="/blog"
-                className={backToBlogClassName}
-              >
-                <IoArrowBack className={backToBlogIconClassName} />
-                Back to blog
-              </Link>
-            </div>
-
             <div className="text-center">
               <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
                 Oops!..
@@ -105,28 +88,18 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Title {...information} sectionLabel="Blog" />
+      <Title {...information} sectionLabel="Blog" sectionHref="/blog" />
       <main className="flex-1">
         <section
           className="page-container"
           style={{ "--enter-delay": "300ms" }}
         >
-          <div
-            className="fade-in-up flex items-center gap-4 mb-6"
-            style={{ "--enter-delay": "300ms" }}
-          >
-            <Link href="/blog" className={backToBlogClassName}>
-              <IoArrowBack className={backToBlogIconClassName} />
-              Back to blog
-            </Link>
-          </div>
-
           <article
-            className="fade-in-up prose prose-neutral dark:prose-invert max-w-none mb-12"
+            className="fade-in-up prose prose-neutral dark:prose-invert max-w-none mb-12 border-t border-neutral-300/80 pt-7 dark:border-neutral-700/80 sm:pt-9"
             style={{ "--enter-delay": "360ms" }}
           >
             <div className="mb-8">
-              <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+              <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 !mt-0 mb-4">
                 {blog.title}
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">

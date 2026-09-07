@@ -14,6 +14,7 @@ const Title = ({
   githubUrl,
   scholarUrl,
   sectionLabel,
+  sectionHref,
 }) => {
   // sticky -> sticky top-0 z-10
   // border -> border-b border-neutral-200/70 dark:border-neutral-800/60
@@ -52,9 +53,20 @@ const Title = ({
               >
                 /
               </span>
-              <span className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
-                {sectionLabel}
-              </span>
+              {sectionHref ? (
+              <Link
+                href={sectionHref}
+                className="group inline-flex px-1 py-1 -mx-1 -my-1 text-lg font-medium text-neutral-600 dark:text-neutral-400"
+              >
+                <span className="transition-[transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:text-neutral-800 dark:group-hover:text-neutral-200 motion-reduce:transition-none">
+                  {sectionLabel}
+                </span>
+              </Link>
+              ) : (
+                <span className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
+                  {sectionLabel}
+                </span>
+              )}
             </>
           ) : null}
         </h1>
