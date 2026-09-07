@@ -46,7 +46,7 @@ export default function BlogList({ blogs = [] }) {
                 </p>
               ) : null}
               <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-6">
-              <h2 className="max-w-2xl text-xl font-semibold leading-snug tracking-[-0.015em] text-neutral-900 transition-[color,transform] duration-200 ease-out group-hover:translate-x-0.5 group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400 motion-reduce:transform-none motion-reduce:transition-none sm:text-2xl">
+              <h2 className="max-w-2xl text-xl font-semibold leading-snug tracking-[-0.015em] text-neutral-900 transition-[transform] duration-200 ease-out group-hover:translate-x-0.5 group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400 motion-reduce:transform-none motion-reduce:transition-none sm:text-2xl">
                 {blog.title}
               </h2>
 

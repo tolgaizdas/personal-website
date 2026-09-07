@@ -11,7 +11,7 @@ function formatDate(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   });
 }
@@ -104,8 +104,13 @@ export default async function BlogPostPage({ params }) {
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                 <span>
+                  {blog.publishDate ? (
+                    <time dateTime={blog.publishDate}>
+                      {formatDate(blog.publishDate)}
+                    </time>
+                  ) : null}
+                  {blog.publishDate && blog.readingTime ? " · " : ""}
                   {blog.readingTime}
-                  {blog.publishDate ? ` · ${formatDate(blog.publishDate)}` : ""}
                 </span>
               </div>
             </div>
