@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }) {
   if (!blog) {
     return (
       <div className="min-h-screen flex flex-col">
-        <Title {...information} />
+        <Title {...information} sectionLabel="Blog" />
         <main className="flex-1">
           <section
             className="fade-in-up page-container"
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Title {...information} />
+      <Title {...information} sectionLabel="Blog" />
       <main className="flex-1">
         <section
           className="page-container"

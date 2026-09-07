@@ -13,16 +13,24 @@ const Title = ({
   linkedinUrl,
   githubUrl,
   scholarUrl,
+  sectionLabel,
 }) => {
   // sticky -> sticky top-0 z-10
   // border -> border-b border-neutral-200/70 dark:border-neutral-800/60
   return (
     <header
-      className="mb-12 bg-[#f0f0f0] text-[#333333] 
-      dark:bg-[#171717] dark:text-[#ececec]"
+      className={`${
+        sectionLabel ? "mb-4 sm:mb-6" : "mb-12"
+      } bg-[#f0f0f0] text-[#333333] dark:bg-[#171717] dark:text-[#ececec]`}
       style={{ "--enter-delay": "100ms" }}
     >
-      <div className="fade-in border-b border-neutral-200/70 dark:border-neutral-800/60 page-container flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-2 py-6 sm:py-8 min-h-[3.5rem]">
+      <div
+        className={`fade-in page-container flex min-h-[3.5rem] flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:py-8 ${
+          sectionLabel
+            ? ""
+            : "border-b border-neutral-200/70 dark:border-neutral-800/60"
+        }`}
+      >
         {/* Left Side - Name aligned with section titles */}
         <h1
           className="fade-in-up text-2xl font-semibold text-neutral-900 dark:text-neutral-100 leading-[1.8rem] sm:leading-[2rem] text-nowrap"
@@ -36,6 +44,19 @@ const Title = ({
               {name}
             </span>
           </Link>
+          {sectionLabel ? (
+            <>
+              <span
+                aria-hidden="true"
+                className="mx-2 text-lg font-normal text-neutral-400 dark:text-neutral-600"
+              >
+                /
+              </span>
+              <span className="text-lg font-medium text-neutral-600 dark:text-neutral-400">
+                {sectionLabel}
+              </span>
+            </>
+          ) : null}
         </h1>
 
         {/* Right Side - Contact buttons, social buttons, separator, and theme toggle */}
