@@ -1,12 +1,12 @@
 # Introduction
 
-This post is about the long, sometimes uncertain, but deeply rewarding journey I took while applying to graduate programs abroad. As a computer engineering student from Turkey, I always knew I wanted to continue my studies with a master's, possibly even a PhD. But I had no idea how many lessons, reflections, and personal growth moments would come along the way.
+This post is about my experience applying to graduate programs abroad. As a computer engineering student from Turkey, I had known for a long time that I wanted to continue my studies with a master's, possibly even a PhD. The application process ended up being much more involved than I had expected, so I wanted to write about what I did and what I learned from it.
 
 # Where It All Started
 
 The idea of studying in the United States for my master's wasn't something that came to me late in university, it actually started way earlier. Back in middle school, I remember thinking that I would do my bachelor's in Turkey and then, if everything aligned, go to the U.S. for my graduate studies. It wasn't just a passing thought, it slowly turned into a quiet goal I kept in the back of my mind.
 
-Years later, I began my undergraduate studies at TOBB University of Economics and Technology, where I spent two terms. I later decided to transfer to Yıldız Technical University, looking for a better fit for my academic and personal growth. Around that time, during my first years of university, AI was beginning to accelerate rapidly, and the whole field of machine learning and language models was evolving at breakneck speed. Seeing this shift up close didn't just excite me, it strengthened the goal I had carried for years and made it feel even more timely and aligned with where the world was heading.
+Years later, I began my undergraduate studies at TOBB University of Economics and Technology, where I spent two terms. I later decided to transfer to Yıldız Technical University, looking for a better fit for my academic and personal growth. Around that time, during my first years of university, AI was beginning to accelerate rapidly, and the whole field of machine learning and language models was evolving at breakneck speed. Seeing this shift up close made me even more interested in pursuing graduate studies in the field.
 
 # Researching Universities
 
@@ -16,7 +16,7 @@ To get a broad view, I used sites like [Times Higher Education (THE)](https://ww
 
 I built a detailed Google Sheets document to organize everything, tuition costs, program strengths, funding opportunities, graduate outcomes, faculty, locations, you name it. My father helped me a lot on this; he worked day and night to help me complete the sheet, and his support made a big difference during this overwhelming phase. This list included more than 150 universities, which gave me a broad perspective before I narrowed it down to a final group of over ten schools to apply to. Some of these were ambitious choices, schools that might have been a stretch, but I also made sure to include safer options to balance things out.
 
-Around that time, a friend suggested I also consider PhD programs. He pointed out that some companies, especially those focused on research and innovation, often prefer hiring PhD graduates. That advice made me rethink the boundaries I had set for myself. So I decided to explore that route, too.
+Around that time, a friend suggested I also consider PhD programs. He pointed out that some companies, especially those focused on research and innovation, often prefer hiring PhD graduates. That advice made me consider PhD programs too, so I decided to explore that route.
 
 # Reaching Out to Professors (PhD)
 
@@ -46,7 +46,7 @@ You also need your transcript(s) and CV to complete the application.
 
 Finally, after gathering everything, all you have to do is submit your documents through the application systems.
 
-One thing to keep in mind: taking and sending exam scores like TOEFL and GRE, plus application fees, adds up to a significant cost. But hopefully, all the effort and expense pay off in the end.
+One thing to keep in mind: taking and sending exam scores like TOEFL and GRE, plus application fees, adds up to a significant cost. The costs are definitely something to account for when deciding how many universities to apply to.
 
 # Good News and Bad News
 
@@ -74,10 +74,10 @@ The LSU PhD was a completely different path. Cost wasn't an issue since it was f
 
 After gathering advice from many people, I ultimately decided to go with USC. What shaped my choice most were the location, right in the heart of California's tech scene and close to Silicon Valley, the faculty's research areas that aligned with my own, and the prestige of the university. USC is ranked 21st in the field of computer science among all U.S. universities, which also gave me confidence in the program’s quality and reputation.
 
-All this hard work and uncertainty came down to that one moment, making the decision.
+After months of researching universities, preparing applications, and waiting for decisions, I had finally chosen USC.
 
 # What's Next?
 
-Now that this chapter is closing, I'm genuinely excited about what lies ahead. This journey has taught me a lot, not just about academia, but about persistence and about myself.
+Now that the application process is over, I'm excited to start my master's at USC and see where it takes me.
 
-If you're reading this and thinking about applying to grad school, here's my advice: it's a marathon, not a sprint. It takes time, patience, and effort. But in the end, it's absolutely worth it.
+If you're thinking about applying to grad school, my main advice is to start early and give yourself plenty of time. There are a lot of moving parts, and there will probably be periods where all you can do is wait. For me, though, going through the whole process was worth it.
