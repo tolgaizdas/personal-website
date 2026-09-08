@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Title from "@/components/layout/Title";
@@ -58,27 +59,7 @@ export default async function BlogPostPage({ params }) {
   const blog = await getBlogById(slug);
 
   if (!blog) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Title {...information} sectionLabel="Blog" sectionHref="/blog" />
-        <main className="flex-1">
-          <section
-            className="fade-in-up page-container"
-            style={{ "--enter-delay": "300ms" }}
-          >
-            <div className="text-center">
-              <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
-                Oops!..
-              </h1>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-                The blog post you're looking for doesn't exist or couldn't be
-                loaded
-              </p>
-            </div>
-          </section>
-        </main>
-      </div>
-    );
+    notFound();
   }
 
   const allBlogs = await getAllBlogs();

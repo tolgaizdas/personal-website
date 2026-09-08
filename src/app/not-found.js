@@ -1,63 +1,52 @@
-export const runtime = "edge";
-import { sanitizeHtml } from "../utils/sanitize";
+"use client";
 
-// Static CSS styles for the 404 page - this is trusted content, not user-generated
-// For edge runtime, we don't need DOMPurify since this is static trusted content
-const errorPageStyles = `body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}`;
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Title from "@/components/layout/Title";
+import { information } from "./content";
 
 export default function NotFound() {
+  const pathname = usePathname();
+  const [isBlogPath, setIsBlogPath] = useState(false);
+
+  useEffect(() => {
+    // Resolve the requested URL after hydration of the shared static 404.
+    setIsBlogPath(pathname === "/blog" || pathname?.startsWith("/blog/") === true);
+  }, [pathname]);
+
   return (
-    <>
-      <title>404: This page could not be found.</title>
-      <div style={styles.error}>
-        <div>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: sanitizeHtml(errorPageStyles),
-            }}
-          />
-          <h1 className="next-error-h1" style={styles.h1}>
-            404
-          </h1>
-          <div style={styles.desc}>
-            <h2 style={styles.h2}>This page could not be found.</h2>
+    <div className="min-h-screen flex flex-col">
+      <Title
+        {...information}
+        hideBorder
+        sectionLabel={isBlogPath ? "Blog" : undefined}
+        sectionHref={isBlogPath ? "/blog" : undefined}
+      />
+      <main className="flex-1">
+        <section className="page-container">
+          <div className="border-t border-neutral-300/80 pt-7 text-center dark:border-neutral-700/80 sm:pt-9">
+            <div className="fade-in-up" style={{ "--enter-delay": "360ms" }}>
+              <h1 className="mb-4 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
+                Oops!..
+              </h1>
+              <p className="mb-6 text-neutral-600 dark:text-neutral-400">
+                {isBlogPath
+                  ? "The blog post you're looking for doesn't exist."
+                  : "The page you're looking for doesn't exist."}
+              </p>
+              <Link
+                href={isBlogPath ? "/blog" : "/"}
+                className="group inline-flex px-1 py-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                <span className="transition-transform duration-200 ease-out group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:transform-none">
+                  {isBlogPath ? "Back to blog" : "Go home"}
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
-    </>
+        </section>
+      </main>
+    </div>
   );
 }
-
-const styles = {
-  error: {
-    fontFamily:
-      'system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
-    height: "100vh",
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  desc: {
-    display: "inline-block",
-  },
-
-  h1: {
-    display: "inline-block",
-    margin: "0 20px 0 0",
-    padding: "0 23px 0 0",
-    fontSize: 24,
-    fontWeight: 500,
-    verticalAlign: "top",
-    lineHeight: "49px",
-  },
-
-  h2: {
-    fontSize: 14,
-    fontWeight: 400,
-    lineHeight: "49px",
-    margin: 0,
-  },
-};

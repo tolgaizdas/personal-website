@@ -15,19 +15,20 @@ const Title = ({
   scholarUrl,
   sectionLabel,
   sectionHref,
+  hideBorder = false,
 }) => {
   // sticky -> sticky top-0 z-10
   // border -> border-b border-neutral-200/70 dark:border-neutral-800/60
   return (
     <header
       className={`${
-        sectionLabel ? "mb-4 sm:mb-6" : "mb-12"
+        sectionLabel || hideBorder ? "mb-4 sm:mb-6" : "mb-12"
       } bg-[#f0f0f0] text-[#333333] dark:bg-[#171717] dark:text-[#ececec]`}
       style={{ "--enter-delay": "100ms" }}
     >
       <div
         className={`fade-in page-container flex min-h-[3.5rem] flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:py-8 ${
-          sectionLabel
+          sectionLabel || hideBorder
             ? ""
             : "border-b border-neutral-200/70 dark:border-neutral-800/60"
         }`}
