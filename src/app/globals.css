@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --page: #ffffff;
   --ink: #202936;
   --muted: #596675;
@@ -15,6 +16,18 @@
   --gutter: 24px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #111111;
+  --ink: #f1f1f1;
+  --muted: #b8b8b8;
+  --quiet: #999999;
+  --accent: #91b8f1;
+  --accent-dark: #b4d0f8;
+  --line: #333333;
+  --soft: #222222;
 }
 
 *,
@@ -75,7 +88,7 @@ button:focus-visible {
 
 /* A quiet masthead, deliberately part of the page flow. */
 .site-header {
-  border-bottom: 1px solid #f0f2f5;
+  border-bottom: 1px solid var(--line);
   background: var(--page);
 }
 
@@ -106,8 +119,38 @@ button:focus-visible {
   color: var(--muted);
   font-size: 15px;
   font-weight: 400;
-  transition: color 180ms ease;
 }
+
+.nav-blog-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-separator {
+  width: 1px;
+  height: 16px;
+  background: var(--line);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover { color: var(--accent-dark); }
+.theme-icon { width: 18px; height: 18px; }
+.theme-icon-moon { display: none; }
+:root[data-theme="dark"] .theme-icon-moon { display: block; }
+:root[data-theme="dark"] .theme-icon-sun { display: none; }
 
 .site-header nav a:hover,
 .site-header nav a[aria-current="page"] {
@@ -182,7 +225,6 @@ main.wrap {
   color: var(--ink);
   font-size: 16px;
   font-weight: 600;
-  transition: color 180ms ease;
 }
 
 .home-actions a::after {
@@ -209,10 +251,6 @@ main.wrap {
   margin-top: 30px;
   color: var(--muted);
   font-size: 14px;
-}
-
-.home-social a {
-  transition: color 180ms ease;
 }
 
 .home-social a:hover {
@@ -253,10 +291,6 @@ main.wrap {
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.2;
-}
-
-.blog-title a {
-  transition: color 180ms ease;
 }
 
 .blog-title a::after {
@@ -372,7 +406,6 @@ main.wrap {
 .prose a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 180ms ease;
 }
 
 .prose a:hover {
@@ -445,7 +478,6 @@ main.wrap {
   color: var(--ink);
   font-size: 16px;
   font-weight: 600;
-  transition: color 180ms ease;
 }
 
 .back-link::after {
@@ -501,7 +533,6 @@ main.wrap {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: border-color 180ms ease, color 180ms ease;
 }
 
 .top-button:hover {
@@ -587,7 +618,7 @@ main.wrap {
   :root { --gutter: 20px; }
 
   .brand { font-size: 13px; }
-  .site-header nav { gap: 18px; }
+  .site-header nav { gap: 14px; }
   .site-header nav a { font-size: 11px; }
   .home-actions { gap: 14px 28px; }
   .prose { font-size: 16px; }
