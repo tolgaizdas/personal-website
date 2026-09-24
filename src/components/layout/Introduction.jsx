@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Introduction = ({ information }) => {
   return (
@@ -10,10 +11,8 @@ const Introduction = ({ information }) => {
           Southern California.
         </p>
 
-        <div className="home-actions" aria-label="Get in touch">
-          <a href={information.calendlyUrl} target="_blank" rel="noreferrer">
-            Book a meeting
-          </a>
+        <div className="home-actions" aria-label="Explore and connect">
+          <Link href="/blog">Read my blog</Link>
           <a href={`mailto:${information.email}`}>Email me</a>
         </div>
 
