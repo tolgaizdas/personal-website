@@ -179,7 +179,7 @@ main.wrap {
 }
 
 .home-intro {
-  --photo-size: clamp(220px, 28vw, 300px);
+  --photo-size: 300px;
   display: grid;
   grid-template-columns: minmax(0, 620px) var(--photo-size);
   align-items: start;
@@ -603,7 +603,7 @@ main.wrap {
 
 @media (max-width: 660px) {
   .home-intro {
-    --photo-size: 180px;
+    --photo-size: 220px;
     grid-template-columns: minmax(0, 1fr);
   }
 
