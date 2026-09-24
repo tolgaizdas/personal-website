@@ -7,7 +7,7 @@
   --page: #ffffff;
   --ink: #202936;
   --muted: #596675;
-  --quiet: #7b8795;
+  --quiet: #667382;
   --accent: #8c775c;
   --accent-dark: #6f5d47;
   --prose-link: #78654c;
@@ -263,7 +263,7 @@ main.wrap {
 }
 
 .home-actions a:hover {
-  color: var(--accent);
+  color: var(--prose-link);
 }
 
 .home-actions a:hover::after {
@@ -281,7 +281,7 @@ main.wrap {
 }
 
 .home-social a:hover {
-  color: var(--accent);
+  color: var(--prose-link);
 }
 
 .journal-content {
@@ -299,7 +299,7 @@ main.wrap {
 }
 
 .blog-tag {
-  color: var(--accent);
+  color: var(--prose-link);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -488,7 +488,7 @@ main.wrap {
 }
 
 .related-posts a:hover {
-  color: var(--accent);
+  color: var(--prose-link);
 }
 
 .back-link {
@@ -508,7 +508,7 @@ main.wrap {
 }
 
 .back-link:hover {
-  color: var(--accent);
+  color: var(--prose-link);
 }
 
 .back-link:hover::after {
@@ -551,7 +551,7 @@ main.wrap {
 
 .top-button:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--prose-link);
 }
 
 /* Reveal each page in reading order without moving the layout. */
