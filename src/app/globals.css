@@ -10,6 +10,8 @@
   --quiet: #7b8795;
   --accent: #8c775c;
   --accent-dark: #6f5d47;
+  --prose-link: #78654c;
+  --prose-link-hover: #5b4a36;
   --line: #e1e6ec;
   --soft: #f3f6fa;
   --photo-border: #000000;
@@ -27,6 +29,8 @@
   --quiet: #999999;
   --accent: #beab91;
   --accent-dark: #d9c6aa;
+  --prose-link: #beab91;
+  --prose-link-hover: #d9c6aa;
   --line: #333333;
   --soft: #222222;
   --photo-border: #ffffff;
@@ -427,12 +431,12 @@ main.wrap {
 }
 
 .prose a {
-  color: var(--accent);
+  color: var(--prose-link);
   text-decoration: none;
 }
 
 .prose a:hover {
-  color: var(--accent-dark);
+  color: var(--prose-link-hover);
   text-decoration: none;
 }
 
