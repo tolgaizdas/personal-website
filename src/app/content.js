@@ -1,5 +1,5 @@
 function anchor(url, text) {
-  return `<a target="_blank" href="${url}" class="text-blue-600 hover:text-blue-800 hover:dark:text-blue-300 dark:text-blue-400">${text}</a>`;
+  return `<a target="_blank" rel="noreferrer" href="${url}">${text}</a>`;
 }
 
 function linkGithub(url) {

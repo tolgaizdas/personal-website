@@ -1,4 +1,5 @@
 import Title from "../../components/layout/Title";
+import Footer from "../../components/layout/Footer";
 import BlogList from "@/components/blog/BlogList";
 import { information } from "../content";
 import { getAllBlogs } from "@/utils/blog";
@@ -14,16 +15,21 @@ export default async function BlogPage() {
   const blogs = await getAllBlogs();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Title {...information} sectionLabel="Blog" />
-      <main className="flex-1 pb-16 sm:pb-24">
-        <section
-          className="fade-in-up page-container"
-          style={{ "--enter-delay": "380ms" }}
-        >
-          <BlogList blogs={blogs} />
+      <main id="main" className="wrap journal-main">
+        <section aria-labelledby="journal-title">
+          <div className="journal-content">
+            <h1 id="journal-title" className="page-title">Writing</h1>
+            <p className="page-intro">
+              Notes on research, computer science, and the experiences that shape
+              my work.
+            </p>
+            <BlogList blogs={blogs} />
+          </div>
         </section>
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }

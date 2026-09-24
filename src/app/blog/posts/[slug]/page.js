@@ -19,7 +19,6 @@ function formatDate(dateString) {
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
-
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -28,9 +27,7 @@ export async function generateMetadata({ params }) {
   const blog = await getBlogById(slug);
 
   if (!blog) {
-    return {
-      title: "Blog Post Not Found",
-    };
+    return { title: "Blog Post Not Found" };
   }
 
   const description = blog.preview || blog.content?.slice(0, 160) || "";
@@ -64,63 +61,44 @@ export default async function BlogPostPage({ params }) {
 
   const allBlogs = await getAllBlogs();
   const relatedBlogs = allBlogs
-    .filter((b) => b.tag === blog.tag && b.slug !== blog.slug)
+    .filter(
+      (candidate) =>
+        candidate.tag === blog.tag && candidate.slug !== blog.slug,
+    )
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Title {...information} sectionLabel="Blog" sectionHref="/blog" />
-      <main className="flex-1">
-        <section
-          className="page-container"
-          style={{ "--enter-delay": "300ms" }}
-        >
-          <article
-            className="fade-in-up prose prose-neutral dark:prose-invert max-w-none mb-12 border-t border-neutral-300/80 pt-7 dark:border-neutral-700/80 sm:pt-9"
-            style={{ "--enter-delay": "360ms" }}
-          >
-            <div className="mb-8">
-              <h1 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 !mt-0 mb-4">
-                {blog.title}
-              </h1>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
-                <span>
-                  {blog.publishDate ? (
-                    <time dateTime={blog.publishDate}>
-                      {formatDate(blog.publishDate)}
-                    </time>
-                  ) : null}
-                  {blog.publishDate && blog.readingTime ? " · " : ""}
-                  {blog.readingTime}
-                </span>
-              </div>
-            </div>
+    <>
+      <Title {...information} sectionLabel="Blog" />
+      <main id="main" className="wrap article-main">
+        <div className="article-layout">
+          <article className="article">
+            <header className="article-header">
+              <h1>{blog.title}</h1>
+              <p className="article-meta">
+                {blog.publishDate ? (
+                  <time dateTime={blog.publishDate}>
+                    {formatDate(blog.publishDate)}
+                  </time>
+                ) : null}
+                {blog.publishDate && blog.readingTime ? " · " : ""}
+                {blog.readingTime}
+              </p>
+            </header>
 
-            <div className="prose-lg prose-neutral dark:prose-invert max-w-none">
+            <div className="prose">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
+                  h1: ({ children }) => <h2>{children}</h2>,
                   code: ({ inline, className, children, ...props }) =>
                     inline ? (
-                      <code
-                        className="bg-neutral-100 dark:bg-neutral-800 px-1.5 rounded text-sm"
-                        {...props}
-                      >
-                        {children}
-                      </code>
+                      <code {...props}>{children}</code>
                     ) : (
-                      <code
-                        className={`${className} block bg-neutral-100 dark:bg-neutral-800 p-4 rounded overflow-x-auto`}
-                        {...props}
-                      >
+                      <code className={className} {...props}>
                         {children}
                       </code>
                     ),
-                  blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-blue-500 pl-4 italic text-neutral-600 dark:text-neutral-400">
-                      {children}
-                    </blockquote>
-                  ),
                 }}
               >
                 {blog.content}
@@ -128,48 +106,24 @@ export default async function BlogPostPage({ params }) {
             </div>
           </article>
 
-          {relatedBlogs.length > 0 && (
-            <div
-              className="fade-in-up mt-12 pt-8 border-t border-neutral-200/70 dark:border-neutral-700"
-              style={{ "--enter-delay": "440ms" }}
-            >
-              <h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
-                Related Posts
-              </h3>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {relatedBlogs.length > 0 ? (
+            <section className="related-posts">
+              <h2>Related posts</h2>
+              <ul>
                 {relatedBlogs.map((relatedBlog) => (
-                  <Link
-                    key={relatedBlog.slug}
-                    href={`/blog/posts/${relatedBlog.slug}`}
-                    className="group"
-                  >
-                    <article className="border border-neutral-200/70 dark:border-neutral-800/60 rounded-lg p-4 hover:shadow-md transition-shadow">
-                      <h4 className="font-semibold text-neutral-900 dark:text-neutral-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-                        {relatedBlog.title}
-                      </h4>
-                      <div className="flex items-center gap-2 mb-2">
-                        {relatedBlog.tag ? (
-                          <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">
-                            {relatedBlog.tag}
-                          </span>
-                        ) : null}
-                        <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                          {relatedBlog.readingTime}
-                        </span>
-                      </div>
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2">
-                        {relatedBlog.preview}
-                      </p>
-                    </article>
-                  </Link>
+                  <li key={relatedBlog.slug}>
+                    <Link href={`/blog/posts/${relatedBlog.slug}`}>
+                      {relatedBlog.title}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-            </div>
-          )}
-        </section>
+              </ul>
+            </section>
+          ) : null}
+        </div>
       </main>
-
+      <Footer />
       <TopButton />
-    </div>
+    </>
   );
 }

@@ -1,14 +1,16 @@
 import Introduction from "../components/layout/Introduction";
-import { information, aboutMe } from "./content";
+import Title from "../components/layout/Title";
+import Footer from "../components/layout/Footer";
+import { information } from "./content";
 
 export default async function Home() {
-  const introduction = aboutMe.subsections?.[0];
-
   return (
-    <div className="h-screen overflow-hidden pb-[10rem]">
-      <main className="h-full">
-        <Introduction information={information} introduction={introduction} />
+    <>
+      <Title {...information} />
+      <main id="main" className="wrap home-main">
+        <Introduction information={information} />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
