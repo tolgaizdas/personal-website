@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Introduction = ({ information }) => {
   const firstName = information.name.split(" ")[0];
 
@@ -29,6 +31,14 @@ const Introduction = ({ information }) => {
           </a>
         </div>
       </div>
+      <Image
+        className="home-photo"
+        src="/images/profile.jpg"
+        alt="Tolga Izdas in front of the Golden Gate Bridge"
+        width={300}
+        height={300}
+        priority
+      />
     </section>
   );
 };
