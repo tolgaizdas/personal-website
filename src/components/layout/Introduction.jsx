@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Introduction = ({ information }) => {
   return (
     <section className="home-intro" aria-labelledby="intro-title">
@@ -10,8 +8,7 @@ const Introduction = ({ information }) => {
           Southern California.
         </p>
 
-        <div className="home-actions" aria-label="Explore and connect">
-          <Link href="/blog">Read my blog</Link>
+        <div className="home-actions" aria-label="Connect">
           <a href={`mailto:${information.email}`}>Email me</a>
         </div>
 
