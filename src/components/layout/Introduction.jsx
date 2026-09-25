@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const Introduction = ({ information }) => {
@@ -28,14 +27,6 @@ const Introduction = ({ information }) => {
           </a>
         </div>
       </div>
-      <Image
-        className="home-photo"
-        src="/images/profile.jpg"
-        alt="Tolga Izdas in front of the Golden Gate Bridge"
-        width={300}
-        height={300}
-        priority
-      />
     </section>
   );
 };
